@@ -1,0 +1,26 @@
+{
+  "name": "@xm/prize-wheel",
+  "license": "MIT",
+  "version": "0.0.1",
+  "author": "xiaomingTang",
+  "description": "prize wheel",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.es.d.ts",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite --config vite.example-config.ts",
+    "build": "vite build",
+    "build:watch": "vite build --watch"
+  },
+  "dependencies": {
+    "@xm/event-emitter": "file:../event-emitter"
+  },
+  "peerDependencies": {
+    "@babel/runtime-corejs3": "^7.18.9",
+    "core-js": "3"
+  }
+}
