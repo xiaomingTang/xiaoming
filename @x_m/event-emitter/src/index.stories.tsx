@@ -1,5 +1,5 @@
 import type { Meta } from "@storybook/react";
-import { createSBArgs, StoryOutputArgs } from "@xm/story-helper";
+import { createSBArgs, StoryOutputArgs } from "@x_m/story-helper";
 
 import { EventEmitter as EventEmitterComponent } from "./index";
 

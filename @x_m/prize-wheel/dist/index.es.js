@@ -7,7 +7,7 @@ import "core-js/modules/esnext.promise.all-settled.js";
 import "core-js/modules/es.string.iterator.js";
 import "core-js/modules/web.dom-collections.iterator.js";
 import s from "@babel/runtime-corejs3/core-js-stable/promise";
-import { EventEmitter as l } from "@xm/event-emitter";
+import { EventEmitter as l } from "@x_m/event-emitter";
 var v = "PrizeWheel";
 function r(e) {
   return new s(function(n) {
@@ -25,7 +25,7 @@ function o() {
       for (; ; )
         switch (t.prev = t.next) {
           case 0:
-            return console.log("imported from '@xm/event-emitter': ".concat(l)), console.log("testPromise start"), t.next = 4, s.allSettled([r(1500), r(2e3), r(2500)]);
+            return console.log("imported from '@x_m/event-emitter': ".concat(l)), console.log("testPromise start"), t.next = 4, s.allSettled([r(1500), r(2e3), r(2500)]);
           case 4:
             console.log("testPromise end");
           case 5:

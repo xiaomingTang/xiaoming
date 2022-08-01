@@ -19,7 +19,7 @@ Index.parameters = {
       language: 'tsx',
       type: 'auto',
       code: `
-import { createSBArgs, StoryOutputArgs } from "@xm/story-helper"
+import { createSBArgs, StoryOutputArgs } from "@x_m/story-helper"
 
 const controlArgs = createSBArgs({
   paramRadio: {

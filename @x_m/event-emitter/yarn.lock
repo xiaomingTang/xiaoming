@@ -2,5 +2,5 @@
 # yarn lockfile v1
 
 
-"@xm/story-helper@file:../story-helper":
+"@x_m/story-helper@file:../story-helper":
   version "0.0.1"

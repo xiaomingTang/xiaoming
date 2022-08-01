@@ -1,5 +1,5 @@
 {
-  "name": "@xm/event-emitter",
+  "name": "@x_m/event-emitter",
   "license": "MIT",
   "version": "0.0.2",
   "author": "xiaomingTang",
@@ -21,6 +21,6 @@
     "core-js": "3"
   },
   "devDependencies": {
-    "@xm/story-helper": "^0.0.2"
+    "@x_m/story-helper": "^0.0.2"
   }
 }

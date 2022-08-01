@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2021-2022 @xm/prize-wheel authors
+Copyright (c) 2021-2022 @x_m/prize-wheel authors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

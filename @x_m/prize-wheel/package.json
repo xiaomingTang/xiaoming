@@ -1,9 +1,9 @@
 {
-  "name": "@xm/story-helper",
+  "name": "@x_m/prize-wheel",
   "license": "MIT",
   "version": "0.0.2",
   "author": "xiaomingTang",
-  "description": "story helper",
+  "description": "prize wheel",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
   "types": "dist/index.es.d.ts",
@@ -12,8 +12,12 @@
     "dist"
   ],
   "scripts": {
+    "dev": "vite --config vite.example-config.ts",
     "build": "vite build",
     "build:watch": "vite build --watch"
+  },
+  "dependencies": {
+    "@x_m/event-emitter": "^0.0.2"
   },
   "peerDependencies": {
     "@babel/runtime-corejs3": "^7.18.9",

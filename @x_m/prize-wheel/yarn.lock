@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@xm/event-emitter@file:../event-emitter":
+"@x_m/event-emitter@file:../event-emitter":
   version "0.0.1"
   dependencies:
     event-emitter "^0.3.5"

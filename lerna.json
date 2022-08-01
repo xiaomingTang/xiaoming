@@ -7,6 +7,6 @@
       "ignoreChanges": ["*.md", ".spec.ts", ".stories.ts"]
     }
   },
-  "packages": ["@xm/**"],
+  "packages": ["@x_m/**"],
   "version": "independent"
 }
