@@ -22,6 +22,5 @@
   },
   "devDependencies": {
     "@xm/story-helper": "^0.0.1"
-  },
-  "gitHead": "4bb702e9017235aaa9d98c1efdc337073c6294b3"
+  }
 }

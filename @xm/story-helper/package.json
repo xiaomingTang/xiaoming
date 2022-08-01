@@ -18,6 +18,5 @@
   "peerDependencies": {
     "@babel/runtime-corejs3": "^7.18.9",
     "core-js": "3"
-  },
-  "gitHead": "4bb702e9017235aaa9d98c1efdc337073c6294b3"
+  }
 }
