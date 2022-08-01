@@ -1,7 +1,7 @@
 {
   "name": "@xm/prize-wheel",
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "xiaomingTang",
   "description": "prize wheel",
   "main": "dist/index.umd.js",
@@ -17,7 +17,7 @@
     "build:watch": "vite build --watch"
   },
   "dependencies": {
-    "@xm/event-emitter": "^0.0.1"
+    "@xm/event-emitter": "^0.0.2"
   },
   "peerDependencies": {
     "@babel/runtime-corejs3": "^7.18.9",

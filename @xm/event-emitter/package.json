@@ -1,7 +1,7 @@
 {
   "name": "@xm/event-emitter",
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "xiaomingTang",
   "description": "event emitter",
   "main": "dist/index.umd.js",
@@ -21,6 +21,6 @@
     "core-js": "3"
   },
   "devDependencies": {
-    "@xm/story-helper": "^0.0.1"
+    "@xm/story-helper": "^0.0.2"
   }
 }
