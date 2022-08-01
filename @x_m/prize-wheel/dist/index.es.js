@@ -16,7 +16,7 @@ function r(e) {
     }, e);
   });
 }
-function y() {
+function _() {
   return o.apply(this, arguments);
 }
 function o() {
@@ -38,6 +38,6 @@ function o() {
 export {
   v as PrizeWheel,
   r as sleepMs,
-  y as testPromise
+  _ as testPromise
 };
 //# sourceMappingURL=index.es.js.map
