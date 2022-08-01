@@ -1,9 +1,9 @@
 {
-  "name": "@xm/event-emitter",
+  "name": "@xm/story-helper",
   "license": "MIT",
   "version": "0.0.1",
   "author": "xiaomingTang",
-  "description": "event emitter",
+  "description": "story helper",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
   "types": "dist/index.es.d.ts",
@@ -12,15 +12,11 @@
     "dist"
   ],
   "scripts": {
-    "dev": "vite --config vite.example-config.ts",
     "build": "vite build",
     "build:watch": "vite build --watch"
   },
   "peerDependencies": {
     "@babel/runtime-corejs3": "^7.18.9",
     "core-js": "3"
-  },
-  "devDependencies": {
-    "@xm/story-helper": "file:../story-helper"
   }
 }
