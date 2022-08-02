@@ -1,4 +1,4 @@
-import type { Meta } from "@storybook/react"
+import type { Meta } from '@storybook/react'
 
 const meta: Meta<{}> = {
   title: 'story-helper',
@@ -6,9 +6,11 @@ const meta: Meta<{}> = {
 
 export default meta
 
-const Template = () => (<>
-  Doc 内点击 <em>show code</em> 查看详情
-</>)
+const Template = () => (
+  <>
+    Doc 内点击 <em>show code</em> 查看详情
+  </>
+)
 
 export const Index = Template.bind({})
 
@@ -64,7 +66,7 @@ const Template = (args: StoryOutputArgs<typeof controlArgs>) => (
 )
 
 export const WhatEver = Template.bind(controlArgs)
-      `
+      `,
     },
   },
 }

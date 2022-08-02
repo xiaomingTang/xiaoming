@@ -1,77 +1,77 @@
 interface ArgController {
   boolean: {
-    return: boolean;
-    defaultValue?: boolean;
-  };
+    return: boolean
+    defaultValue?: boolean
+  }
   number: {
-    return: number;
-    defaultValue?: number;
-    min?: number;
-    max?: number;
-    step?: number;
-  };
+    return: number
+    defaultValue?: number
+    min?: number
+    max?: number
+    step?: number
+  }
   range: {
-    return: [number, number];
-    defaultValue?: number;
-    min?: number;
-    max?: number;
-    step?: number;
-  };
+    return: [number, number]
+    defaultValue?: number
+    min?: number
+    max?: number
+    step?: number
+  }
   object: {
-    return: object;
-    defaultValue?: object;
-  };
+    return: object
+    defaultValue?: object
+  }
   file: {
-    return: string[];
-    accept?: string;
-  };
+    return: string[]
+    accept?: string
+  }
   radio: {
-    return: string;
-    defaultValue?: string;
-    options?: string[];
-  };
-  "inline-radio": {
-    return: string;
-    defaultValue?: string;
-    options?: string[];
-  };
+    return: string
+    defaultValue?: string
+    options?: string[]
+  }
+  'inline-radio': {
+    return: string
+    defaultValue?: string
+    options?: string[]
+  }
   check: {
-    return: string[];
-    defaultValue?: string[];
-    options?: string[];
-  };
-  "inline-check": {
-    return: string[];
-    defaultValue?: string[];
-    options?: string[];
-  };
+    return: string[]
+    defaultValue?: string[]
+    options?: string[]
+  }
+  'inline-check': {
+    return: string[]
+    defaultValue?: string[]
+    options?: string[]
+  }
   select: {
-    return: string;
-    defaultValue?: string;
-    options?: string[];
-  };
-  "multi-select": {
-    return: string[];
-    defaultValue?: string[];
-    options?: string[];
-  };
+    return: string
+    defaultValue?: string
+    options?: string[]
+  }
+  'multi-select': {
+    return: string[]
+    defaultValue?: string[]
+    options?: string[]
+  }
   text: {
-    return: string;
-    defaultValue?: string;
-  };
+    return: string
+    defaultValue?: string
+  }
   color: {
-    return: string;
-    presetsColors?: string[];
-    defaultValue?: number;
-  };
+    return: string
+    presetsColors?: string[]
+    defaultValue?: number
+  }
   date: {
-    return: string;
-    defaultValue?: string;
-  };
+    return: string
+    defaultValue?: string
+  }
 }
 
 type ArgItem<T extends keyof ArgController> = {
-  control: T;
+  control: T
 } & Omit<ArgController[T], 'return'>
 
 export interface StoryInputArgs {
@@ -89,10 +89,10 @@ export interface StoryInputArgs {
     | ArgItem<'radio'>
     | ArgItem<'range'>
     | ArgItem<'select'>
-    | ArgItem<'text'>;
+    | ArgItem<'text'>
 }
 export type StoryOutputArgs<T extends StoryInputArgs> = {
-  [key in keyof T]: ArgController[T[key]['control']]['return'];
+  [key in keyof T]: ArgController[T[key]['control']]['return']
 }
 
 export function createSBArgs<T extends StoryInputArgs>(args: T): T {

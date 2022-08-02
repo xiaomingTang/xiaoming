@@ -1,7 +1,7 @@
-import type { Meta } from "@storybook/react";
-import { createSBArgs, StoryOutputArgs } from "@x_m/story-helper";
+import type { Meta } from '@storybook/react'
+import { createSBArgs, StoryOutputArgs } from '@x_m/story-helper'
 
-import { EventEmitter as EventEmitterComponent } from "./index";
+import { EventEmitter as EventEmitterComponent } from './index'
 
 const controlArgs = createSBArgs({
   boolean: {
@@ -42,4 +42,4 @@ const Template = (args: StoryOutputArgs<typeof controlArgs>) => (
   </div>
 )
 
-export const StoryHelperTest = Template.bind(controlArgs);
+export const StoryHelperTest = Template.bind(controlArgs)

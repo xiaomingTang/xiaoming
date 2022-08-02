@@ -8,6 +8,6 @@
   "include": [
     "vite.base-react-config.ts",
     "**/vite.config.ts",
-    "**/vite.example-config.ts",
+    "**/vite.example-config.ts"
   ]
 }

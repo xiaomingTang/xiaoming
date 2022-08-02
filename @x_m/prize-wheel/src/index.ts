@@ -15,10 +15,6 @@ export function sleepMs(ms: number) {
 export async function testPromise() {
   console.log(`imported from '@x_m/event-emitter': ${EventEmitter}`)
   console.log('testPromise start')
-  await Promise.allSettled([
-    sleepMs(1500),
-    sleepMs(2000),
-    sleepMs(2500),
-  ])
+  await Promise.allSettled([sleepMs(1500), sleepMs(2000), sleepMs(2500)])
   console.log('testPromise end')
 }

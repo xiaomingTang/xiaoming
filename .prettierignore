@@ -1,0 +1,7 @@
+# 貌似不支持 '!'
+
+*.json
+*.md
+*.d.ts
+*.js
+*.stories.tsx

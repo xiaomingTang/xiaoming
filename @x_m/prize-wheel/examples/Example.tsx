@@ -3,9 +3,11 @@ import { PrizeWheel, testPromise } from '../src/index'
 
 export default function Example() {
   return (
-    <button onClick={() => {
-      testPromise()
-    }}>
+    <button
+      onClick={() => {
+        testPromise()
+      }}
+    >
       PrizeWheel name: {PrizeWheel}
     </button>
   )

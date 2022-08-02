@@ -12,10 +12,6 @@ export function sleepMs(ms: number) {
 
 export async function testPromise() {
   console.log('testPromise start')
-  await Promise.allSettled([
-    sleepMs(1500),
-    sleepMs(2000),
-    sleepMs(2500),
-  ])
+  await Promise.allSettled([sleepMs(1500), sleepMs(2000), sleepMs(2500)])
   console.log('testPromise end')
 }
