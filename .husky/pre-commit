@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/HUSKY.SH"
 
-yarn prettier
+yarn prettier & yarn lint

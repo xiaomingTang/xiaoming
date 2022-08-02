@@ -1,0 +1,5 @@
+**/*.js
+**/*.d.ts
+**/*.stories.tsx
+**/vite.config.ts
+**/vite.example-config.ts
