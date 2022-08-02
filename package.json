@@ -60,11 +60,5 @@
     "hooks": {
       "pre-commit": "yarn prettier"
     }
-  },
-  "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
   }
 }
