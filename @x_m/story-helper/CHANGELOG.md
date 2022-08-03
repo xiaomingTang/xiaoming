@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.1.0 (2022-08-03)
+
+
+### Features
+
+* all packages inited ([5787438](https://github.com/xiaomingTang/xiaoming/commit/5787438b146a0df2ba637c5802a805fe3ac6f21e))
+* explicit private false ([426849b](https://github.com/xiaomingTang/xiaoming/commit/426849b8cb90121898c918ba2d793ca29a6f7f86))
+* prettier ([28a93d1](https://github.com/xiaomingTang/xiaoming/commit/28a93d18b47e9336fc1981f2ee22b8f8b685ba53))
+* rename org to x_m ([2a00118](https://github.com/xiaomingTang/xiaoming/commit/2a00118c45b258f72c80383f4ff0330d1d737824))
+
+
+
+
+
 ## 0.0.2 (2022-08-01)
 
 
