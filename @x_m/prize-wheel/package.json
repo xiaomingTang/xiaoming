@@ -8,6 +8,8 @@
   "main": "dist/index.es.js",
   "module": "dist/index.es.js",
   "types": "dist/index.es.d.ts",
+  "repository": "https://github.com/xiaomingTang/xiaoming/tree/master/%40x_m/prize-wheel",
+  "homepage": "https://github.com/xiaomingTang/xiaoming/tree/master/%40x_m/prize-wheel",
   "files": [
     "src",
     "dist"
