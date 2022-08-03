@@ -34,6 +34,7 @@ module.exports = {
     'comma-dangle': 'off',
     'import/no-extraneous-dependencies': 'off',
     'import/no-unresolved': 'off',
+    'operator-linebreak': 'off',
   },
   settings: {
     react: {

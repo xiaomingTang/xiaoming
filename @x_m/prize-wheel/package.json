@@ -5,7 +5,7 @@
   "author": "xiaomingTang",
   "description": "prize wheel",
   "private": false,
-  "main": "dist/index.umd.js",
+  "main": "dist/index.es.js",
   "module": "dist/index.es.js",
   "types": "dist/index.es.d.ts",
   "files": [
@@ -18,10 +18,15 @@
     "build:watch": "vite build --watch"
   },
   "dependencies": {
-    "@x_m/event-emitter": "^0.0.2"
+    "@x_m/event-emitter": "^0.0.2",
+    "lodash-es": "^4.17.21"
   },
   "peerDependencies": {
     "@babel/runtime-corejs3": "^7.18.9",
-    "core-js": "3"
+    "core-js": "3",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/lodash-es": "^4.17.6"
   }
 }

@@ -1,0 +1,27 @@
+.wrapper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+  background-color: #eeeeee;
+}
+
+.shouldStopAt {
+  position: absolute;
+  width: 150px;
+  left: 50%;
+  top: 50%;
+  border-top: 1px dashed gray;
+  border-bottom: 1px dashed gray;
+  transform-origin: 0 center;
+}
+
+.curDeg {
+  position: absolute;
+  width: 150px;
+  left: 50%;
+  top: 50%;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  transform-origin: 0 center;
+}

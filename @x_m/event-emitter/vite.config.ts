@@ -14,7 +14,7 @@ export default defineConfig({
     lib: {
       name: 'EventEmitter',
       entry: path.resolve(__dirname, 'src/index.ts'),
-      formats: ['es', 'umd'],
+      formats: ['es'],
       fileName: (format) => `index.${format}.js`,
     },
     target: 'es2015',
