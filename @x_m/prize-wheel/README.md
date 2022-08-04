@@ -1,10 +1,15 @@
-# prize-wheel
+# @x_m/prize-wheel
+
+### install
+```
+yarn add @x_m/prize-wheel
+```
 
 ### examples
 
 ``` typescript
 
-import { PrizeWheelLogic, usePrizeWheelState } from '../src/index'
+import { PrizeWheelLogic, usePrizeWheelState } from '@x_m/prize-wheel'
 
 /**
  * PrizeWheelLogic is 只负责逻辑部分,

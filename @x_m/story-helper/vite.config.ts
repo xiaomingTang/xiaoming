@@ -14,7 +14,7 @@ export default defineConfig({
     lib: {
       name: 'StoryHelper',
       entry: path.resolve(__dirname, 'src/index.ts'),
-      formats: ['es'],
+      formats: ['es', 'umd'],
       fileName: (format) => `index.${format}.js`,
     },
     target: 'es2015',

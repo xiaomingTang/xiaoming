@@ -6,7 +6,6 @@
   "license": "MIT",
   "private": false,
   "repository": "https://github.com/xiaomingTang/xiaoming.git",
-  "homepage": "https://github.com/xiaomingTang/xiaoming.git",
   "browserslist": {
     "production": [
       "> 1%",

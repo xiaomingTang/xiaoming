@@ -1,5 +1,10 @@
 # @x_m/story-helper
 
+### install
+```
+yarn add @x_m/story-helper
+```
+
 ### examples
 
 ``` tsx

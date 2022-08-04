@@ -1,8 +1,15 @@
-# event-emitter
+# @x_m/event-emitter
+
+### install
+```
+yarn add @x_m/event-emitter
+```
 
 ### examples
 
 ``` typescript
+
+import EventEmitter from '@x_m/event-emitter'
 
 const eventBus = new EventEmitter<{
   'eat': ['apple' |'peach', number];
