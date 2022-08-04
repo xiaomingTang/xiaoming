@@ -3,28 +3,36 @@ import ReactDOM from 'react-dom/client'
 import PrizeWheel from './components/prize-wheel'
 import styles from './index.module.css'
 
-function App({ routes }: {
+function App({
+  routes,
+}: {
   routes: {
-    name: string;
-    value: React.ReactNode;
-  }[];
+    name: string
+    value: React.ReactNode
+  }[]
 }) {
-  const [route, setRoute] = useState(new URL(window.location.href).searchParams.get('route'))
+  const [route, setRoute] = useState(
+    new URL(window.location.href).searchParams.get('route')
+  )
 
-  const curElem = useMemo(() => (
-    routes.find((item) => item.name === route) ?? {
-      name: 'NOT FOUND',
-      value: 'NOT FOUND'
-    }
-  ), [routes, route])
+  const curElem = useMemo(
+    () =>
+      routes.find((item) => item.name === route) ?? {
+        name: 'NOT FOUND',
+        value: 'NOT FOUND',
+      },
+    [routes, route]
+  )
 
-  return <div className={styles.root}>
-    <aside className={styles.aside}>
-      {
-        routes.map(({ name }) => (
+  return (
+    <div className={styles.root}>
+      <aside className={styles.aside}>
+        {routes.map(({ name }) => (
           <a
             key={name}
-            className={`${styles.menuItem} ${route === name ? styles.active : ''}`}
+            className={`${styles.menuItem} ${
+              route === name ? styles.active : ''
+            }`}
             onClick={() => {
               setRoute((prev) => {
                 if (prev !== name) {
@@ -38,13 +46,11 @@ function App({ routes }: {
           >
             {name}
           </a>
-        ))
-      }
-    </aside>
-    <main className={styles.main}>
-      {curElem.value}
-    </main>
-  </div>
+        ))}
+      </aside>
+      <main className={styles.main}>{curElem.value}</main>
+    </div>
+  )
 }
 
 ReactDOM.createRoot(document.querySelector('#root') as HTMLElement).render(

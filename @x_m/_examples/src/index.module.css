@@ -12,8 +12,8 @@
 
 .menuItem {
   display: block;
-  padding: .25em;
-  margin: .25em 0;
+  padding: 0.25em;
+  margin: 0.25em 0;
   cursor: pointer;
   background-color: #e0e0e0;
 }

@@ -35,6 +35,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'import/no-unresolved': 'off',
     'operator-linebreak': 'off',
+    'implicit-arrow-linebreak': 'off',
   },
   settings: {
     react: {
