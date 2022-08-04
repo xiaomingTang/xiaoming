@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2](https://github.com/xiaomingTang/xiaoming/compare/@x_m/event-emitter@0.1.1...@x_m/event-emitter@0.1.2) (2022-08-04)
+
+
+### Features
+
+* split example & library; add prize-wheel-helper ([77e5f51](https://github.com/xiaomingTang/xiaoming/commit/77e5f510e0a16bab94c0587c18670058c101d5a5))
+
+
+
+
+
 ## [0.1.1](https://github.com/xiaomingTang/xiaoming/compare/@x_m/event-emitter@0.1.0...@x_m/event-emitter@0.1.1) (2022-08-04)
 
 
