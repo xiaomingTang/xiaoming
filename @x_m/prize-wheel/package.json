@@ -1,7 +1,7 @@
 {
   "name": "@x_m/prize-wheel",
   "license": "MIT",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "xiaomingTang",
   "description": "prize wheel",
   "private": false,
@@ -19,7 +19,7 @@
     "build:watch": "vite build --watch"
   },
   "dependencies": {
-    "@x_m/event-emitter": "^0.1.0",
+    "@x_m/event-emitter": "^0.1.1",
     "lodash-es": "^4.17.21"
   },
   "peerDependencies": {

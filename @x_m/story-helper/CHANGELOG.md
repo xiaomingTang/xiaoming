@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/xiaomingTang/xiaoming/compare/@x_m/story-helper@0.1.0...@x_m/story-helper@0.1.1) (2022-08-04)
+
+
+### Features
+
+* add homepage & registry ([fac64e7](https://github.com/xiaomingTang/xiaoming/commit/fac64e71b7d1edc2f18bdd5d8931d0d2b1e5007c))
+* add umd ([90858a0](https://github.com/xiaomingTang/xiaoming/commit/90858a0f841db617925522faef8b20a26745236a))
+
+
+
+
+
 # 0.1.0 (2022-08-03)
 
 
