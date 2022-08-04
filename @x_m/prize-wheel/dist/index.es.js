@@ -10,12 +10,13 @@ import s from "@babel/runtime-corejs3/helpers/defineProperty";
 import T from "@x_m/event-emitter";
 import S from "@babel/runtime-corejs3/helpers/slicedToArray";
 import { useState as v, useEffect as V } from "react";
-import { clamp as L, noop as k } from "lodash-es";
+import L from "lodash/clamp";
+import k from "lodash/noop";
 function D(n) {
   var g = n.currentTime, u = n.targetTime, t = n.startValue, r = n.endValue, i = L(g / (u / 2), 0, 2), a = r - t;
   return i < 1 ? t + a / 2 * i * i : (i -= 1, t - a / 2 * (i * (i - 2) - 1));
 }
-function F(n) {
+function Q(n) {
   var g = v(-1), u = S(g, 2), t = u[0], r = u[1], i = v(!1), a = S(i, 2), l = a[0], e = a[1];
   return V(function() {
     if (!n)
@@ -59,7 +60,7 @@ function P() {
     return !1;
   }
 }
-var Q = /* @__PURE__ */ function(n) {
+var j = /* @__PURE__ */ function(n) {
   A(u, n);
   var g = C(u);
   function u(t) {
@@ -123,8 +124,8 @@ var Q = /* @__PURE__ */ function(n) {
   }]), u;
 }(T);
 export {
-  Q as PrizeWheelLogic,
+  j as PrizeWheelLogic,
   D as easeInOutQuad,
-  F as usePrizeWheelState
+  Q as usePrizeWheelState
 };
 //# sourceMappingURL=index.es.js.map

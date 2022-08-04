@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import { clamp, noop } from 'lodash-es'
+import clamp from 'lodash/clamp'
+import noop from 'lodash/noop'
 import type { PrizeWheelLogic } from './logic'
 
 /**

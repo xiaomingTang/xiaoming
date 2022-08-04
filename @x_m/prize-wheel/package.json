@@ -20,14 +20,11 @@
   },
   "dependencies": {
     "@x_m/event-emitter": "^0.1.1",
-    "lodash-es": "^4.17.21"
+    "lodash": "^4.17.21"
   },
   "peerDependencies": {
     "@babel/runtime-corejs3": "^7.18.9",
     "core-js": "3",
     "react": "^18.2.0"
-  },
-  "devDependencies": {
-    "@types/lodash-es": "^4.17.6"
   }
 }
