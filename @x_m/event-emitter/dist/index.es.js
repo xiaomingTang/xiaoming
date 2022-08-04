@@ -62,4 +62,3 @@ var i = /* @__PURE__ */ new d(), L = /* @__PURE__ */ function() {
 export {
   L as default
 };
-//# sourceMappingURL=index.es.js.map

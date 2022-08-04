@@ -1,102 +1,79 @@
-import f from "@babel/runtime-corejs3/core-js-stable/reflect/construct";
+import g from "@babel/runtime-corejs3/core-js-stable/reflect/construct";
 import "core-js/modules/es.object.to-string.js";
-import R from "@babel/runtime-corejs3/helpers/classCallCheck";
-import _ from "@babel/runtime-corejs3/helpers/createClass";
+import p from "@babel/runtime-corejs3/helpers/classCallCheck";
+import c from "@babel/runtime-corejs3/helpers/createClass";
 import o from "@babel/runtime-corejs3/helpers/assertThisInitialized";
-import A from "@babel/runtime-corejs3/helpers/inherits";
-import y from "@babel/runtime-corejs3/helpers/possibleConstructorReturn";
-import h from "@babel/runtime-corejs3/helpers/getPrototypeOf";
+import D from "@babel/runtime-corejs3/helpers/inherits";
+import S from "@babel/runtime-corejs3/helpers/possibleConstructorReturn";
+import m from "@babel/runtime-corejs3/helpers/getPrototypeOf";
 import s from "@babel/runtime-corejs3/helpers/defineProperty";
-import T from "@x_m/event-emitter";
-import S from "@babel/runtime-corejs3/helpers/slicedToArray";
-import { useState as v, useEffect as V } from "react";
-import L from "lodash/clamp";
-import k from "lodash/noop";
-function D(n) {
-  var g = n.currentTime, u = n.targetTime, t = n.startValue, r = n.endValue, i = L(g / (u / 2), 0, 2), a = r - t;
-  return i < 1 ? t + a / 2 * i * i : (i -= 1, t - a / 2 * (i * (i - 2) - 1));
+import v from "@x_m/event-emitter";
+import R from "lodash/clamp";
+function h(a) {
+  var l = a.currentTime, u = a.targetTime, t = a.startValue, n = a.endValue, r = R(l / (u / 2), 0, 2), i = n - t;
+  return r < 1 ? t + i / 2 * r * r : (r -= 1, t - i / 2 * (r * (r - 2) - 1));
 }
-function Q(n) {
-  var g = v(-1), u = S(g, 2), t = u[0], r = u[1], i = v(!1), a = S(i, 2), l = a[0], e = a[1];
-  return V(function() {
-    if (!n)
-      return k;
-    var d = function() {
-      e(!0);
-    }, m = function() {
-      r(n.deg);
-    }, p = function() {
-      e(!1);
-    };
-    return n.addListener("start", d), n.addListener("running", m), n.addListener("end", p), function() {
-      n.removeListener("start", d), n.removeListener("running", m), n.removeListener("end", p);
-    };
-  }, [n]), {
-    deg: t,
-    running: l
-  };
-}
-function C(n) {
-  var g = P();
+function A(a) {
+  var l = y();
   return function() {
-    var t = h(n), r;
-    if (g) {
-      var i = h(this).constructor;
-      r = f(t, arguments, i);
+    var t = m(a), n;
+    if (l) {
+      var r = m(this).constructor;
+      n = g(t, arguments, r);
     } else
-      r = t.apply(this, arguments);
-    return y(this, r);
+      n = t.apply(this, arguments);
+    return S(this, n);
   };
 }
-function P() {
-  if (typeof Reflect == "undefined" || !f || f.sham)
+function y() {
+  if (typeof Reflect == "undefined" || !g || g.sham)
     return !1;
   if (typeof Proxy == "function")
     return !0;
   try {
-    return Boolean.prototype.valueOf.call(f(Boolean, [], function() {
+    return Boolean.prototype.valueOf.call(g(Boolean, [], function() {
     })), !0;
-  } catch (n) {
+  } catch (a) {
     return !1;
   }
 }
-var j = /* @__PURE__ */ function(n) {
-  A(u, n);
-  var g = C(u);
+var O = /* @__PURE__ */ function(a) {
+  D(u, a);
+  var l = A(u);
   function u(t) {
-    var r, i, a, l, e;
-    return R(this, u), e = g.call(this), s(o(e), "rawDeg", -1), s(o(e), "speedRatio", 5), s(o(e), "minRunningDeg", 3600), s(o(e), "easeStartDeg", 540), s(o(e), "easeStopDeg", 540), s(o(e), "rawRunning", !1), s(o(e), "shouldStopAtDeg", -1), s(o(e), "animate", function() {
+    var n, r, i, d, e;
+    return p(this, u), e = l.call(this), s(o(e), "rawDeg", -1), s(o(e), "speedRatio", 5), s(o(e), "minRunningDeg", 3600), s(o(e), "easeStartDeg", 540), s(o(e), "easeStopDeg", 540), s(o(e), "rawRunning", !1), s(o(e), "shouldStopAtDeg", -1), s(o(e), "animate", function() {
       if (!!e.running) {
-        var d;
-        e.shouldStopAtDeg >= 0 && e.deg - (e.shouldStopAtDeg - e.easeStopDeg) >= 0 ? d = D({
+        var f;
+        e.shouldStopAtDeg >= 0 && e.deg - (e.shouldStopAtDeg - e.easeStopDeg) >= 0 ? f = h({
           currentTime: e.deg - (e.shouldStopAtDeg - e.easeStopDeg),
           targetTime: e.easeStopDeg,
           startValue: 1,
           endValue: 0.1
-        }) : d = D({
+        }) : f = h({
           currentTime: e.deg,
           targetTime: e.easeStartDeg,
           startValue: 0.1,
           endValue: 1
-        }), e.deg += d * e.speedRatio, e.shouldStopAtDeg >= 0 && (e.deg = Math.min(e.shouldStopAtDeg, e.deg)), e.shouldStopAtDeg < 0 || e.deg < e.shouldStopAtDeg ? window.requestAnimationFrame(e.animate) : e.end();
+        }), e.deg += f * e.speedRatio, e.shouldStopAtDeg >= 0 && (e.deg = Math.min(e.shouldStopAtDeg, e.deg)), e.shouldStopAtDeg < 0 || e.deg < e.shouldStopAtDeg ? typeof window != "undefined" ? requestAnimationFrame(e.animate) : setTimeout(e.animate, 0) : e.end();
       }
-    }), e.easeStartDeg = (r = t == null ? void 0 : t.easeStartDeg) !== null && r !== void 0 ? r : e.easeStartDeg, e.easeStopDeg = (i = t == null ? void 0 : t.easeStopDeg) !== null && i !== void 0 ? i : e.easeStopDeg, e.minRunningDeg = (a = t == null ? void 0 : t.minRunningDeg) !== null && a !== void 0 ? a : e.minRunningDeg, e.speedRatio = (l = t == null ? void 0 : t.speedRatio) !== null && l !== void 0 ? l : e.speedRatio, e;
+    }), e.easeStartDeg = (n = t == null ? void 0 : t.easeStartDeg) !== null && n !== void 0 ? n : e.easeStartDeg, e.easeStopDeg = (r = t == null ? void 0 : t.easeStopDeg) !== null && r !== void 0 ? r : e.easeStopDeg, e.minRunningDeg = (i = t == null ? void 0 : t.minRunningDeg) !== null && i !== void 0 ? i : e.minRunningDeg, e.speedRatio = (d = t == null ? void 0 : t.speedRatio) !== null && d !== void 0 ? d : e.speedRatio, e;
   }
-  return _(u, [{
+  return c(u, [{
     key: "deg",
     get: function() {
       return this.rawDeg;
     },
-    set: function(r) {
-      this.rawDeg = r, this.emit("running");
+    set: function(n) {
+      this.rawDeg = n, this.emit("running");
     }
   }, {
     key: "running",
     get: function() {
       return this.rawRunning;
     },
-    set: function(r) {
-      r !== this.rawRunning && this.emit(r ? "start" : "end"), this.rawRunning = r;
+    set: function(n) {
+      n !== this.rawRunning && this.emit(n ? "start" : "end"), this.rawRunning = n;
     }
   }, {
     key: "run",
@@ -115,17 +92,15 @@ var j = /* @__PURE__ */ function(n) {
     }
   }, {
     key: "shouldStopAt",
-    value: function(r) {
-      var i = (r % 360 + 360) % 360;
+    value: function(n) {
+      var r = (n % 360 + 360) % 360;
       this.shouldStopAtDeg = Math.max(this.deg + this.easeStopDeg, this.minRunningDeg);
-      var a = i - this.shouldStopAtDeg % 360;
-      this.shouldStopAtDeg += a >= 0 ? a : a + 360;
+      var i = r - this.shouldStopAtDeg % 360;
+      this.shouldStopAtDeg += i >= 0 ? i : i + 360;
     }
   }]), u;
-}(T);
+}(v);
 export {
-  j as PrizeWheelLogic,
-  D as easeInOutQuad,
-  Q as usePrizeWheelState
+  O as PrizeWheel,
+  h as easeInOutQuad
 };
-//# sourceMappingURL=index.es.js.map

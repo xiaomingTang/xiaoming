@@ -1,10 +1,11 @@
 import React, { useRef, useState } from 'react'
-import { PrizeWheelLogic, usePrizeWheelState } from '../src/index'
+import { PrizeWheel } from '@x_m/prize-wheel'
+import { usePrizeWheelState } from '@x_m/prize-wheel-helper'
 import styles from './index.module.css'
 
-export default function Example() {
+export default function Component() {
   const wheelRef = useRef(
-    new PrizeWheelLogic({
+    new PrizeWheel({
       minRunningDeg: 2000,
       easeStartDeg: 180,
       easeStopDeg: 360,

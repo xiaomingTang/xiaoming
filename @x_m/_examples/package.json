@@ -1,0 +1,23 @@
+{
+  "license": "MIT",
+  "version": "0.0.1",
+  "author": "xiaomingTang",
+  "description": "example for @x_m/*",
+  "private": true,
+  "main": "src/index.tsx",
+  "repository": "https://github.com/xiaomingTang/xiaoming/tree/master/%40x_m/_examples",
+  "scripts": {
+    "dev": "vite --config vite.example-config.ts"
+  },
+  "dependencies": {
+    "@x_m/event-emitter": "^0.1.1",
+    "@x_m/prize-wheel-helper": "file:../prize-wheel-helper",
+    "@x_m/prize-wheel": "^0.1.2",
+    "lodash": "^4.17.21"
+  },
+  "peerDependencies": {
+    "@babel/runtime-corejs3": "^7.18.9",
+    "core-js": "3",
+    "react": "^18.2.0"
+  }
+}

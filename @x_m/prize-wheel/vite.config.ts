@@ -6,11 +6,8 @@ import babel from '@rollup/plugin-babel'
 const isExternal = (id: string) => !id.startsWith('.') && !path.isAbsolute(id)
 
 export default defineConfig({
-  // esbuild: {
-  //   jsxInject: "import React from 'react'",
-  // },
   build: {
-    sourcemap: true,
+    sourcemap: false,
     lib: {
       name: 'PrizeWheel',
       entry: path.resolve(__dirname, 'src/index.ts'),

@@ -1,5 +1,5 @@
 import EventEmitter from '@x_m/event-emitter'
-import { easeInOutQuad } from './utils'
+import { easeInOutQuad } from './animations'
 
 interface Options {
   /**
@@ -33,7 +33,7 @@ interface Options {
 /**
  * 幸运大转盘 逻辑部分
  */
-export class PrizeWheelLogic extends EventEmitter<{
+export class PrizeWheel extends EventEmitter<{
   start: []
   running: []
   end: []
@@ -185,7 +185,11 @@ export class PrizeWheelLogic extends EventEmitter<{
       this.deg = Math.min(this.shouldStopAtDeg, this.deg)
     }
     if (this.shouldStopAtDeg < 0 || this.deg < this.shouldStopAtDeg) {
-      window.requestAnimationFrame(this.animate)
+      if (typeof window !== 'undefined') {
+        requestAnimationFrame(this.animate)
+      } else {
+        setTimeout(this.animate, 0)
+      }
     } else {
       this.end()
     }

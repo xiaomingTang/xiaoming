@@ -9,14 +9,15 @@ yarn add @x_m/prize-wheel
 
 ``` typescript
 
-import { PrizeWheelLogic, usePrizeWheelState } from '@x_m/prize-wheel'
+import { PrizeWheel } from '@x_m/prize-wheel'
+import { usePrizeWheelState } from '@x_m/prize-wheel-helper'
 
 /**
- * PrizeWheelLogic is 只负责逻辑部分,
+ * PrizeWheel 只负责逻辑部分,
  * 渲染转盘由使用者自己负责,
- * 因此可用于 react / vue / vanilla...
+ * 因此可用于 react / vue / vanilla / node...
  */
-const wheel = new PrizeWheelLogic({
+const wheel = new PrizeWheel({
   /**
    * degree per clock cycle
    * 表示转动稳定后的速度(度 每 时钟周期)

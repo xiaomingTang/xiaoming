@@ -9,7 +9,7 @@ export default defineConfig({
   build: {
     sourcemap: false,
     lib: {
-      name: 'EventEmitter',
+      name: 'PrizeWheelHelper',
       entry: path.resolve(__dirname, 'src/index.ts'),
       formats: ['es', 'umd'],
       fileName: (format) => `index.${format}.js`,

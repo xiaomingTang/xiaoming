@@ -14,7 +14,6 @@
     "dist"
   ],
   "scripts": {
-    "dev": "vite --config vite.example-config.ts",
     "build": "vite build",
     "build:watch": "vite build --watch"
   },
@@ -24,7 +23,6 @@
   },
   "peerDependencies": {
     "@babel/runtime-corejs3": "^7.18.9",
-    "core-js": "3",
-    "react": "^18.2.0"
+    "core-js": "3"
   }
 }
