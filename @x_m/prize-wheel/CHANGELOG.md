@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2](https://github.com/xiaomingTang/xiaoming/compare/@x_m/prize-wheel@0.1.1...@x_m/prize-wheel@0.1.2) (2022-08-04)
+
+
+### Features
+
+* use lodash instead of lodash-es ([b1149d2](https://github.com/xiaomingTang/xiaoming/commit/b1149d20b4ed569e4a710b8775e58253917e41b0))
+
+
+
+
+
 ## [0.1.1](https://github.com/xiaomingTang/xiaoming/compare/@x_m/prize-wheel@0.1.0...@x_m/prize-wheel@0.1.1) (2022-08-04)
 
 
