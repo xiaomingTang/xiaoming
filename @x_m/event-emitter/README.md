@@ -1,5 +1,7 @@
 # @x_m/event-emitter
 
+事件触发器
+
 ### install
 ```
 yarn add @x_m/event-emitter

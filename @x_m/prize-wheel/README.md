@@ -1,5 +1,7 @@
 # @x_m/prize-wheel
 
+抽奖转盘的逻辑抽象
+
 ### install
 ```
 yarn add @x_m/prize-wheel

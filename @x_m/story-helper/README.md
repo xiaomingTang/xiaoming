@@ -1,5 +1,7 @@
 # @x_m/story-helper
 
+storybook 类型辅助函数
+
 ### install
 ```
 yarn add @x_m/story-helper

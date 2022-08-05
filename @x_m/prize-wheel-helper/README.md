@@ -1,5 +1,7 @@
 # @x_m/prize-wheel-helper
 
+[@x_m/prize-wheel](../prize-wheel/README.md)的 react 辅助函数
+
 ### install
 ```
 yarn add @x_m/prize-wheel-helper
