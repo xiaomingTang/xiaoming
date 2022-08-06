@@ -22,7 +22,7 @@
     "build-storybook": "build-storybook",
     "build": "lerna run build",
     "build:watch": "lerna run build:watch",
-    "lint": "eslint @x_m",
+    "lint": "eslint --fix @x_m",
     "prettier": "prettier --write . --config .prettierrc.json"
   },
   "dependencies": {

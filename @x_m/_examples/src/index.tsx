@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react'
 import ReactDOM from 'react-dom/client'
 import PrizeWheel from './components/prize-wheel'
+import Interact from './components/interact'
 import styles from './index.module.css'
 
 function App({
@@ -59,6 +60,10 @@ ReactDOM.createRoot(document.querySelector('#root') as HTMLElement).render(
       {
         name: 'PrizeWheel',
         value: <PrizeWheel />,
+      },
+      {
+        name: 'Interact',
+        value: <Interact />,
       },
     ]}
   />

@@ -10,9 +10,10 @@
     "dev": "vite --config vite.example-config.ts"
   },
   "dependencies": {
-    "@x_m/event-emitter": "^0.1.2",
+    "@x_m/interact": "^0.0.1",
     "@x_m/prize-wheel": "^0.1.3",
-    "@x_m/prize-wheel-helper": "file:../prize-wheel-helper",
+    "@x_m/prize-wheel-helper": "^0.0.2",
+    "gl-matrix": "^3.4.3",
     "lodash": "^4.17.21"
   },
   "peerDependencies": {

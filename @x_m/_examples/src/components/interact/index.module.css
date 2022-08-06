@@ -1,0 +1,12 @@
+.wrapper {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  left: -50px;
+  top: -50px;
+  /* border-radius: 100%; */
+  background-color: #ddd;
+  background-image: url(../../assets/lenna.png);
+  background-size: cover;
+  cursor: grab;
+}
