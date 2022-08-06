@@ -45,19 +45,19 @@ interface EventRecorder {
  * ```
  */
 export default class EventEmitter<M extends EventsOverview = EventsOverview> {
-  #eventsMap = {} as Record<keyof M, EventRecorder[]>
+  private eventsMap = {} as Record<keyof M, EventRecorder[]>
 
   addListener<K extends keyof M>(
     eventName: K,
     handler: (...args: M[K]) => void,
     options?: AddListenerOptions
   ) {
-    if (!this.#eventsMap[eventName]) {
+    if (!this.eventsMap[eventName]) {
       // init
-      this.#eventsMap[eventName] = []
+      this.eventsMap[eventName] = []
     }
     const times = options?.times ?? Infinity
-    const list = this.#eventsMap[eventName]
+    const list = this.eventsMap[eventName]
     const idx = list.findIndex((item) => item.callback === handler)
     if (idx >= 0) {
       list[idx].times = times
@@ -74,21 +74,21 @@ export default class EventEmitter<M extends EventsOverview = EventsOverview> {
     eventName: K,
     handler?: (...args: M[K]) => void
   ) {
-    if (this.#eventsMap[eventName]) {
+    if (this.eventsMap[eventName]) {
       if (handler) {
-        this.#eventsMap[eventName] = this.#eventsMap[eventName].filter(
+        this.eventsMap[eventName] = this.eventsMap[eventName].filter(
           (item) => item.callback !== handler
         )
       } else {
-        this.#eventsMap[eventName] = []
+        this.eventsMap[eventName] = []
       }
     }
     return this
   }
 
   emit<K extends keyof M>(eventName: K, ...args: M[K]) {
-    if (this.#eventsMap[eventName]) {
-      this.#eventsMap[eventName] = this.#eventsMap[eventName].filter((item) => {
+    if (this.eventsMap[eventName]) {
+      this.eventsMap[eventName] = this.eventsMap[eventName].filter((item) => {
         if (item.times > 0) {
           item.callback(...args)
           // eslint-disable-next-line no-param-reassign
