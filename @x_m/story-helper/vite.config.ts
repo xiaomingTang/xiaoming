@@ -12,7 +12,7 @@ export default defineConfig({
   build: {
     sourcemap: true,
     lib: {
-      name: 'StoryHelper',
+      name: 'XM_StoryHelper',
       entry: path.resolve(__dirname, 'src/index.ts'),
       formats: ['es', 'umd'],
       fileName: (format) => `index.${format}.js`,
