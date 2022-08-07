@@ -19,7 +19,7 @@ export default function Component() {
       target.style.transform = interact.formatToCss()
     }
     interact.attach(trigger)
-    interact.setOriginTranslateFromElement(target)
+    interact.setOriginTranslateFromElement(trigger)
     interact.addListener('change', onChange)
     return () => {
       interact.detach()

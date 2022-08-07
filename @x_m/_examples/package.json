@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@x_m/interact": "^0.0.1",
-    "@x_m/interact-dom": "file:../interact-dom",
+    "@x_m/interact-dom": "file:..\\interact-dom",
     "@x_m/prize-wheel": "^0.1.3",
     "@x_m/prize-wheel-helper": "^0.0.2",
     "gl-matrix": "^3.4.3",

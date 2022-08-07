@@ -22,7 +22,7 @@
     "core-js": "3"
   },
   "dependencies": {
-    "@x_m/interact": "file:../interact",
+    "@x_m/interact": "file:..\\interact",
     "gl-matrix": "^3.4.3"
   }
 }
