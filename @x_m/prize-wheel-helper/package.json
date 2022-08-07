@@ -1,7 +1,7 @@
 {
   "name": "@x_m/prize-wheel-helper",
   "license": "MIT",
-  "version": "0.0.2",
+  "version": "0.1.5",
   "author": "xiaomingTang",
   "description": "prize wheel helper",
   "private": false,
@@ -26,6 +26,6 @@
     "react": "^18.2.0"
   },
   "devDependencies": {
-    "@x_m/prize-wheel": "^0.1.3"
+    "@x_m/prize-wheel": "^0.1.5"
   }
 }

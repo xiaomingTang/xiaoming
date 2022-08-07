@@ -8,18 +8,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-* 修改 udm lib name ([8cffd71](https://github.com/xiaomingTang/xiaoming/commit/8cffd715f2ac3bda9527e9544bd828b142ac3d78))
 * format configs & dependencies ([c8ced58](https://github.com/xiaomingTang/xiaoming/commit/c8ced58aae0c55f9a21814dcbbabbf8b2564aa1d))
-* split example & library; add prize-wheel-helper ([77e5f51](https://github.com/xiaomingTang/xiaoming/commit/77e5f510e0a16bab94c0587c18670058c101d5a5))
+* interact 逻辑部分初步实现 ([fc418b7](https://github.com/xiaomingTang/xiaoming/commit/fc418b730a1a8d48827aa5970070f02a2134600c))
 * todo: split trigger and target ([7c927ce](https://github.com/xiaomingTang/xiaoming/commit/7c927cee7975171826ffdccdb8c902cdaddf19e2))
-
-
-
-
-
-## 0.0.2 (2022-08-04)
-
-
-### Features
-
-* split example & library; add prize-wheel-helper ([77e5f51](https://github.com/xiaomingTang/xiaoming/commit/77e5f510e0a16bab94c0587c18670058c101d5a5))
