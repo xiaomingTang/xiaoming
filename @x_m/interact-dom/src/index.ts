@@ -1,12 +1,15 @@
 import { mat3 } from 'gl-matrix'
 import {
   FormatterTypes,
-  InteractEvents, MouseFormatter, Point, TouchFormatter,
+  InteractEvents,
+  MouseFormatter,
+  Point,
+  TouchFormatter,
 } from '@x_m/interact'
 import EventEmitter from '@x_m/event-emitter'
 
 export default class InteractDom extends EventEmitter<{
-  change: [];
+  change: []
 }> {
   private element: HTMLElement | null = null
 
@@ -16,11 +19,7 @@ export default class InteractDom extends EventEmitter<{
   }
 
   private onMove = (...[pos]: InteractEvents['move']) => {
-    mat3.multiply(
-      this.matrix,
-      [1, 0, 0, 0, 1, 0, pos.x, pos.y, 1],
-      this.matrix
-    )
+    mat3.multiply(this.matrix, [1, 0, 0, 0, 1, 0, pos.x, pos.y, 1], this.matrix)
     this.emit('change')
   }
 
@@ -33,8 +32,12 @@ export default class InteractDom extends EventEmitter<{
     mat3.multiply(
       this.matrix,
       [
-        cos, sin, 0,
-        -sin, cos, 0,
+        cos,
+        sin,
+        0,
+        -sin,
+        cos,
+        0,
         a * cos - b * sin - a,
         a * sin + b * cos - b,
         1,
@@ -49,8 +52,12 @@ export default class InteractDom extends EventEmitter<{
     mat3.multiply(
       this.matrix,
       [
-        ratio, 0, 0,
-        0, ratio, 0,
+        ratio,
+        0,
+        0,
+        0,
+        ratio,
+        0,
         (center.x - x) * (1 - ratio),
         (center.y - y) * (1 - ratio),
         1,
@@ -73,7 +80,7 @@ export default class InteractDom extends EventEmitter<{
 
   setOriginTranslateFromDomRect(domRect: DOMRect) {
     const {
-      x, y, width, height,
+      x, y, width, height
     } = domRect
     this.originTranslate = {
       x: x + width / 2,
@@ -83,7 +90,7 @@ export default class InteractDom extends EventEmitter<{
 
   setOriginTranslateFromElement(element: HTMLElement) {
     const {
-      x, y, width, height,
+      x, y, width, height
     } = element.getBoundingClientRect()
     this.originTranslate = {
       x: x + width / 2,
@@ -91,7 +98,10 @@ export default class InteractDom extends EventEmitter<{
     }
   }
 
-  attach(element: HTMLElement, formatterTypes: FormatterTypes[] = ['mouse', 'touch']) {
+  attach(
+    element: HTMLElement,
+    formatterTypes: FormatterTypes[] = ['mouse', 'touch']
+  ) {
     if (!element) {
       console.error('[interact-dom]: element is required')
       return

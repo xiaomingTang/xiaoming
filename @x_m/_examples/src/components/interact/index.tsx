@@ -27,14 +27,10 @@ export default function Component() {
     }
   }, [])
 
-  return (<>
-    <div
-      ref={triggerElemRef}
-      className={styles.trigger}
-    />
-    <div
-      ref={targetElemRef}
-      className={styles.target}
-    />
-  </>)
+  return (
+    <>
+      <div ref={triggerElemRef} className={styles.trigger} />
+      <div ref={targetElemRef} className={styles.target} />
+    </>
+  )
 }
