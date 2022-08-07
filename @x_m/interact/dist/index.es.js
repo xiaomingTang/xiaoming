@@ -135,6 +135,10 @@ var ne = /* @__PURE__ */ function(r) {
   return C(u, [{
     key: "attach",
     value: function(o) {
+      if (!o) {
+        console.error("[interact] element required");
+        return;
+      }
       this.element = o, window.addEventListener("mousemove", this.onMouseMove), window.addEventListener("mouseup", this.onMouseUp), o.addEventListener("mousedown", this.onMouseDown), o.addEventListener("wheel", this.onWheel);
     }
   }, {

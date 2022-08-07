@@ -1,0 +1,28 @@
+{
+  "name": "@x_m/interact-dom",
+  "license": "MIT",
+  "version": "0.0.1",
+  "author": "xiaomingTang",
+  "description": "interact dom",
+  "private": false,
+  "main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.es.d.ts",
+  "repository": "https://github.com/xiaomingTang/xiaoming/tree/master/%40x_m/interact-dom",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "build:watch": "vite build --watch"
+  },
+  "peerDependencies": {
+    "@babel/runtime-corejs3": "^7.18.9",
+    "core-js": "3"
+  },
+  "dependencies": {
+    "@x_m/interact": "file:../interact",
+    "gl-matrix": "^3.4.3"
+  }
+}

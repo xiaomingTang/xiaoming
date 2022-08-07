@@ -18,6 +18,7 @@
   },
   "scripts": {
     "prepare": "husky install",
+    "dev": "cd @x_m/_examples && yarn dev",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build": "lerna run build",

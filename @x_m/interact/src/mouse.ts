@@ -154,6 +154,11 @@ export class MouseFormatter
   }
 
   attach(element: HTMLElement) {
+    if (!element) {
+      console.error('[interact] element required')
+      return
+    }
+
     this.element = element
     /**
      * mouseup bind on window, instead of body;

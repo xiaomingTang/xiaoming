@@ -21,6 +21,8 @@ export type InteractEvents = {
   ]
 }
 
+export type FormatterTypes = 'mouse' | 'touch'
+
 export abstract class Interact extends EventEmitter<InteractEvents> {
   abstract enableMove: boolean
 
