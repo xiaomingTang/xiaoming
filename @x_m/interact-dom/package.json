@@ -17,12 +17,12 @@
     "build": "vite build",
     "build:watch": "vite build --watch"
   },
+  "dependencies": {
+    "@x_m/interact": "^0.0.1",
+    "gl-matrix": "^3.4.3"
+  },
   "peerDependencies": {
     "@babel/runtime-corejs3": "^7.18.9",
     "core-js": "3"
-  },
-  "dependencies": {
-    "@x_m/interact": "file:..\\interact",
-    "gl-matrix": "^3.4.3"
   }
 }

@@ -4,9 +4,18 @@
     "publish": {
       "allowBranch": "master",
       "conventionalCommits": true,
-      "ignoreChanges": ["*.md", ".spec.ts", ".stories.ts"]
+      "ignoreChanges": [
+        "*.md",
+        ".spec.ts",
+        ".stories.ts"
+      ]
     }
   },
-  "packages": ["@x_m/**"],
-  "version": "independent"
+  "packages": [
+    "@x_m/*"
+  ],
+  "version": "0.1.4",
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
+  "useNx": false,
+  "useWorkspaces": false
 }

@@ -1,33 +1,24 @@
-# @x_m/prize-wheel-helper
+# @x_m/interact-dom
 
-[@x_m/prize-wheel](../prize-wheel/README.md)的 react 辅助函数
+用户交互(move / scale / rotate) 和 交互方式(mouse / touch)的抽象
 
 ### install
 ```
-yarn add  @x_m/prize-wheel-helper @x_m/prize-wheel
+yarn add @x_m/interact-dom
 ```
 
 ### examples
 
 ``` typescript
 
-import { PrizeWheel } from '@x_m/prize-wheel'
-import { usePrizeWheelState } from '@x_m/prize-wheel-helper'
+import InteractDom from '@x_m/interact-dom'
 
-/**
- * PrizeWheel 只负责逻辑部分,
- * 渲染转盘由使用者自己负责,
- * 因此可用于 react / vue / vanilla / node...
- */
-const wheel = new PrizeWheel()
+const interact = new InteractDom()
+const elem = document.querySelector('xxx')
 
-// in react
-const { deg, running } = usePrizeWheelState(wheel)
-// render your prize wheel with deg
-CustomPrizeWheelRenderer(deg)
-
-wheel.run()
-
-wheel.shouldStopAtDeg(any degree)
+interact.attach(elem)
+interact.addListener('change', () => {
+  elem.style.transform = interact.formatToCss()
+})
 
 ```
