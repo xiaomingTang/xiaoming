@@ -1,4 +1,5 @@
 #!/bin/sh
 . "$(dirname "$0")/_/HUSKY.SH"
 
-yarn lint & yarn prettier & git add .
+# 不能在这后面加 git add, 否则 prettier 会报错, 依旧执行不到 git add
+yarn lint & yarn prettier

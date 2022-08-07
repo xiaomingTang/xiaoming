@@ -8,8 +8,6 @@ import {
 } from '@x_m/interact'
 import EventEmitter from '@x_m/event-emitter'
 
-
-
 export default class InteractDom extends EventEmitter<{
   // eslint-disable-next-line no-use-before-define
   change: [InteractDom]
