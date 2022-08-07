@@ -9,7 +9,8 @@ import {
 import EventEmitter from '@x_m/event-emitter'
 
 export default class InteractDom extends EventEmitter<{
-  change: []
+  // eslint-disable-next-line no-use-before-define
+  change: [InteractDom]
 }> {
   private element: HTMLElement | null = null
 
@@ -20,7 +21,7 @@ export default class InteractDom extends EventEmitter<{
 
   private onMove = (...[pos]: InteractEvents['move']) => {
     mat3.multiply(this.matrix, [1, 0, 0, 0, 1, 0, pos.x, pos.y, 1], this.matrix)
-    this.emit('change')
+    this.emit('change', this)
   }
 
   private onRotate = (...[{ ratio, center }]: InteractEvents['rotate']) => {
@@ -44,7 +45,7 @@ export default class InteractDom extends EventEmitter<{
       ],
       this.matrix
     )
-    this.emit('change')
+    this.emit('change', this)
   }
 
   private onScale = (...[{ ratio, center }]: InteractEvents['scale']) => {
@@ -64,7 +65,7 @@ export default class InteractDom extends EventEmitter<{
       ],
       this.matrix
     )
-    this.emit('change')
+    this.emit('change', this)
   }
 
   matrix = mat3.create()

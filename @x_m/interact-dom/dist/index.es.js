@@ -2,7 +2,7 @@ import C from "@babel/runtime-corejs3/core-js-stable/reflect/construct";
 import "core-js/modules/es.object.to-string.js";
 import M from "@babel/runtime-corejs3/helpers/classCallCheck";
 import S from "@babel/runtime-corejs3/helpers/createClass";
-import c from "@babel/runtime-corejs3/helpers/assertThisInitialized";
+import l from "@babel/runtime-corejs3/helpers/assertThisInitialized";
 import P from "@babel/runtime-corejs3/helpers/inherits";
 import A from "@babel/runtime-corejs3/helpers/possibleConstructorReturn";
 import E from "@babel/runtime-corejs3/helpers/getPrototypeOf";
@@ -44,25 +44,25 @@ var Y = /* @__PURE__ */ function(x) {
     M(this, f);
     for (var r = arguments.length, e = new Array(r), a = 0; a < r; a++)
       e[a] = arguments[a];
-    return t = y.call.apply(y, g(s = [this]).call(s, e)), u(c(t), "element", null), u(c(t), "originTranslate", {
+    return t = y.call.apply(y, g(s = [this]).call(s, e)), u(l(t), "element", null), u(l(t), "originTranslate", {
       x: 0,
       y: 0
-    }), u(c(t), "onMove", function() {
+    }), u(l(t), "onMove", function() {
       for (var i = arguments.length, n = new Array(i), o = 0; o < i; o++)
         n[o] = arguments[o];
-      var l = n[0];
-      w.multiply(t.matrix, [1, 0, 0, 0, 1, 0, l.x, l.y, 1], t.matrix), t.emit("change");
-    }), u(c(t), "onRotate", function() {
+      var c = n[0];
+      w.multiply(t.matrix, [1, 0, 0, 0, 1, 0, c.x, c.y, 1], t.matrix), t.emit("change", l(t));
+    }), u(l(t), "onRotate", function() {
       for (var i = arguments.length, n = new Array(i), o = 0; o < i; o++)
         n[o] = arguments[o];
-      var l = n[0], m = l.ratio, d = l.center, h = Math.cos(m), v = Math.sin(m), T = t.originTranslate, I = T.x, L = T.y, O = -(d.x - I), R = -(d.y - L);
-      w.multiply(t.matrix, [h, v, 0, -v, h, 0, O * h - R * v - O, O * v + R * h - R, 1], t.matrix), t.emit("change");
-    }), u(c(t), "onScale", function() {
+      var c = n[0], m = c.ratio, d = c.center, h = Math.cos(m), v = Math.sin(m), T = t.originTranslate, I = T.x, L = T.y, O = -(d.x - I), R = -(d.y - L);
+      w.multiply(t.matrix, [h, v, 0, -v, h, 0, O * h - R * v - O, O * v + R * h - R, 1], t.matrix), t.emit("change", l(t));
+    }), u(l(t), "onScale", function() {
       for (var i = arguments.length, n = new Array(i), o = 0; o < i; o++)
         n[o] = arguments[o];
-      var l = n[0], m = l.ratio, d = l.center, h = t.originTranslate, v = h.x, T = h.y;
-      w.multiply(t.matrix, [m, 0, 0, 0, m, 0, (d.x - v) * (1 - m), (d.y - T) * (1 - m), 1], t.matrix), t.emit("change");
-    }), u(c(t), "matrix", w.create()), u(c(t), "mouseFormatter", void 0), u(c(t), "touchFormatter", void 0), t;
+      var c = n[0], m = c.ratio, d = c.center, h = t.originTranslate, v = h.x, T = h.y;
+      w.multiply(t.matrix, [m, 0, 0, 0, m, 0, (d.x - v) * (1 - m), (d.y - T) * (1 - m), 1], t.matrix), t.emit("change", l(t));
+    }), u(l(t), "matrix", w.create()), u(l(t), "mouseFormatter", void 0), u(l(t), "touchFormatter", void 0), t;
   }
   return S(f, [{
     key: "setOriginTranslate",
