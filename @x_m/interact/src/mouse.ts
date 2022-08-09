@@ -105,7 +105,7 @@ export class MouseFormatter
       !!e.shiftKey === (this.mouseButtonOfScale === 'shift-required')
     ) {
       this.emit('scale', {
-        ratio: e.deltaY > 0 ? (1 / this.ratioOfScale) : this.ratioOfScale,
+        ratio: e.deltaY > 0 ? 1 / this.ratioOfScale : this.ratioOfScale,
         center,
       })
     }
@@ -114,9 +114,10 @@ export class MouseFormatter
       !!e.shiftKey !== (this.mouseButtonOfScale === 'shift-required')
     ) {
       this.emit('rotate', {
-        ratio: e.deltaY > 0
-          ? (this.ratioOfRotate * Math.PI) / 180
-          : -(this.ratioOfRotate * Math.PI) / 180,
+        ratio:
+          e.deltaY > 0
+            ? (this.ratioOfRotate * Math.PI) / 180
+            : -(this.ratioOfRotate * Math.PI) / 180,
         center,
       })
     }

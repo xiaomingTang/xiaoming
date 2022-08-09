@@ -143,7 +143,8 @@ export class TouchFormatter
       if (this.enableScale) {
         this.emit('scale', {
           center: centerOf(posA, posB, this.touchAPos, this.touchBPos),
-          ratio: distanceOf(posA, posB) / distanceOf(this.touchAPos, this.touchBPos),
+          ratio:
+            distanceOf(posA, posB) / distanceOf(this.touchAPos, this.touchBPos),
         })
       }
 
