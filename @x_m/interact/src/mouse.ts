@@ -23,6 +23,21 @@ interface MouseFormatterProps {
   enableScale?: boolean
   enableRotate?: boolean
   /**
+   * 每次触发 move 事件, 移动的倍率
+   * @default 1
+   */
+  ratioOfMove?: number
+  /**
+   * 每次触发 scale(wheel) 事件, 缩放的倍率
+   * @default 1.1
+   */
+  ratioOfScale?: number
+  /**
+   * 每次触发 rotate(wheel) 事件, 旋转的角度(degree)
+   * @default 15
+   */
+  ratioOfRotate?: number
+  /**
    * which button triggers move event;
    * button type:
    * https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/button
@@ -71,8 +86,8 @@ export class MouseFormatter
       return
     }
     this.emit('move', {
-      x: e.movementX,
-      y: e.movementY,
+      x: e.movementX * this.ratioOfMove,
+      y: e.movementY * this.ratioOfMove,
     })
   }
 
@@ -90,7 +105,7 @@ export class MouseFormatter
       !!e.shiftKey === (this.mouseButtonOfScale === 'shift-required')
     ) {
       this.emit('scale', {
-        ratio: e.deltaY > 0 ? 0.9 : 1 / 0.9,
+        ratio: e.deltaY > 0 ? (1 / this.ratioOfScale) : this.ratioOfScale,
         center,
       })
     }
@@ -99,7 +114,9 @@ export class MouseFormatter
       !!e.shiftKey !== (this.mouseButtonOfScale === 'shift-required')
     ) {
       this.emit('rotate', {
-        ratio: e.deltaY > 0 ? (15 * Math.PI) / 180 : -(15 * Math.PI) / 180,
+        ratio: e.deltaY > 0
+          ? (this.ratioOfRotate * Math.PI) / 180
+          : -(this.ratioOfRotate * Math.PI) / 180,
         center,
       })
     }
@@ -129,6 +146,24 @@ export class MouseFormatter
   mouseButtonOfScale: 'shift-required' | 'middle-button-only'
 
   /**
+   * 每次触发 move 事件, 移动的倍率
+   * @default 1
+   */
+  ratioOfMove: number
+
+  /**
+   * 每次触发 scale(wheel) 事件, 缩放的倍率
+   * @default 1.1
+   */
+  ratioOfScale: number
+
+  /**
+   * 每次触发 rotate(wheel) 事件, 旋转的角度(degree)
+   * @default 15
+   */
+  ratioOfRotate: number
+
+  /**
    * IF AND ONLY IF TouchFormatter be used at the same time,
    * HIGHLY recommended disabledWhenFiresTouchEvents be true.
    * learn more: https://developer.mozilla.org/en-US/docs/Web/API/InputDeviceCapabilities/firesTouchEvents
@@ -137,8 +172,6 @@ export class MouseFormatter
   disabledWhenFiresTouchEvents: boolean
 
   /**
-   * MouseFormatter emit 的 scale, 表示每个滚轮事件, 缩 0.9 倍(or 放大 1/0.9 倍);
-   * MouseFormatter emit 的 rotate, 表示每个滚轮事件, 旋转 15°;
    * 使用者可自行添加倍率
    */
   constructor(options?: MouseFormatterProps) {
@@ -146,6 +179,9 @@ export class MouseFormatter
     this.enableMove = options?.enableMove ?? true
     this.enableScale = options?.enableScale ?? true
     this.enableRotate = options?.enableRotate ?? true
+    this.ratioOfMove = options?.ratioOfMove ?? 1
+    this.ratioOfScale = options?.ratioOfScale ?? 1.1
+    this.ratioOfRotate = options?.ratioOfRotate ?? 15
     this.disabledWhenFiresTouchEvents =
       options?.disabledWhenFiresTouchEvents ?? false
     this.mouseButtonOfMove = options?.mouseButtonOfMove ?? MouseButton.left

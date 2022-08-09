@@ -5,6 +5,16 @@ interface TouchFormatterProps {
   enableMove?: boolean
   enableScale?: boolean
   enableRotate?: boolean
+  /**
+   * 每次触发 move 事件, 移动的倍率
+   * @default 1
+   */
+  ratioOfMove?: number
+  /**
+   * 每次触发 rotate 事件, 旋转的角度(degree)
+   * @default 1
+   */
+  ratioOfRotate?: number
 }
 
 function vectorOf(src: Point, tar: Point): Point {
@@ -133,8 +143,7 @@ export class TouchFormatter
       if (this.enableScale) {
         this.emit('scale', {
           center: centerOf(posA, posB, this.touchAPos, this.touchBPos),
-          ratio:
-            distanceOf(posA, posB) / distanceOf(this.touchAPos, this.touchBPos),
+          ratio: distanceOf(posA, posB) / distanceOf(this.touchAPos, this.touchBPos),
         })
       }
 
