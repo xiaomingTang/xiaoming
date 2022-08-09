@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.6](https://github.com/xiaomingTang/xiaoming/compare/v0.1.5...v0.1.6) (2022-08-09)
+
+
+### Bug Fixes
+
+* dependencies & add storybook ([16fa523](https://github.com/xiaomingTang/xiaoming/commit/16fa523bd66b7c7a445b15aaf0493090a6d58ffc))
+
+
+### Features
+
+* add license ([628274b](https://github.com/xiaomingTang/xiaoming/commit/628274b851ccdc6ce62de987d94a988154f7a480))
+
+
+
+
+
 ## 0.1.5 (2022-08-07)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.6](https://github.com/xiaomingTang/xiaoming/compare/v0.1.5...v0.1.6) (2022-08-09)
+
+
+### Features
+
+* 新增 ratio 等的 options 可选类型 ([faa3b66](https://github.com/xiaomingTang/xiaoming/commit/faa3b666be65ff204a38b8d1b2596ee27efc3d4f))
+
+
+
+
+
 ## 0.1.5 (2022-08-07)
 
 

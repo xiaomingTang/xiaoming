@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.6](https://github.com/xiaomingTang/xiaoming/compare/v0.1.5...v0.1.6) (2022-08-09)
+
+
+### Features
+
+* 新增鼠标交互的倍率 ([290b833](https://github.com/xiaomingTang/xiaoming/commit/290b83311d529195c378a70ed8c6df506c97d7e6))
+* 新增鼠标交互的倍率 ([0a5d94e](https://github.com/xiaomingTang/xiaoming/commit/0a5d94efe4e4767d9565f8b0f48d48977bccc2b1))
+
+
+
+
+
 ## 0.1.5 (2022-08-07)
 
 

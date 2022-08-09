@@ -1,6 +1,6 @@
 {
   "license": "MIT",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "author": "xiaomingTang",
   "description": "example for @x_m/*",
   "private": true,
@@ -10,8 +10,8 @@
     "dev": "vite --config vite.example-config.ts"
   },
   "dependencies": {
-    "@x_m/interact": "^0.1.5",
-    "@x_m/interact-dom": "^0.1.5",
+    "@x_m/interact": "^0.1.6",
+    "@x_m/interact-dom": "^0.1.6",
     "@x_m/prize-wheel": "^0.1.5",
     "@x_m/prize-wheel-helper": "^0.1.5",
     "lodash": "^4.17.21"
