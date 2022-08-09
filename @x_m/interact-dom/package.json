@@ -18,11 +18,15 @@
     "build:watch": "vite build --watch"
   },
   "dependencies": {
+    "@x_m/event-emitter": "^0.1.5",
     "@x_m/interact": "^0.1.5",
     "gl-matrix": "^3.4.3"
   },
   "peerDependencies": {
     "@babel/runtime-corejs3": "^7.18.9",
     "core-js": "3"
+  },
+  "devDependencies": {
+    "@x_m/story-helper": "^0.1.5"
   }
 }

@@ -12,8 +12,6 @@ export default class InteractDom extends EventEmitter<{
   // eslint-disable-next-line no-use-before-define
   change: [InteractDom]
 }> {
-  private element: HTMLElement | null = null
-
   private originTranslate: Point = {
     x: 0,
     y: 0,
@@ -107,7 +105,6 @@ export default class InteractDom extends EventEmitter<{
       console.error('[interact-dom]: element is required')
       return
     }
-    this.element = element
     this.setOriginTranslateFromElement(element)
     if (formatterTypes.includes('mouse')) {
       const mouseFormatter = new MouseFormatter({

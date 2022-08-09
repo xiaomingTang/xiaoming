@@ -6,7 +6,7 @@ import l from "@babel/runtime-corejs3/helpers/assertThisInitialized";
 import P from "@babel/runtime-corejs3/helpers/inherits";
 import A from "@babel/runtime-corejs3/helpers/possibleConstructorReturn";
 import E from "@babel/runtime-corejs3/helpers/getPrototypeOf";
-import u from "@babel/runtime-corejs3/helpers/defineProperty";
+import h from "@babel/runtime-corejs3/helpers/defineProperty";
 import g from "@babel/runtime-corejs3/core-js-stable/instance/concat";
 import p from "@babel/runtime-corejs3/core-js-stable/instance/includes";
 import { mat3 as w } from "gl-matrix";
@@ -44,25 +44,25 @@ var Y = /* @__PURE__ */ function(x) {
     M(this, f);
     for (var r = arguments.length, e = new Array(r), a = 0; a < r; a++)
       e[a] = arguments[a];
-    return t = y.call.apply(y, g(s = [this]).call(s, e)), u(l(t), "element", null), u(l(t), "originTranslate", {
+    return t = y.call.apply(y, g(s = [this]).call(s, e)), h(l(t), "originTranslate", {
       x: 0,
       y: 0
-    }), u(l(t), "onMove", function() {
+    }), h(l(t), "onMove", function() {
       for (var i = arguments.length, n = new Array(i), o = 0; o < i; o++)
         n[o] = arguments[o];
       var c = n[0];
       w.multiply(t.matrix, [1, 0, 0, 0, 1, 0, c.x, c.y, 1], t.matrix), t.emit("change", l(t));
-    }), u(l(t), "onRotate", function() {
+    }), h(l(t), "onRotate", function() {
       for (var i = arguments.length, n = new Array(i), o = 0; o < i; o++)
         n[o] = arguments[o];
-      var c = n[0], m = c.ratio, d = c.center, h = Math.cos(m), v = Math.sin(m), T = t.originTranslate, I = T.x, L = T.y, O = -(d.x - I), R = -(d.y - L);
-      w.multiply(t.matrix, [h, v, 0, -v, h, 0, O * h - R * v - O, O * v + R * h - R, 1], t.matrix), t.emit("change", l(t));
-    }), u(l(t), "onScale", function() {
+      var c = n[0], u = c.ratio, d = c.center, m = Math.cos(u), v = Math.sin(u), T = t.originTranslate, I = T.x, L = T.y, O = -(d.x - I), R = -(d.y - L);
+      w.multiply(t.matrix, [m, v, 0, -v, m, 0, O * m - R * v - O, O * v + R * m - R, 1], t.matrix), t.emit("change", l(t));
+    }), h(l(t), "onScale", function() {
       for (var i = arguments.length, n = new Array(i), o = 0; o < i; o++)
         n[o] = arguments[o];
-      var c = n[0], m = c.ratio, d = c.center, h = t.originTranslate, v = h.x, T = h.y;
-      w.multiply(t.matrix, [m, 0, 0, 0, m, 0, (d.x - v) * (1 - m), (d.y - T) * (1 - m), 1], t.matrix), t.emit("change", l(t));
-    }), u(l(t), "matrix", w.create()), u(l(t), "mouseFormatter", void 0), u(l(t), "touchFormatter", void 0), t;
+      var c = n[0], u = c.ratio, d = c.center, m = t.originTranslate, v = m.x, T = m.y;
+      w.multiply(t.matrix, [u, 0, 0, 0, u, 0, (d.x - v) * (1 - u), (d.y - T) * (1 - u), 1], t.matrix), t.emit("change", l(t));
+    }), h(l(t), "matrix", w.create()), h(l(t), "mouseFormatter", void 0), h(l(t), "touchFormatter", void 0), t;
   }
   return S(f, [{
     key: "setOriginTranslate",
@@ -95,7 +95,7 @@ var Y = /* @__PURE__ */ function(x) {
         console.error("[interact-dom]: element is required");
         return;
       }
-      if (this.element = t, this.setOriginTranslateFromElement(t), p(r).call(r, "mouse")) {
+      if (this.setOriginTranslateFromElement(t), p(r).call(r, "mouse")) {
         var e = new B({
           disabledWhenFiresTouchEvents: p(r).call(r, "touch")
         });
