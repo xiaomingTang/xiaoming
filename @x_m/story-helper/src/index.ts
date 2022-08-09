@@ -1,3 +1,5 @@
+type SelectValue = number | string
+
 interface ArgController {
   boolean: {
     return: boolean
@@ -26,34 +28,34 @@ interface ArgController {
     accept?: string
   }
   radio: {
-    return: string
-    defaultValue?: string
-    options?: string[]
+    return?: SelectValue
+    defaultValue?: SelectValue
+    options?: SelectValue[]
   }
   'inline-radio': {
-    return: string
-    defaultValue?: string
-    options?: string[]
+    return?: SelectValue
+    defaultValue?: SelectValue
+    options?: SelectValue[]
   }
   check: {
-    return: string[]
-    defaultValue?: string[]
-    options?: string[]
+    return: SelectValue[]
+    defaultValue?: SelectValue[]
+    options?: SelectValue[]
   }
   'inline-check': {
-    return: string[]
-    defaultValue?: string[]
-    options?: string[]
+    return: SelectValue[]
+    defaultValue?: SelectValue[]
+    options?: SelectValue[]
   }
   select: {
-    return: string
-    defaultValue?: string
-    options?: string[]
+    return?: SelectValue
+    defaultValue?: SelectValue
+    options?: SelectValue[]
   }
   'multi-select': {
-    return: string[]
-    defaultValue?: string[]
-    options?: string[]
+    return?: SelectValue[]
+    defaultValue?: SelectValue[]
+    options?: SelectValue[]
   }
   text: {
     return: string
