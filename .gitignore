@@ -4,3 +4,4 @@
 *.log
 **/debug.log
 **/yarn-error.log
+storybook-static/
