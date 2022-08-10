@@ -1,74 +1,41 @@
-type SelectValue = number | string
+type OptionsValue = number | string
+
+type InputArg<T> = {
+  return: T
+  name?: string
+  defaultValue: T
+}
+
+interface NumberArg {
+  min?: number
+  max?: number
+  step?: number
+}
+
+interface OptionsArg {
+  options: OptionsValue[]
+}
 
 interface ArgController {
-  boolean: {
-    return: boolean
-    defaultValue?: boolean
-  }
-  number: {
-    return: number
-    defaultValue?: number
-    min?: number
-    max?: number
-    step?: number
-  }
-  range: {
-    return: [number, number]
-    defaultValue?: number
-    min?: number
-    max?: number
-    step?: number
-  }
-  object: {
-    return: object
-    defaultValue?: object
+  boolean: InputArg<boolean>
+  number: InputArg<number> & NumberArg
+  range: InputArg<[number, number]> & NumberArg
+  object: InputArg<object>
+  radio: InputArg<OptionsValue> & OptionsArg
+  'inline-radio': InputArg<OptionsValue> & OptionsArg
+  select: InputArg<OptionsValue> & OptionsArg
+  check: InputArg<OptionsValue[]> & OptionsArg
+  'inline-check': InputArg<OptionsValue[]> & OptionsArg
+  'multi-select': InputArg<OptionsValue[]> & OptionsArg
+  text: InputArg<string>
+  date: InputArg<string>
+  color: InputArg<string> & {
+    presetsColors?: string[]
   }
   file: {
     return: string[]
+    name?: string
     accept?: string
-  }
-  radio: {
-    return?: SelectValue
-    defaultValue?: SelectValue
-    options?: SelectValue[]
-  }
-  'inline-radio': {
-    return?: SelectValue
-    defaultValue?: SelectValue
-    options?: SelectValue[]
-  }
-  check: {
-    return: SelectValue[]
-    defaultValue?: SelectValue[]
-    options?: SelectValue[]
-  }
-  'inline-check': {
-    return: SelectValue[]
-    defaultValue?: SelectValue[]
-    options?: SelectValue[]
-  }
-  select: {
-    return?: SelectValue
-    defaultValue?: SelectValue
-    options?: SelectValue[]
-  }
-  'multi-select': {
-    return?: SelectValue[]
-    defaultValue?: SelectValue[]
-    options?: SelectValue[]
-  }
-  text: {
-    return: string
-    defaultValue?: string
-  }
-  color: {
-    return: string
-    presetsColors?: string[]
-    defaultValue?: number
-  }
-  date: {
-    return: string
-    defaultValue?: string
   }
 }
 
@@ -93,6 +60,7 @@ export interface StoryInputArgs {
     | ArgItem<'select'>
     | ArgItem<'text'>
 }
+
 export type StoryOutputArgs<T extends StoryInputArgs> = {
   [key in keyof T]: ArgController[T[key]['control']]['return']
 }
