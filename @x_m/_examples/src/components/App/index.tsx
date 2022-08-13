@@ -30,7 +30,7 @@ export function App({
         <a
           href='https://github.com/xiaomingTang/xiaoming'
           target='_blank'
-          rel="noreferrer"
+          rel='noreferrer'
           className={styles.menuItem}
           title='open in github'
         >
