@@ -1,0 +1,81 @@
+$size: 200px;
+
+.root {
+  position: relative;
+  padding: 16px;
+  user-select: none;
+}
+
+.dial {
+  position: relative;
+  width: $size;
+  height: $size;
+  font-size: 16px;
+  border-radius: $size;
+  background: radial-gradient(#f5f5f5, #ccc);
+  box-shadow: 0px 0px 12px 4px #bdbdbd;
+  font-family: cursive;
+}
+
+.pin {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: var(--pin-size);
+  border-radius: var(--pin-size);
+  transform-origin: left;
+  transition: transform cubic-bezier(0.27, 1.55, 0.66, 0.92) 0.45s;
+  // 下面这个动画回弹太硬了, 但还是放着先
+  // transition: transform cubic-bezier(0.175,0.885,0.32,1.275) .45s;
+}
+
+.hPin {
+  @extend .pin;
+  --pin-size: 3px;
+  width: calc($size / 3.6);
+  background-color: black;
+  transform: translateY(-50%) rotate(calc(var(--h, 0) * 360deg / 12 - 90deg));
+}
+
+.mPin {
+  @extend .pin;
+  --pin-size: 2px;
+  width: calc($size / 3.17);
+  background-color: #666;
+  transform: translateY(-50%) rotate(calc(var(--m, 0) * 360deg / 60 - 90deg));
+}
+
+.sPin {
+  @extend .pin;
+  --pin-size: 1px;
+  width: calc($size / 2.8);
+  background-color: #999;
+  transform: translateY(-50%) rotate(calc(var(--s, 0) * 360deg / 60 - 90deg));
+}
+
+.num {
+  position: absolute;
+  display: inline-block;
+  width: 2em;
+  height: calc(1.2em + 12px);
+  line-height: calc(1.2em + 12px);
+  text-align: center;
+  left: 50%;
+  top: 0;
+  transform-origin: center calc($size / 2);
+}
+
+@for $n from 1 through 12 {
+  .num-#{$n} {
+    @extend .num;
+    transform: translate(-1em, 0) rotate(calc($n * 30deg));
+  }
+}
+
+.toggleButton {
+  position: relative;
+  padding: 4px 0.5em;
+  margin-top: 1em;
+  left: $size / 2;
+  transform: translateX(-50%);
+}

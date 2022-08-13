@@ -10,6 +10,7 @@
     "dev": "vite --config vite.example-config.ts"
   },
   "dependencies": {
+    "@x_m/hooks": "^0.1.5",
     "@x_m/interact": "^0.1.6",
     "@x_m/interact-dom": "^0.1.6",
     "@x_m/prize-wheel": "^0.1.5",
@@ -20,5 +21,8 @@
     "@babel/runtime-corejs3": "^7.18.9",
     "core-js": "3",
     "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "sass": "^1.54.4"
   }
 }

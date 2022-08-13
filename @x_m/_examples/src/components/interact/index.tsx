@@ -10,7 +10,8 @@ export default function Component() {
 
   useEffect(() => {
     const target = targetElemRef.current
-    const trigger = triggerElemRef.current
+    // const trigger = triggerElemRef.current
+    const trigger = target
     const interact = interactRef.current
     if (!(target && trigger && interact)) {
       return noop
