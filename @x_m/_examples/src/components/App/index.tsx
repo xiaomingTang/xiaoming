@@ -27,6 +27,15 @@ export function App({
   return (
     <div className={styles.root}>
       <aside className={styles.aside}>
+        <a
+          href='https://github.com/xiaomingTang/xiaoming'
+          target='_blank'
+          rel="noreferrer"
+          className={styles.menuItem}
+          title='open in github'
+        >
+          open in github
+        </a>
         {routes.map(({ name }) => (
           <a
             key={name}

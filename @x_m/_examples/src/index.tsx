@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { App } from './utils'
+import { App } from './components/App'
 import Clock from './components/clock'
 import PrizeWheel from './components/prize-wheel'
 import Interact from './components/interact'

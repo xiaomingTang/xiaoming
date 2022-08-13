@@ -76,6 +76,6 @@ $size: 200px;
   position: relative;
   padding: 4px 0.5em;
   margin-top: 1em;
-  left: $size / 2;
+  left: calc($size / 2);
   transform: translateX(-50%);
 }

@@ -19,12 +19,17 @@ export default function Component() {
     const onChange = () => {
       target.style.transform = interact.formatToCss()
     }
+    const onResize = () => {
+      interact.setOriginTranslateFromElement(trigger)
+    }
     interact.attach(trigger)
     interact.setOriginTranslateFromElement(trigger)
     interact.addListener('change', onChange)
+    window.addEventListener('resize', onResize)
     return () => {
       interact.detach()
       interact.removeListener('change', onChange)
+      window.removeEventListener('resize', onResize)
     }
   }, [])
 
@@ -32,6 +37,10 @@ export default function Component() {
     <>
       <div ref={triggerElemRef} className={styles.trigger} />
       <div ref={targetElemRef} className={styles.target} />
+      <p>- 支持鼠标和手指触摸</p>
+      <p>- 支持拖拽</p>
+      <p>- 支持缩放(鼠标滚轮 或 双指缩合)</p>
+      <p>- 支持旋转(shift + 鼠标滚轮 或 双指转动)</p>
     </>
   )
 }

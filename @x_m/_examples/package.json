@@ -7,7 +7,8 @@
   "main": "src/index.tsx",
   "repository": "https://github.com/xiaomingTang/xiaoming/tree/master/%40x_m/_examples",
   "scripts": {
-    "dev": "vite --config vite.example-config.ts"
+    "dev": "vite --config vite.example-config.ts",
+    "build": "vite build --config vite.config.ts"
   },
   "dependencies": {
     "@x_m/hooks": "^0.1.5",
