@@ -85,6 +85,7 @@ export class MouseFormatter
     if (!this.enableMove || !this.isMoving) {
       return
     }
+    e.preventDefault()
     this.emit('move', {
       x: e.movementX * this.ratioOfMove,
       y: e.movementY * this.ratioOfMove,

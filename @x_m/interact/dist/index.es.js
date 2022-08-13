@@ -79,8 +79,8 @@ import W from "@x_m/event-emitter/src";
       }), c;
   };
 })(globalThis);
-function F(r) {
-  var l = X();
+function D(r) {
+  var l = F();
   return function() {
     var t = T(r), o;
     if (l) {
@@ -91,7 +91,7 @@ function F(r) {
     return R(this, o);
   };
 }
-function X() {
+function F() {
   if (typeof Reflect == "undefined" || !p || p.sham)
     return !1;
   if (typeof Proxy == "function")
@@ -105,17 +105,17 @@ function X() {
 }
 var ne = /* @__PURE__ */ function(r) {
   C(u, r);
-  var l = F(u);
+  var l = D(u);
   function u(t) {
     var o, s, d, n, v, b, f, h, E, e;
     return w(this, u), e = l.call(this), a(i(e), "element", null), a(i(e), "isMoving", !1), a(i(e), "onMouseDown", function(c) {
       var m;
       e.disabledWhenFiresTouchEvents && (m = c.sourceCapabilities) !== null && m !== void 0 && m.firesTouchEvents || !e.enableMove || c.button !== e.mouseButtonOfMove || (e.isMoving = !0);
     }), a(i(e), "onMouseMove", function(c) {
-      !e.enableMove || !e.isMoving || e.emit("move", {
+      !e.enableMove || !e.isMoving || (c.preventDefault(), e.emit("move", {
         x: c.movementX * e.ratioOfMove,
         y: c.movementY * e.ratioOfMove
-      });
+      }));
     }), a(i(e), "onMouseUp", function() {
       e.isMoving = !1;
     }), a(i(e), "onWheel", function(c) {
@@ -149,7 +149,7 @@ var ne = /* @__PURE__ */ function(r) {
     }
   }]), u;
 }(Y);
-function D(r) {
+function X(r) {
   var l = A();
   return function() {
     var t = T(r), o;
@@ -194,7 +194,7 @@ function I() {
 }
 var oe = /* @__PURE__ */ function(r) {
   C(u, r);
-  var l = D(u);
+  var l = X(u);
   function u(t) {
     var o, s, d, n;
     return w(this, u), n = l.call(this), a(i(n), "element", null), a(i(n), "hasTouchStart", !1), a(i(n), "touchAPos", {
