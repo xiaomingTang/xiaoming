@@ -6,7 +6,7 @@ import l from "@babel/runtime-corejs3/helpers/assertThisInitialized";
 import P from "@babel/runtime-corejs3/helpers/inherits";
 import A from "@babel/runtime-corejs3/helpers/possibleConstructorReturn";
 import E from "@babel/runtime-corejs3/helpers/getPrototypeOf";
-import h from "@babel/runtime-corejs3/helpers/defineProperty";
+import f from "@babel/runtime-corejs3/helpers/defineProperty";
 import g from "@babel/runtime-corejs3/core-js-stable/instance/concat";
 import p from "@babel/runtime-corejs3/core-js-stable/instance/includes";
 import { mat3 as w } from "gl-matrix";
@@ -37,34 +37,34 @@ function F() {
   }
 }
 var Y = /* @__PURE__ */ function(x) {
-  P(f, x);
-  var y = _(f);
-  function f() {
+  P(h, x);
+  var y = _(h);
+  function h() {
     var s, t;
-    M(this, f);
+    M(this, h);
     for (var r = arguments.length, e = new Array(r), a = 0; a < r; a++)
       e[a] = arguments[a];
-    return t = y.call.apply(y, g(s = [this]).call(s, e)), h(l(t), "originTranslate", {
+    return t = y.call.apply(y, g(s = [this]).call(s, e)), f(l(t), "originTranslate", {
       x: 0,
       y: 0
-    }), h(l(t), "onMove", function() {
-      for (var i = arguments.length, n = new Array(i), o = 0; o < i; o++)
-        n[o] = arguments[o];
+    }), f(l(t), "onMove", function() {
+      for (var o = arguments.length, n = new Array(o), i = 0; i < o; i++)
+        n[i] = arguments[i];
       var c = n[0];
       w.multiply(t.matrix, [1, 0, 0, 0, 1, 0, c.x, c.y, 1], t.matrix), t.emit("change", l(t));
-    }), h(l(t), "onRotate", function() {
-      for (var i = arguments.length, n = new Array(i), o = 0; o < i; o++)
-        n[o] = arguments[o];
+    }), f(l(t), "onRotate", function() {
+      for (var o = arguments.length, n = new Array(o), i = 0; i < o; i++)
+        n[i] = arguments[i];
       var c = n[0], u = c.ratio, d = c.center, m = Math.cos(u), v = Math.sin(u), T = t.originTranslate, I = T.x, L = T.y, O = -(d.x - I), R = -(d.y - L);
       w.multiply(t.matrix, [m, v, 0, -v, m, 0, O * m - R * v - O, O * v + R * m - R, 1], t.matrix), t.emit("change", l(t));
-    }), h(l(t), "onScale", function() {
-      for (var i = arguments.length, n = new Array(i), o = 0; o < i; o++)
-        n[o] = arguments[o];
+    }), f(l(t), "onScale", function() {
+      for (var o = arguments.length, n = new Array(o), i = 0; i < o; i++)
+        n[i] = arguments[i];
       var c = n[0], u = c.ratio, d = c.center, m = t.originTranslate, v = m.x, T = m.y;
       w.multiply(t.matrix, [u, 0, 0, 0, u, 0, (d.x - v) * (1 - u), (d.y - T) * (1 - u), 1], t.matrix), t.emit("change", l(t));
-    }), h(l(t), "matrix", w.create()), h(l(t), "mouseFormatter", void 0), h(l(t), "touchFormatter", void 0), t;
+    }), f(l(t), "matrix", w.create()), f(l(t), "mouseFormatter", void 0), f(l(t), "touchFormatter", void 0), t;
   }
-  return S(f, [{
+  return S(h, [{
     key: "setOriginTranslate",
     value: function(t) {
       this.originTranslate.x = t.x, this.originTranslate.y = t.y;
@@ -72,20 +72,22 @@ var Y = /* @__PURE__ */ function(x) {
   }, {
     key: "setOriginTranslateFromDomRect",
     value: function(t) {
-      var r = t.x, e = t.y, a = t.width, i = t.height;
+      var r = t.x, e = t.y, a = t.width, o = t.height;
       this.originTranslate = {
         x: r + a / 2,
-        y: e + i / 2
+        y: e + o / 2
       };
     }
   }, {
     key: "setOriginTranslateFromElement",
     value: function(t) {
-      var r = t.getBoundingClientRect(), e = r.x, a = r.y, i = r.width, n = r.height;
+      var r = t.style.transform;
+      t.style.transform = "";
+      var e = t.getBoundingClientRect(), a = e.x, o = e.y, n = e.width, i = e.height;
       this.originTranslate = {
-        x: e + i / 2,
-        y: a + n / 2
-      };
+        x: a + n / 2,
+        y: o + i / 2
+      }, t.style.transform = r;
     }
   }, {
     key: "attach",
@@ -122,10 +124,10 @@ var Y = /* @__PURE__ */ function(x) {
   }, {
     key: "formatToCss",
     value: function() {
-      var t, r, e, a, i, n = this.matrix;
-      return g(t = g(r = g(e = g(a = g(i = "matrix(".concat(n[0], ",")).call(i, n[1], ",")).call(a, n[3], ",")).call(e, n[4], ",")).call(r, n[6], ",")).call(t, n[7], ")");
+      var t, r, e, a, o, n = this.matrix;
+      return g(t = g(r = g(e = g(a = g(o = "matrix(".concat(n[0], ",")).call(o, n[1], ",")).call(a, n[3], ",")).call(e, n[4], ",")).call(r, n[6], ",")).call(t, n[7], ")");
     }
-  }]), f;
+  }]), h;
 }(b);
 export {
   Y as default

@@ -88,6 +88,9 @@ export default class InteractDom extends EventEmitter<{
   }
 
   setOriginTranslateFromElement(element: HTMLElement) {
+    const savedTransform = element.style.transform
+    // eslint-disable-next-line no-param-reassign
+    element.style.transform = ''
     const {
       x, y, width, height
     } = element.getBoundingClientRect()
@@ -95,6 +98,8 @@ export default class InteractDom extends EventEmitter<{
       x: x + width / 2,
       y: y + height / 2,
     }
+    // eslint-disable-next-line no-param-reassign
+    element.style.transform = savedTransform
   }
 
   attach(
