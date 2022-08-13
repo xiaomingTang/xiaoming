@@ -11,14 +11,38 @@ yarn add @x_m/interact
 
 ``` typescript
 
-import InteractDom from '@x_m/interact-dom'
+import { MouseFormatter, TouchFormatter } from '@x_m/interact'
 
-const interact = new InteractDom()
-const elem = document.querySelector('xxx')
+// --- mouse ---
 
-interact.attach(elem)
-interact.addListener('change', () => {
-  elem.style.transform = interact.formatToCss()
+const mouseFormatter = new MouseFormatter()
+
+mouseFormatter.attach(element)
+
+mouseFormatter.addListener('move', (...args) => {
+  // do sth
+})
+mouseFormatter.addListener('scale', (...args) => {
+  // do sth
+})
+mouseFormatter.addListener('rotate', (...args) => {
+  // do sth
+})
+
+// --- touch ---
+
+const touchFormatter = new TouchFormatter()
+
+touchFormatter.attach(element)
+
+touchFormatter.addListener('move', (...args) => {
+  // do sth
+})
+touchFormatter.addListener('scale', (...args) => {
+  // do sth
+})
+touchFormatter.addListener('rotate', (...args) => {
+  // do sth
 })
 
 ```

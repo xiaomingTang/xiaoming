@@ -1,6 +1,6 @@
 # @x_m/interact-dom
 
-用户交互(move / scale / rotate) 和 交互方式(mouse / touch)的抽象
+对 [@x_m/interact](../interact/README.md) 在各个交互方式上做了一个封装
 
 ### install
 ```
