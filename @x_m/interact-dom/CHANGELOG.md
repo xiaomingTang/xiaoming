@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.7](https://github.com/xiaomingTang/xiaoming/compare/v0.1.6...v0.1.7) (2022-08-13)
+
+
+### Features
+
+* get correct translate ([43c626b](https://github.com/xiaomingTang/xiaoming/commit/43c626bb7045b443c897e39a76b7cf3e73326ffc))
+
+
+
+
+
 ## [0.1.6](https://github.com/xiaomingTang/xiaoming/compare/v0.1.5...v0.1.6) (2022-08-09)
 
 

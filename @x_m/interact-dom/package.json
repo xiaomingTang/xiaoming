@@ -1,7 +1,7 @@
 {
   "name": "@x_m/interact-dom",
   "license": "MIT",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "author": "xiaomingTang",
   "description": "interact dom",
   "private": false,
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@x_m/event-emitter": "^0.1.5",
-    "@x_m/interact": "^0.1.6",
+    "@x_m/interact": "^0.1.7",
     "gl-matrix": "^3.4.3"
   },
   "peerDependencies": {
@@ -27,6 +27,6 @@
     "core-js": "3"
   },
   "devDependencies": {
-    "@x_m/story-helper": "^0.1.6"
+    "@x_m/story-helper": "^0.1.7"
   }
 }

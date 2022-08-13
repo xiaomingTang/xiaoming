@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.7](https://github.com/xiaomingTang/xiaoming/compare/v0.1.6...v0.1.7) (2022-08-13)
+
+
+### Features
+
+* add e.preventDefault onMove ([d8b0ead](https://github.com/xiaomingTang/xiaoming/commit/d8b0ead1ff524b49bc563055ccd975b9d102cc71))
+
+
+
+
+
 ## [0.1.6](https://github.com/xiaomingTang/xiaoming/compare/v0.1.5...v0.1.6) (2022-08-09)
 
 

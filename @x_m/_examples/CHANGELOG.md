@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.7](https://github.com/xiaomingTang/xiaoming/compare/v0.1.6...v0.1.7) (2022-08-13)
+
+
+### Features
+
+* 新增描述和构建出 dist ([7b628ef](https://github.com/xiaomingTang/xiaoming/commit/7b628ef98b41115b24a9cf13f056a79fb9ee70cd))
+* 新增一个时钟示例 ([03886bd](https://github.com/xiaomingTang/xiaoming/commit/03886bd441c61b4d78d3822778e680be09e287fe))
+
+
+
+
+
 ## [0.1.6](https://github.com/xiaomingTang/xiaoming/compare/v0.1.5...v0.1.6) (2022-08-09)
 
 **Note:** Version bump only for package undefined
