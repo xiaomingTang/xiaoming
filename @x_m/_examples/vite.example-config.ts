@@ -8,7 +8,7 @@ function getLocal(filename: string) {
   if (!lastTwoName) {
     return lastName
   }
-  if (/^index\.module\.\w*ss/ig.test(lastName)) {
+  if (/^index\.module\.\w*ss/gi.test(lastName)) {
     return lastTwoName
   }
   return lastName
@@ -18,7 +18,10 @@ function hash(str: string, length = 6) {
   return Buffer.from(str, 'base64url').toString('base64url').slice(0, length)
 }
 
-const generateScopedName: CSSModulesOptions['generateScopedName'] = (name, filename) => {
+const generateScopedName: CSSModulesOptions['generateScopedName'] = (
+  name,
+  filename
+) => {
   return `${getLocal(filename)}__${name}__${hash(`${filename}-${name}`, 5)}`
 }
 

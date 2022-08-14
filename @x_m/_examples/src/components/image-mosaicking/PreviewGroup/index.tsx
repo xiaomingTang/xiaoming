@@ -20,10 +20,10 @@ const classNames: CSSTransitionClassNames = {
 export default function PreviewGroup() {
   const store = useImageMosaickingStore()
 
-  return <div className={styles.root}>
-    <TransitionGroup className={styles.previewList}>
-      {
-        store.files.map((item, idx) => (
+  return (
+    <div className={styles.root}>
+      <TransitionGroup className={styles.previewList}>
+        {store.files.map((item, idx) => (
           <CSSTransition
             key={`${item.name}-${item.size}-${item.lastModified}`}
             timeout={500}
@@ -36,8 +36,8 @@ export default function PreviewGroup() {
               }}
             />
           </CSSTransition>
-        ))
-      }
-    </TransitionGroup>
-  </div>
+        ))}
+      </TransitionGroup>
+    </div>
+  )
 }

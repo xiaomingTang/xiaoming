@@ -8,14 +8,10 @@ export interface PreviewItemState {
 
 type PreviewItemProps = PreviewItemState
 
-export default function PreviewItem({
-  src,
-  onRemove,
-}: PreviewItemProps) {
-  return <div
-    className={styles.root}
-    onClick={onRemove}
-  >
-    <img src={src} className={styles.img} />
-  </div>
+export default function PreviewItem({ src, onRemove }: PreviewItemProps) {
+  return (
+    <div className={styles.root} onClick={onRemove}>
+      <img src={src} className={styles.img} />
+    </div>
+  )
 }

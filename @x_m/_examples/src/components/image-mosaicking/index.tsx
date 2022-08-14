@@ -8,20 +8,22 @@ export default function Component() {
   useWarnBeforeUnload()
   const store = useImageMosaickingStore((state) => state)
 
-  return <div className={styles.root}>
-    <input
-      type='file'
-      multiple
-      accept='image/*'
-      onInput={(e) => {
-        const target = e.target as HTMLInputElement
-        if (target.files) {
-          store.push(...target.files)
-        }
-      }}
-    />
-    <div className={styles.previewGroup}>
-      <PreviewGroup />
+  return (
+    <div className={styles.root}>
+      <input
+        type='file'
+        multiple
+        accept='image/*'
+        onInput={(e) => {
+          const target = e.target as HTMLInputElement
+          if (target.files) {
+            store.push(...target.files)
+          }
+        }}
+      />
+      <div className={styles.previewGroup}>
+        <PreviewGroup />
+      </div>
     </div>
-  </div>
+  )
 }

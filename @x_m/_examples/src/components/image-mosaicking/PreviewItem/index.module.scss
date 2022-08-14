@@ -7,7 +7,7 @@ $size: 100px;
   height: $size;
   margin-right: 16px;
   overflow: hidden;
-  transition: all .5s;
+  transition: all 0.5s;
   background-color: #eee;
 
   &.isRemoved {
