@@ -1,0 +1,20 @@
+.root {
+  padding: 16px;
+  white-space: nowrap;
+  overflow: auto;
+}
+
+.previewItem-enter {
+  opacity: 0;
+}
+.previewItem-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.previewItem-exit {
+  opacity: 1;
+}
+.previewItem-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
+}

@@ -1,21 +1,32 @@
-import w from "@babel/runtime-corejs3/helpers/slicedToArray";
-import { useRef as o, useState as R, useEffect as f } from "react";
-import A from "lodash/noop";
-function q(e, r) {
-  var n, m = o(r ? void 0 : e(performance.now())), v = R(m.current), a = w(v, 2), d = a[0], l = a[1], i = o(e), t = (n = r == null ? void 0 : r.enable) !== null && n !== void 0 ? n : !0;
-  return f(function() {
+import p from "@babel/runtime-corejs3/helpers/slicedToArray";
+import { useRef as f, useState as b, useEffect as u } from "react";
+import R from "lodash/noop";
+function B(e, r) {
+  var n, d = f(r ? void 0 : e(performance.now())), l = b(d.current), a = p(l, 2), v = a[0], m = a[1], i = f(e), o = (n = r == null ? void 0 : r.enable) !== null && n !== void 0 ? n : !0;
+  return u(function() {
     i.current = e;
-  }, [e]), f(function() {
-    if (!t)
-      return A;
-    var u = -1, s = function c(p) {
-      !t || (l(i.current(p)), u = window.requestAnimationFrame(c));
+  }, [e]), u(function() {
+    if (!o)
+      return R;
+    var t = -1, c = function s(w) {
+      !o || (m(i.current(w)), t = window.requestAnimationFrame(s));
     };
-    return u = window.requestAnimationFrame(s), function() {
-      window.cancelAnimationFrame(u);
+    return t = window.requestAnimationFrame(c), function() {
+      window.cancelAnimationFrame(t);
     };
-  }, [t]), d;
+  }, [o]), v;
+}
+function E() {
+  u(function() {
+    var e = function(n) {
+      return n.preventDefault(), n.returnValue = "before unload", "before unload";
+    };
+    return window.addEventListener("beforeunload", e), function() {
+      window.removeEventListener("beforeunload", e);
+    };
+  }, []);
 }
 export {
-  q as useRafLoop
+  B as useRafLoop,
+  E as useWarnBeforeUnload
 };

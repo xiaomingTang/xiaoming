@@ -12,7 +12,7 @@
   left: 50%;
   top: 50%;
   background-color: #ddd;
-  background-image: url(../../assets/lenna.png);
+  background-image: url(../../assets/lenna.jpg);
   background-size: cover;
   cursor: grab;
 }
