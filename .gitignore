@@ -7,3 +7,4 @@
 storybook-static/
 @x_m/_examples/dist
 .vscode/
+/.local/
