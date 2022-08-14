@@ -20,7 +20,9 @@ ReactDOM.createRoot(document.querySelector('#root') as HTMLElement).render(
       },
       {
         route: 'PrizeWheel',
-        component: <Suspensed loader={() => import('./components/prize-wheel')} />,
+        component: (
+          <Suspensed loader={() => import('./components/prize-wheel')} />
+        ),
       },
     ]}
   />

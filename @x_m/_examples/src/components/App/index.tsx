@@ -3,49 +3,55 @@ import styles from './index.module.css'
 
 interface ComponentRouteProps {
   route: string
-  description?: string;
+  description?: string
   component: React.ReactNode
   link?: never
 }
 
 interface LinkRouteProps {
   route: string
-  description?: string;
+  description?: string
   component?: never
   link: string
 }
 
 function isComponentRoute<T extends Record<string, any>>(
   props: T & (ComponentRouteProps | LinkRouteProps)
-): props is (T & ComponentRouteProps) {
+): props is T & ComponentRouteProps {
   return !!(props as ComponentRouteProps).component
 }
 
-function Route(props: (ComponentRouteProps | LinkRouteProps) & {
-  active?: boolean;
-  onClick?: () => void;
-}) {
+function Route(
+  props: (ComponentRouteProps | LinkRouteProps) & {
+    active?: boolean
+    onClick?: () => void
+  }
+) {
   if (isComponentRoute(props)) {
-    return <a
+    return (
+      <a
+        key={props.route}
+        title={props.description}
+        className={`${styles.menuItem} ${props.active ? styles.active : ''}`}
+        onClick={props.onClick}
+      >
+        {props.route}
+      </a>
+    )
+  }
+  return (
+    <a
       key={props.route}
       title={props.description}
       className={`${styles.menuItem} ${props.active ? styles.active : ''}`}
       onClick={props.onClick}
+      href={(props as LinkRouteProps).link}
+      target='_blank'
+      rel='noreferrer'
     >
       {props.route}
     </a>
-  }
-  return <a
-    key={props.route}
-    title={props.description}
-    className={`${styles.menuItem} ${props.active ? styles.active : ''}`}
-    onClick={props.onClick}
-    href={(props as LinkRouteProps).link}
-    target='_blank'
-    rel='noreferrer'
-  >
-    {props.route}
-  </a>
+  )
 }
 
 export function App({
@@ -53,12 +59,15 @@ export function App({
 }: {
   routes: (ComponentRouteProps | LinkRouteProps)[]
 }) {
-  const [route, setRoute] = useState(() => (
-    new URL(window.location.href).searchParams.get('route')
-  ))
-  const componentRoutes = useMemo(() => (
-    routes.filter((item) => !!(item as ComponentRouteProps).component) as ComponentRouteProps[]
-  ), [routes])
+  const [route, setRoute] = useState(() =>
+    new URL(window.location.href).searchParams.get('route'))
+  const componentRoutes = useMemo(
+    () =>
+      routes.filter(
+        (item) => !!(item as ComponentRouteProps).component
+      ) as ComponentRouteProps[],
+    [routes]
+  )
 
   const curComponentRoute = useMemo(
     () =>

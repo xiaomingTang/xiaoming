@@ -13,19 +13,19 @@ function Fallback() {
     }
   }, [])
 
-  return <>
-    {fallback}
-  </>
+  return <>{fallback}</>
 }
 
 export default function Suspensed({
   loader,
 }: {
-  loader: Parameters<typeof React.lazy>[0],
+  loader: Parameters<typeof React.lazy>[0]
 }) {
   const Component = React.lazy(loader)
 
-  return <React.Suspense fallback={<Fallback />}>
-    <Component />
-  </React.Suspense>
+  return (
+    <React.Suspense fallback={<Fallback />}>
+      <Component />
+    </React.Suspense>
+  )
 }
