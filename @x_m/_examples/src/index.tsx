@@ -7,19 +7,28 @@ ReactDOM.createRoot(document.querySelector('#root') as HTMLElement).render(
   <App
     routes={[
       {
-        route: 'Open in github',
+        route: 'open in github',
+        description: 'xiaoming 的 github',
         link: 'https://github.com/xiaomingTang/xiaoming',
       },
       {
-        route: 'Clock',
+        route: 'clock',
+        description: '模拟实体时钟',
         component: <Suspensed loader={() => import('./components/clock')} />,
       },
       {
-        route: 'Interact',
+        route: 'interact',
+        description: '用户交互: 拖拽、缩放、旋转',
         component: <Suspensed loader={() => import('./components/interact')} />,
       },
       {
-        route: 'PrizeWheel',
+        route: 'image-mosaicking',
+        description: '图片拼接',
+        component: <Suspensed loader={() => import('./components/image-mosaicking')} />,
+      },
+      {
+        route: 'prize-wheel',
+        description: '幸运大转盘',
         component: (
           <Suspensed loader={() => import('./components/prize-wheel')} />
         ),
