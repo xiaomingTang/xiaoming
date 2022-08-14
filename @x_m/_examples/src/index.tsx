@@ -1,24 +1,26 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { App } from './components/App'
-import Clock from './components/clock'
-import PrizeWheel from './components/prize-wheel'
-import Interact from './components/interact'
+import Suspensed from './utils/Suspensed'
 
 ReactDOM.createRoot(document.querySelector('#root') as HTMLElement).render(
   <App
     routes={[
       {
-        name: 'Clock',
-        value: <Clock />,
+        route: 'Open in github',
+        link: 'https://github.com/xiaomingTang/xiaoming',
       },
       {
-        name: 'PrizeWheel',
-        value: <PrizeWheel />,
+        route: 'Clock',
+        component: <Suspensed loader={() => import('./components/clock')} />,
       },
       {
-        name: 'Interact',
-        value: <Interact />,
+        route: 'Interact',
+        component: <Suspensed loader={() => import('./components/interact')} />,
+      },
+      {
+        route: 'PrizeWheel',
+        component: <Suspensed loader={() => import('./components/prize-wheel')} />,
       },
     ]}
   />
