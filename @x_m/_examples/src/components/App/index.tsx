@@ -15,6 +15,7 @@ interface LinkRouteProps {
   link: string
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function isComponentRoute<T extends Record<string, any>>(
   props: T & (ComponentRouteProps | LinkRouteProps)
 ): props is T & ComponentRouteProps {
