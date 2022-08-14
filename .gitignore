@@ -6,3 +6,4 @@
 **/yarn-error.log
 storybook-static/
 @x_m/_examples/dist
+.vscode/
