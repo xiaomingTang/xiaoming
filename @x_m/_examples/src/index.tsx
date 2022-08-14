@@ -24,7 +24,9 @@ ReactDOM.createRoot(document.querySelector('#root') as HTMLElement).render(
       {
         route: 'image-mosaicking',
         description: '图片拼接',
-        component: <Suspensed loader={() => import('./components/image-mosaicking')} />,
+        component: (
+          <Suspensed loader={() => import('./components/image-mosaicking')} />
+        ),
       },
       {
         route: 'prize-wheel',
