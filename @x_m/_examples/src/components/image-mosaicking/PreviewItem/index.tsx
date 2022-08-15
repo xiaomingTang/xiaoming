@@ -21,7 +21,7 @@ export default function PreviewItem({
     <div className={cln(className, styles.root)}>
       <img src={src} className={styles.img} />
       <IconButton
-        color="primary"
+        color='primary'
         className={styles.remove}
         onClick={onRemove}
         component='button'

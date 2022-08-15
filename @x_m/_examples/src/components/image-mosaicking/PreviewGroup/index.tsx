@@ -19,21 +19,13 @@ const classNames: CSSTransitionClassNames = {
   exitDone: styles['previewItem-exit-done'],
 }
 
-export default function PreviewGroup({
-  className,
-}: {
-  className?: string
-}) {
+export default function PreviewGroup({ className }: { className?: string }) {
   const store = useImageMosaickingStore()
 
   return (
     <div className={cln(className, styles.root)}>
       <TransitionGroup className={styles.previewList}>
-        <CSSTransition
-          key='upload'
-          timeout={500}
-          classNames={classNames}
-        >
+        <CSSTransition key='upload' timeout={500} classNames={classNames}>
           <Box
             sx={{
               display: 'inline-block',
@@ -47,8 +39,8 @@ export default function PreviewGroup({
                 height: 100,
               }}
               variant='contained'
-              component="label"
-              aria-label="upload picture"
+              component='label'
+              aria-label='upload picture'
             >
               upload
               <input
