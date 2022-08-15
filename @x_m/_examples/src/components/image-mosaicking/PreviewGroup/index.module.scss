@@ -1,7 +1,15 @@
 .root {
-  padding: 16px;
   white-space: nowrap;
   overflow: auto;
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+}
+
+.previewItem {
+  margin-right: 16px;
 }
 
 .previewItem-enter {
