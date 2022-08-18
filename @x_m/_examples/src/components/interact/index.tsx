@@ -41,6 +41,7 @@ export default function Component() {
       <p>- 支持拖拽</p>
       <p>- 支持缩放(鼠标滚轮 或 双指缩合)</p>
       <p>- 支持旋转(shift + 鼠标滚轮 或 双指转动)</p>
+      <p>- resize 不会影响正常操作</p>
     </>
   )
 }

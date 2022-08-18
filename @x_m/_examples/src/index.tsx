@@ -23,7 +23,7 @@ ReactDOM.createRoot(document.querySelector('#root') as HTMLElement).render(
       },
       {
         route: 'image-mosaicking',
-        description: '图片拼接',
+        description: '图片拼接(施工中...)',
         component: (
           <Suspensed loader={() => import('./components/image-mosaicking')} />
         ),
