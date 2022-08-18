@@ -1,15 +1,15 @@
+$size: 100px;
+
 .root {
   white-space: nowrap;
-  overflow: auto;
-}
-
-.input {
-  width: 100%;
-  height: 100%;
+  height: $size;
+  overflow: auto hidden;
 }
 
 .previewItem {
-  margin-right: 16px;
+  width: $size;
+  height: $size;
+  margin-left: 12px;
 }
 
 .previewItem-enter {

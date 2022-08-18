@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { IconButton } from '@mui/material'
 import cln from 'classnames'
 import { Delete } from '@mui/icons-material'
+import noop from 'lodash/noop'
 import styles from './index.module.scss'
 
 export interface PreviewItemState {
-  src: string
+  image: HTMLImageElement
   onRemove: () => void
   className?: string
 }
@@ -13,13 +14,25 @@ export interface PreviewItemState {
 type PreviewItemProps = PreviewItemState
 
 export default function PreviewItem({
-  src,
+  image,
   onRemove,
   className,
 }: PreviewItemProps) {
+  const rootRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const root = rootRef.current
+    if (root && image) {
+      root.prepend(image)
+      return () => {
+        root.removeChild(image)
+      }
+    }
+    return noop
+  }, [image])
+
   return (
-    <div className={cln(className, styles.root)}>
-      <img src={src} className={styles.img} />
+    <div ref={rootRef} className={cln(className, styles.root)}>
       <IconButton
         color='primary'
         className={styles.remove}

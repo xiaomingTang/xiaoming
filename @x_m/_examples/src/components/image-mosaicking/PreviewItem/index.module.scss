@@ -1,11 +1,8 @@
-$size: 100px;
-
 .root {
   position: relative;
   display: inline-block;
-  width: $size;
-  height: $size;
   overflow: hidden;
+  border-radius: 4px;
   background-color: #eee;
 
   .remove {
@@ -13,11 +10,11 @@ $size: 100px;
     right: 0;
     top: 0;
   }
-}
 
-.img {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  img {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 }
