@@ -35,11 +35,14 @@ const defaultRect: DOMRect = {
  * }
  * ```
  */
-export function useElementRect(element?: React.RefObject<HTMLElement> | HTMLElement | null) {
+export function useElementRect(
+  element?: React.RefObject<HTMLElement> | HTMLElement | null
+) {
   const [rect, setRect] = useState(defaultRect)
 
   useEffect(() => {
-    const finalElement = element instanceof HTMLElement ? element : element?.current
+    const finalElement =
+      element instanceof HTMLElement ? element : element?.current
     if (finalElement) {
       const resetRect = () => {
         setRect(finalElement.getBoundingClientRect())
