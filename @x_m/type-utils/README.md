@@ -14,7 +14,7 @@ yarn add @x_m/type-utils
 
 ---
 
-#### PickOneOf
+#### PickOneOf [_↑_](#examples)
 from: [https://dev.to/maxime1992/implement-a-generic-oneof-type-with-typescript-22em](https://dev.to/maxime1992/implement-a-generic-oneof-type-with-typescript-22em)
 
 ``` typescript
@@ -42,7 +42,7 @@ interface Group {
 type PickOneOfGroup = PickOneOf<Group>
 ```
 
-#### StructAs
+#### StructAs [_↑_](#examples)
 
 ``` typescript
 
