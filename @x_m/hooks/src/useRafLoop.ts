@@ -20,10 +20,7 @@ export function useRafLoop<T>(
   const [result, setResult] = useState<T | undefined>(initialValueRef.current)
   const callbackRef = useRef(callback)
   const enable = options?.enable ?? true
-
-  useEffect(() => {
-    callbackRef.current = callback
-  }, [callback])
+  callbackRef.current = callback
 
   useEffect(() => {
     if (!enable) {
@@ -31,9 +28,6 @@ export function useRafLoop<T>(
     }
     let rafFlag = -1
     const update = (timestamp: number) => {
-      if (!enable) {
-        return
-      }
       setResult(callbackRef.current(timestamp))
       rafFlag = window.requestAnimationFrame(update)
     }

@@ -1,6 +1,6 @@
 import s from "@babel/runtime-corejs3/helpers/slicedToArray";
-import { useState as m, useEffect as u, useRef as l } from "react";
-import b from "lodash/omit";
+import { useState as m, useEffect as f, useRef as v } from "react";
+import S from "lodash/omit";
 import w from "lodash/noop";
 var p = {
   height: 0,
@@ -12,41 +12,39 @@ var p = {
   right: 0,
   top: 0,
   toJSON: function() {
-    return b(p, "toJson");
+    return S(p, "toJson");
   }
 };
 function A(e) {
-  var t = m(p), n = s(t, 2), i = n[0], a = n[1];
-  return u(function() {
+  var t = m(p), n = s(t, 2), u = n[0], i = n[1];
+  return f(function() {
     var r = e instanceof HTMLElement ? e : e == null ? void 0 : e.current;
     if (r) {
       var o = function() {
-        a(r.getBoundingClientRect());
+        i(r.getBoundingClientRect());
       };
       return o(), window.addEventListener("resize", o), function() {
         window.removeEventListener("resize", o);
       };
     }
     return w;
-  }, [e]), i;
+  }, [e]), u;
 }
 function B(e, t) {
-  var n, i = l(t ? void 0 : e(performance.now())), a = m(i.current), r = s(a, 2), o = r[0], v = r[1], c = l(e), f = (n = t == null ? void 0 : t.enable) !== null && n !== void 0 ? n : !0;
-  return u(function() {
-    c.current = e;
-  }, [e]), u(function() {
-    if (!f)
+  var n, u = v(t ? void 0 : e(performance.now())), i = m(u.current), r = s(i, 2), o = r[0], d = r[1], c = v(e), l = (n = t == null ? void 0 : t.enable) !== null && n !== void 0 ? n : !0;
+  return c.current = e, f(function() {
+    if (!l)
       return w;
-    var d = -1, E = function R(S) {
-      !f || (v(c.current(S)), d = window.requestAnimationFrame(R));
+    var a = -1, E = function R(b) {
+      d(c.current(b)), a = window.requestAnimationFrame(R);
     };
-    return d = window.requestAnimationFrame(E), function() {
-      window.cancelAnimationFrame(d);
+    return a = window.requestAnimationFrame(E), function() {
+      window.cancelAnimationFrame(a);
     };
-  }, [f]), o;
+  }, [l]), o;
 }
 function F() {
-  u(function() {
+  f(function() {
     var e = function(n) {
       return n.preventDefault(), n.returnValue = "before unload", "before unload";
     };
