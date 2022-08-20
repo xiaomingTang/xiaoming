@@ -30,14 +30,19 @@ interface Options {
   easeStopDeg?: number
 }
 
-/**
- * 幸运大转盘 逻辑部分
- */
-export class PrizeWheel extends EventEmitter<{
+// 此处必须声明 type,
+// 如果是 interface, 就必须 extends event-emitter 中的 EventsOverview,
+// 而这会导致类型过泛, 不能被 event-emitter 中的 HandlersOf 识别
+export type PrizeWheelEventsOverview = {
   start: []
   running: []
   end: []
-}> {
+}
+
+/**
+ * 幸运大转盘 逻辑部分
+ */
+export class PrizeWheel extends EventEmitter<PrizeWheelEventsOverview> {
   private rawDeg = -1
 
   /**
@@ -87,10 +92,10 @@ export class PrizeWheel extends EventEmitter<{
 
   // 禁止外部设置 running 属性
   private set running(value: boolean) {
+    this.rawRunning = value
     if (value !== this.rawRunning) {
       this.emit(value ? 'start' : 'end')
     }
-    this.rawRunning = value
   }
 
   /**

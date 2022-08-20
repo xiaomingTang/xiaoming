@@ -73,7 +73,7 @@ var O = /* @__PURE__ */ function(a) {
       return this.rawRunning;
     },
     set: function(n) {
-      n !== this.rawRunning && this.emit(n ? "start" : "end"), this.rawRunning = n;
+      this.rawRunning = n, n !== this.rawRunning && this.emit(n ? "start" : "end");
     }
   }, {
     key: "run",
