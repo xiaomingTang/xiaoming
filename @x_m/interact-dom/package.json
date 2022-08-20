@@ -1,7 +1,7 @@
 {
   "name": "@x_m/interact-dom",
   "license": "MIT",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "author": "xiaomingTang",
   "description": "interact dom",
   "private": false,
@@ -18,8 +18,8 @@
     "build:watch": "vite build --watch"
   },
   "dependencies": {
-    "@x_m/event-emitter": "^0.1.5",
-    "@x_m/interact": "^0.1.7",
+    "@x_m/event-emitter": "^0.1.8",
+    "@x_m/interact": "^0.1.8",
     "gl-matrix": "^3.4.3"
   },
   "peerDependencies": {

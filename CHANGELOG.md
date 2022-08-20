@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.8](https://github.com/xiaomingTang/xiaoming/compare/v0.1.7...v0.1.8) (2022-08-20)
+
+
+### Features
+
+* 图片编辑器样式布局初步完成 ([c34f792](https://github.com/xiaomingTang/xiaoming/commit/c34f7922fbcfecef999cf063be088123a38d0c08))
+* 图片拼接页初始化 ([83b3704](https://github.com/xiaomingTang/xiaoming/commit/83b3704cd991af976a8076adfd6e17ce783ae86e))
+* 新增说明描述 ([a8a01cb](https://github.com/xiaomingTang/xiaoming/commit/a8a01cb36e316f68c0fc8e3655dc9862173dd00b))
+* 新增状态管理 ([2f7f65e](https://github.com/xiaomingTang/xiaoming/commit/2f7f65e57818483f91c35ba5dbb68f19cb70a72e))
+* add BUILT_IN_EMIT ([a44a069](https://github.com/xiaomingTang/xiaoming/commit/a44a069072ef6608325814b71559502e7bcf0d5c))
+* add BUILT_IN_EMIT ([0c77e04](https://github.com/xiaomingTang/xiaoming/commit/0c77e041a8200a13d8e6180ee3400c5ee50e4df7))
+* add useElementRect ([815d280](https://github.com/xiaomingTang/xiaoming/commit/815d280eeb94d6c1d27b784d991610eb50f4df08))
+* export PrizeWheelEventsOverview & set rawRunning earlier ([2033e92](https://github.com/xiaomingTang/xiaoming/commit/2033e92f22cf174aefc79e87389a444416a76bf1))
+* ignore dist & ignore lint of any ([92c3623](https://github.com/xiaomingTang/xiaoming/commit/92c362379b554ccd671bf89cbe3245c6519dcd4e))
+* init ([1acfd4e](https://github.com/xiaomingTang/xiaoming/commit/1acfd4e212f3fbe9f81fb700ef93a1d578cb70a3))
+* lazy component & rm dist ([bf6d7f2](https://github.com/xiaomingTang/xiaoming/commit/bf6d7f2dd7fb4b5bfc440cc2e1a5d643b507f96d))
+* prettier ([19be8ae](https://github.com/xiaomingTang/xiaoming/commit/19be8ae84c540c9a01b71b17518f3eb91fafc2da))
+* remove useless useEffect ([0b6f027](https://github.com/xiaomingTang/xiaoming/commit/0b6f027a965778e5d5221aa42f3ebb25d267e385))
+* try to use mui ([3263dd2](https://github.com/xiaomingTang/xiaoming/commit/3263dd28fec13203fbf228683ad6b2f5353253c1))
+
+
+
+
+
 ## [0.1.7](https://github.com/xiaomingTang/xiaoming/compare/v0.1.6...v0.1.7) (2022-08-13)
 
 

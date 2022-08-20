@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.8](https://github.com/xiaomingTang/xiaoming/compare/v0.1.7...v0.1.8) (2022-08-20)
+
+
+### Features
+
+* export PrizeWheelEventsOverview & set rawRunning earlier ([2033e92](https://github.com/xiaomingTang/xiaoming/commit/2033e92f22cf174aefc79e87389a444416a76bf1))
+
+
+
+
+
 ## 0.1.5 (2022-08-07)
 
 

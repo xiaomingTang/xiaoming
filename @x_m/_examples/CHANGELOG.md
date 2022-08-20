@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.8](https://github.com/xiaomingTang/xiaoming/compare/v0.1.7...v0.1.8) (2022-08-20)
+
+
+### Features
+
+* 图片编辑器样式布局初步完成 ([c34f792](https://github.com/xiaomingTang/xiaoming/commit/c34f7922fbcfecef999cf063be088123a38d0c08))
+* 图片拼接页初始化 ([83b3704](https://github.com/xiaomingTang/xiaoming/commit/83b3704cd991af976a8076adfd6e17ce783ae86e))
+* 新增说明描述 ([a8a01cb](https://github.com/xiaomingTang/xiaoming/commit/a8a01cb36e316f68c0fc8e3655dc9862173dd00b))
+* 新增状态管理 ([2f7f65e](https://github.com/xiaomingTang/xiaoming/commit/2f7f65e57818483f91c35ba5dbb68f19cb70a72e))
+* ignore dist & ignore lint of any ([92c3623](https://github.com/xiaomingTang/xiaoming/commit/92c362379b554ccd671bf89cbe3245c6519dcd4e))
+* lazy component & rm dist ([bf6d7f2](https://github.com/xiaomingTang/xiaoming/commit/bf6d7f2dd7fb4b5bfc440cc2e1a5d643b507f96d))
+* prettier ([19be8ae](https://github.com/xiaomingTang/xiaoming/commit/19be8ae84c540c9a01b71b17518f3eb91fafc2da))
+* try to use mui ([3263dd2](https://github.com/xiaomingTang/xiaoming/commit/3263dd28fec13203fbf228683ad6b2f5353253c1))
+
+
+
+
+
 ## [0.1.7](https://github.com/xiaomingTang/xiaoming/compare/v0.1.6...v0.1.7) (2022-08-13)
 
 
