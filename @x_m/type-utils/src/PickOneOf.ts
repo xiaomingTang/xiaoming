@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import type { AnyObj, ValueOf } from './Object'
-
 // https://dev.to/maxime1992/implement-a-generic-oneof-type-with-typescript-22em
+
+import type { AnyObj, ValueOf } from './Object'
 
 type PickByKeys<Obj extends AnyObj, Key extends keyof Obj> = Obj extends any
   ? {
