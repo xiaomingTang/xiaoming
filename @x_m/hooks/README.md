@@ -13,8 +13,7 @@ yarn add  @x_m/hooks
 
 ---
 
-#### useElementRect [_↑_](#examples)
-
+#### useElementRect
 ``` typescript
 
 function MyComponent() {
@@ -32,8 +31,9 @@ function MyComponent() {
 }
 
 ```
+[↑ examples ↑](#examples)
 
-#### useRafLoop [_↑_](#examples)
+#### useRafLoop
 
 ``` typescript react
 
@@ -65,8 +65,9 @@ function Component() {
 }
 
 ```
+[↑ examples ↑](#examples)
 
-#### useWarnBeforeUnload [_↑_](#examples)
+#### useWarnBeforeUnload
 
 ``` typescript
 
@@ -77,3 +78,4 @@ function Component() {
 }
 
 ```
+[↑ examples ↑](#examples)
