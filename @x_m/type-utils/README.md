@@ -9,8 +9,8 @@ yarn add @x_m/type-utils
 
 ### examples
 
-[PickOneOf](#PickOneOf)
-[StructAs](#StructAs)
+[PickOneOf](#PickOneOf)    
+[StructAs](#StructAs)    
 
 ---
 
