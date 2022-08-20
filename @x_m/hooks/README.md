@@ -5,7 +5,35 @@
 yarn add  @x_m/hooks
 ```
 
-### useRafLoop
+### examples
+
+[useElementRect](#useElementRect)
+[useRafLoop](#useRafLoop)
+[useWarnBeforeUnload](#useWarnBeforeUnload)
+
+---
+
+#### useElementRect
+
+``` typescript
+
+function MyComponent() {
+  const ref = useRef<HTMLElement>(null)
+  const rect = useElementRect(ref)
+}
+
+// or
+
+// out of component
+const element = document.querySelector('xxx')
+
+function MyComponent() {
+  const rect = useElementRect(element)
+}
+
+```
+
+#### useRafLoop
 
 ``` typescript react
 
@@ -21,7 +49,7 @@ function Component() {
   const [visibility, setVisibility] = useState(true)
 
   useRafLoop(() => {
-    console.log('rendering')
+    console.log('rendering...')
   }, {
     enable: visibility,
   })
@@ -34,6 +62,18 @@ function Component() {
       toggle visibility
     </button>
   </>
+}
+
+```
+
+#### useWarnBeforeUnload
+
+``` typescript
+
+function Component() {
+  // show a confirmation dialog before page unload (beforeunload event, NOT component unload)
+  // https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event
+  useWarnBeforeUnload()
 }
 
 ```
