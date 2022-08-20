@@ -24,7 +24,26 @@
     "build": "lerna run build",
     "build:watch": "lerna run build:watch",
     "lint": "eslint --fix @x_m",
-    "prettier": "prettier --write . --config .prettierrc.json"
+    "format": "prettier --write ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint && yarn lint-staged --quiet"
+    }
+  },
+  "lint-staged": {
+    "*.{md,json}": [
+      "prettier --write"
+    ],
+    "*.{js,jsx}": [
+      "prettier --write"
+    ],
+    "*.{css,scss}": [
+      "prettier --write"
+    ],
+    "*.{ts,tsx}": [
+      "prettier --parser=typescript --write"
+    ]
   },
   "dependencies": {
     "@babel/runtime-corejs3": "^7.18.9",
@@ -47,6 +66,8 @@
     "@vitejs/plugin-react": "^2.0.0",
     "eslint": "^8.21.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",

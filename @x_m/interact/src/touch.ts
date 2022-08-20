@@ -43,7 +43,8 @@ function centerOf(...posArr: Point[]): Point {
 
 export class TouchFormatter
   extends EventEmitter<InteractEvents>
-  implements Interact {
+  implements Interact
+{
   private element: HTMLElement | null = null
 
   private hasTouchStart = false

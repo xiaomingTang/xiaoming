@@ -78,9 +78,7 @@ export default class InteractDom extends EventEmitter<{
   }
 
   setOriginTranslateFromDomRect(domRect: DOMRect) {
-    const {
-      x, y, width, height
-    } = domRect
+    const { x, y, width, height } = domRect
     this.originTranslate = {
       x: x + width / 2,
       y: y + height / 2,
@@ -91,9 +89,7 @@ export default class InteractDom extends EventEmitter<{
     const savedTransform = element.style.transform
     // eslint-disable-next-line no-param-reassign
     element.style.transform = ''
-    const {
-      x, y, width, height
-    } = element.getBoundingClientRect()
+    const { x, y, width, height } = element.getBoundingClientRect()
     this.originTranslate = {
       x: x + width / 2,
       y: y + height / 2,

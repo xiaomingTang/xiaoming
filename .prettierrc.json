@@ -1,7 +1,17 @@
 {
+  "$schema": "https://json.schemastore.org/prettierrc",
   "trailingComma": "es5",
   "tabWidth": 2,
   "semi": false,
   "singleQuote": true,
-  "jsxSingleQuote": true
+  "jsxSingleQuote": true,
+  "arrowParens": "always",
+  "overrides": [
+    {
+      "files": "*.ts",
+      "options": {
+        "parser": "typescript"
+      }
+    }
+  ]
 }

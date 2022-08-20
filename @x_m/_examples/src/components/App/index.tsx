@@ -61,7 +61,8 @@ export function App({
   routes: (ComponentRouteProps | LinkRouteProps)[]
 }) {
   const [route, setRoute] = useState(() =>
-    new URL(window.location.href).searchParams.get('route'))
+    new URL(window.location.href).searchParams.get('route')
+  )
   const componentRoutes = useMemo(
     () =>
       routes.filter(
@@ -72,12 +73,12 @@ export function App({
 
   const curComponentRoute = useMemo(
     () =>
-      (!route
+      !route
         ? componentRoutes[0]
         : componentRoutes.find((item) => item.route === route) ?? {
-          route: 'NOT FOUND',
-          component: 'NOT FOUND',
-        }),
+            route: 'NOT FOUND',
+            component: 'NOT FOUND',
+          },
     [componentRoutes, route]
   )
 

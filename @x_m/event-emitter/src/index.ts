@@ -1,4 +1,4 @@
-import { StructAs } from '@x_m/type-utils/src/StructAs'
+import type { StructAs } from '@x_m/type-utils'
 
 interface AddListenerOptions {
   /**

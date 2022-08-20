@@ -63,7 +63,8 @@ interface MouseFormatterProps {
 
 export class MouseFormatter
   extends EventEmitter<InteractEvents>
-  implements Interact {
+  implements Interact
+{
   private element: HTMLElement | null = null
 
   private isMoving = false
