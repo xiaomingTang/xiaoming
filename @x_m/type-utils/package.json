@@ -1,0 +1,20 @@
+{
+  "name": "@x_m/type-utils",
+  "license": "MIT",
+  "version": "0.1.7",
+  "author": "xiaomingTang",
+  "description": "type utils",
+  "private": false,
+  "main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.es.d.ts",
+  "repository": "https://github.com/xiaomingTang/xiaoming/tree/master/%40x_m/type-utils",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "build:watch": "vite build --watch"
+  }
+}
