@@ -1,23 +1,23 @@
 import c from "@babel/runtime-corejs3/helpers/classCallCheck";
-import p from "@babel/runtime-corejs3/helpers/createClass";
-import v from "@babel/runtime-corejs3/helpers/defineProperty";
+import v from "@babel/runtime-corejs3/helpers/createClass";
+import o from "@babel/runtime-corejs3/helpers/defineProperty";
 import h from "@babel/runtime-corejs3/core-js-stable/instance/find-index";
-import o from "@babel/runtime-corejs3/core-js-stable/instance/filter";
-var b = /* @__PURE__ */ function() {
-  function a() {
-    c(this, a), v(this, "eventsMap", {});
+import f from "@babel/runtime-corejs3/core-js-stable/instance/filter";
+var E = /* @__PURE__ */ function() {
+  function l() {
+    c(this, l), o(this, "eventsMap", {});
   }
-  return p(a, [{
+  return v(l, [{
     key: "addListener",
     value: function(t, e, s) {
-      var i;
+      var r;
       this.eventsMap[t] || (this.eventsMap[t] = []);
-      var n = (i = s == null ? void 0 : s.times) !== null && i !== void 0 ? i : 1 / 0, r = this.eventsMap[t], f = h(r).call(r, function(u) {
+      var a = (r = s == null ? void 0 : s.times) !== null && r !== void 0 ? r : 1 / 0, n = this.eventsMap[t], i = h(n).call(n, function(u) {
         return u.callback === e;
       });
-      return f >= 0 ? r[f].times = n : r.push({
+      return i >= 0 ? n[i].times = a : n.push({
         callback: e,
-        times: n
+        times: a
       }), this;
     }
   }, {
@@ -26,8 +26,8 @@ var b = /* @__PURE__ */ function() {
       if (this.eventsMap[t])
         if (e) {
           var s;
-          this.eventsMap[t] = o(s = this.eventsMap[t]).call(s, function(i) {
-            return i.callback !== e;
+          this.eventsMap[t] = f(s = this.eventsMap[t]).call(s, function(r) {
+            return r.callback !== e;
           });
         } else
           this.eventsMap[t] = [];
@@ -36,18 +36,27 @@ var b = /* @__PURE__ */ function() {
   }, {
     key: "emit",
     value: function(t) {
-      for (var e = arguments.length, s = new Array(e > 1 ? e - 1 : 0), i = 1; i < e; i++)
-        s[i - 1] = arguments[i];
+      for (var e = arguments.length, s = new Array(e > 1 ? e - 1 : 0), r = 1; r < e; r++)
+        s[r - 1] = arguments[r];
+      if (this.eventsMap.BUILT_IN_EMIT) {
+        var a;
+        this.eventsMap.BUILT_IN_EMIT = f(a = this.eventsMap.BUILT_IN_EMIT).call(a, function(i) {
+          return i.times > 0 && (i.callback({
+            type: t,
+            args: s
+          }), i.times -= 1), i.times > 0;
+        });
+      }
       if (this.eventsMap[t]) {
         var n;
-        this.eventsMap[t] = o(n = this.eventsMap[t]).call(n, function(r) {
-          return r.times > 0 && (r.callback.apply(r, s), r.times -= 1), r.times > 0;
+        this.eventsMap[t] = f(n = this.eventsMap[t]).call(n, function(i) {
+          return i.times > 0 && (i.callback.apply(i, s), i.times -= 1), i.times > 0;
         });
       }
       return this;
     }
-  }]), a;
+  }]), l;
 }();
 export {
-  b as default
+  E as default
 };

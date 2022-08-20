@@ -11,32 +11,52 @@ yarn add @x_m/event-emitter
 
 ``` typescript
 
-import EventEmitter from '@x_m/event-emitter'
-
 const eventBus = new EventEmitter<{
-  'eat': ['apple' |'peach', number];
+  'eat': ['apple' | 'peach', number];
   'touch': [string];
 }>()
 
 eventBus.addListener('eat', (food, count) => {
-  console.log(`I had eat ${count} ${food}`)
+  console.log(`[eat]: I had eat ${count} ${food}`)
 })
 
 eventBus.addListener('touch', (something) => {
-  console.log(`I'm touching ${something}`)
+  console.log(`[touch]: I'm touching ${something}`)
 }, {
-  // only triggered twice; Infinity if not specified
+  // only listen twice; Infinity if not specified
   times: 2,
 })
 
-// I had eat 2 apple
+eventBus.addListener('BUILT_IN_EMIT', ({ type, args }) => {
+  switch (type) {
+    case 'eat': {
+      const [food, count] = args
+      console.log(`[BUILT_IN_EMIT]: I had eat ${count} ${food}`)
+      break
+    }
+    case 'touch': {
+      const [something] = args
+      console.log(`[BUILT_IN_EMIT]: I'm touching ${something}`)
+      break
+    }
+    default:
+      break
+  }
+})
+
+console.log('\nwill eat 2 apple')
 eventBus.emit('eat', 'apple', 2)
 
-// I'm touching apple
+console.log('\nwill touch apple')
 eventBus.emit('touch', 'apple')
-// I'm touching peach
+
+console.log('\nwill touch peach')
 eventBus.emit('touch', 'peach')
-// NOT triggered, as it only triggered twice
+
+console.log(`
+will touch apple,
+but [touch] listener can NOT listen this,
+as it only listen twice`)
 eventBus.emit('touch', 'apple')
 
 ```
