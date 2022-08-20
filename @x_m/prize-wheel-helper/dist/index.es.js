@@ -1,26 +1,33 @@
-import s from "@babel/runtime-corejs3/helpers/slicedToArray";
-import { useState as d, useEffect as S } from "react";
-import L from "lodash/noop";
-function R(n) {
-  var f = d(-1), t = s(f, 2), g = t[0], m = t[1], c = d(!1), r = s(c, 2), v = r[0], e = r[1];
-  return S(function() {
-    if (!n)
-      return L;
-    var i = function() {
-      e(!0);
-    }, o = function() {
-      m(n.deg);
-    }, u = function() {
-      e(!1);
+import i from "@babel/runtime-corejs3/helpers/slicedToArray";
+import { useState as s, useEffect as d } from "react";
+import p from "lodash/noop";
+function T(e) {
+  var u = s(-1), t = i(u, 2), o = t[0], f = t[1], c = s(!1), r = i(c, 2), m = r[0], n = r[1];
+  return d(function() {
+    if (!e)
+      return p;
+    var a = function(_) {
+      var g = _.type;
+      switch (g) {
+        case "start":
+          n(!0);
+          break;
+        case "running":
+          f(e.deg);
+          break;
+        case "end":
+          n(!1);
+          break;
+      }
     };
-    return n.addListener("start", i), n.addListener("running", o), n.addListener("end", u), function() {
-      n.removeListener("start", i), n.removeListener("running", o), n.removeListener("end", u);
+    return e.addListener("BUILT_IN_EMIT", a), function() {
+      e.removeListener("BUILT_IN_EMIT", a);
     };
-  }, [n]), {
-    deg: g,
-    running: v
+  }, [e]), {
+    deg: o,
+    running: m
   };
 }
 export {
-  R as usePrizeWheelState
+  T as usePrizeWheelState
 };
