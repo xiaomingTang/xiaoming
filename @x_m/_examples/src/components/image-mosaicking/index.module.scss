@@ -9,6 +9,9 @@ $size: 100px;
 
 .imageManager {
   width: 100%;
+  // 有 flex-grow, 所以可以设置一个小一点的 height
+  // 需要为 canvas 设置 width & height, 所以必须要设置一个小一点的 height
+  height: 30%;
   flex: 1 1 auto;
   margin-bottom: 12px;
 }

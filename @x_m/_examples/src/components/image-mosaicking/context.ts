@@ -7,14 +7,24 @@ interface ImageMosaickingState {
   push: File[]['push']
 }
 
-// @TODO: 每次上传的 file 都是不一样的对象, 也就是说这个 Map 的 key 一直在变化, 目前该缓存未按预期工作
-// 需要找出一个方法使缓存生效(根据内容 hash?)
-// 如果找不出来, 就需要将该 Map 移除(因为现在起了负作用)
-export const fileMap: Map<File, HTMLImageElement> = new Map()
+/**
+ * @TODO
+ * 目前按照该方法来对用户上传的文件生成唯一 ID,
+ * 显然是不够准确的, 可能会重复, 待优化 ID 生成方案,
+ * 或者给用户选择的权利: 不鉴定唯一性, 每次上传均重新生成 url & image
+ */
+function geneFileKey(f: File): string {
+  return `${f.name}-${f.size}-${f.lastModified}-${f.type}-${f.webkitRelativePath}`
+}
+
+export const fileMap: Map<
+  ReturnType<typeof geneFileKey>,
+  HTMLImageElement
+> = new Map()
 
 function getImage(file: File): Promise<HTMLImageElement> {
   return new Promise((resolve, reject) => {
-    const cachedImage = fileMap.get(file)
+    const cachedImage = fileMap.get(geneFileKey(file))
     if (cachedImage) {
       resolve(cachedImage)
       return
@@ -23,11 +33,15 @@ function getImage(file: File): Promise<HTMLImageElement> {
     const url = URL.createObjectURL(file)
     image.onload = () => {
       URL.revokeObjectURL(url)
-      fileMap.set(file, image)
+      image.onload = null
+      image.onerror = null
+      fileMap.set(geneFileKey(file), image)
       resolve(image)
     }
     image.onerror = (err) => {
       URL.revokeObjectURL(url)
+      image.onload = null
+      image.onerror = null
       console.error(err)
       reject(new Error(`image load error: ${file.name}`))
     }
@@ -40,8 +54,11 @@ export const useImageMosaickingStore = create<ImageMosaickingState>(
     files: [],
     images: [],
     splice: (start: number, deleteCount: number, ...items: File[]) => {
-      const newFiles = [...get().files]
+      const newFiles: File[] = [...get().files]
       const result = newFiles.splice(start, deleteCount, ...items)
+      result.forEach((f) => {
+        fileMap.delete(geneFileKey(f))
+      })
       Promise.all(newFiles.map((f) => getImage(f)))
         .then((images) => {
           set({

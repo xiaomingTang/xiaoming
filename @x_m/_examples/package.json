@@ -15,6 +15,7 @@
     "@emotion/styled": "^11.10.0",
     "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.10.0",
+    "@x_m/event-emitter": "^0.1.8",
     "@x_m/hooks": "^0.1.8",
     "@x_m/interact": "^0.1.8",
     "@x_m/interact-dom": "^0.1.8",
