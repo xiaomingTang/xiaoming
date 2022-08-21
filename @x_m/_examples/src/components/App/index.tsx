@@ -25,29 +25,29 @@ function isComponentRoute<T extends Record<string, any>>(
 function Route(
   props: (ComponentRouteProps | LinkRouteProps) & {
     active?: boolean
-    onClick?: () => void
   }
 ) {
-  if (isComponentRoute(props)) {
-    return (
-      <a
-        key={props.route}
-        title={props.description}
-        className={`${styles.menuItem} ${props.active ? styles.active : ''}`}
-        onClick={props.onClick}
-      >
-        {props.route}
-      </a>
-    )
-  }
+  const isComponent = isComponentRoute(props)
+
+  const url = useMemo(() => {
+    if (props.active) {
+      return undefined
+    }
+    if (isComponent) {
+      const tempUrl = new URL(window.location.href)
+      tempUrl.searchParams.set('route', props.route)
+      return tempUrl.toString()
+    }
+    return props.link
+  }, [isComponent, props.active, props.link, props.route])
+
   return (
     <a
       key={props.route}
       title={props.description}
       className={`${styles.menuItem} ${props.active ? styles.active : ''}`}
-      onClick={props.onClick}
-      href={(props as LinkRouteProps).link}
-      target='_blank'
+      href={url}
+      target={isComponent ? '' : '_blank'}
       rel='noreferrer'
     >
       {props.route}
@@ -88,19 +88,7 @@ export function App({
     <div className={styles.root}>
       <aside className={styles.aside}>
         {routes.map((item) => (
-          <Route
-            key={item.route}
-            active={item.route === route}
-            onClick={() => {
-              if (isComponentRoute(item) && route !== item.route) {
-                const url = new URL(window.location.href)
-                url.searchParams.set('route', item.route)
-                // 直接跳转(而非组件切换), 以使 beforeunload 生效
-                window.location.replace(url)
-              }
-            }}
-            {...item}
-          />
+          <Route key={item.route} active={item.route === route} {...item} />
         ))}
       </aside>
       <main className={styles.main}>{curComponentRoute.component}</main>

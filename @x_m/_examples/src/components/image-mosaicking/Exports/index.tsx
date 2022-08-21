@@ -11,7 +11,7 @@ import {
 import { IosShare } from '@mui/icons-material'
 import styles from './index.module.scss'
 
-export default function Export({ className }: { className?: string }) {
+export default function Exports({ className }: { className?: string }) {
   const [panelVisible, setPanelVisible] = useState(false)
 
   return (
@@ -19,7 +19,7 @@ export default function Export({ className }: { className?: string }) {
       <IconButton
         color='primary'
         className={cln(className, styles.root)}
-        title='Export'
+        title='导出'
         onClick={() => setPanelVisible((prev) => !prev)}
         component='button'
         size='small'
@@ -33,15 +33,13 @@ export default function Export({ className }: { className?: string }) {
         fullWidth
         maxWidth='md'
       >
-        <DialogTitle id='alert-dialog-title'>export</DialogTitle>
+        <DialogTitle id='alert-dialog-title'>导出</DialogTitle>
         <DialogContent>导出选项</DialogContent>
         <DialogActions>
-          <Button onClick={() => setPanelVisible(false)}>取消</Button>
-          <Button
-            autoFocus
-            variant='contained'
-            onClick={() => setPanelVisible(false)}
-          >
+          <Button autoFocus onClick={() => setPanelVisible(false)}>
+            取消
+          </Button>
+          <Button variant='contained' onClick={() => setPanelVisible(false)}>
             确认
           </Button>
         </DialogActions>
