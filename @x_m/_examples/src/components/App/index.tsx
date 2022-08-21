@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import React, { useMemo } from 'react'
 import styles from './index.module.css'
 
 interface ComponentRouteProps {
@@ -60,9 +60,11 @@ export function App({
 }: {
   routes: (ComponentRouteProps | LinkRouteProps)[]
 }) {
-  const [route, setRoute] = useState(() =>
-    new URL(window.location.href).searchParams.get('route')
+  const route = useMemo(
+    () => new URL(window.location.href).searchParams.get('route'),
+    []
   )
+
   const componentRoutes = useMemo(
     () =>
       routes.filter(
@@ -90,15 +92,11 @@ export function App({
             key={item.route}
             active={item.route === route}
             onClick={() => {
-              if (isComponentRoute(item)) {
-                setRoute((prev) => {
-                  if (prev !== item.route) {
-                    const url = new URL(window.location.href)
-                    url.searchParams.set('route', item.route)
-                    window.history.replaceState(null, '', url.toString())
-                  }
-                  return item.route
-                })
+              if (isComponentRoute(item) && route !== item.route) {
+                const url = new URL(window.location.href)
+                url.searchParams.set('route', item.route)
+                // 直接跳转(而非组件切换), 以使 beforeunload 生效
+                window.location.replace(url)
               }
             }}
             {...item}
