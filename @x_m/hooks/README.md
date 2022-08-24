@@ -8,6 +8,7 @@ yarn add  @x_m/hooks
 ### examples
 
 [useElementRect](#useElementRect)    
+[useListen](#useListen)    
 [useRafLoop](#useRafLoop)    
 [useWarnBeforeUnload](#useWarnBeforeUnload)    
 
@@ -28,6 +29,21 @@ const element = document.querySelector('xxx')
 
 function MyComponent() {
   const rect = useElementRect(element)
+}
+
+```
+[↑ examples ↑](#examples)
+
+#### useListen
+``` typescript
+
+function Component() {
+  const [count, setCount] = useState(0)
+
+  // will be triggered when count changed
+  useListen(count, (prev, next) => {
+    console.log(prev, next)
+  })
 }
 
 ```

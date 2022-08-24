@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import omit from 'lodash/omit'
 import noop from 'lodash/noop'
+import throttle from 'lodash/throttle'
+import type { ThrottleSettings } from 'lodash'
 
 const defaultRect: DOMRect = {
   height: 0,
@@ -36,7 +38,17 @@ const defaultRect: DOMRect = {
  * ```
  */
 export function useElementRect(
-  element?: React.RefObject<HTMLElement> | HTMLElement | null
+  element?: React.RefObject<HTMLElement> | HTMLElement | null,
+  /**
+   * ms; default: 500
+   */
+  wait?: number,
+  /**
+   * options.trailing; default: true
+   *
+   * options.leading; default: false
+   */
+  options?: ThrottleSettings
 ) {
   const [rect, setRect] = useState(defaultRect)
 
@@ -44,9 +56,16 @@ export function useElementRect(
     const finalElement =
       element instanceof HTMLElement ? element : element?.current
     if (finalElement) {
-      const resetRect = () => {
-        setRect(finalElement.getBoundingClientRect())
-      }
+      const resetRect = throttle(
+        () => {
+          setRect(finalElement.getBoundingClientRect())
+        },
+        wait ?? 500,
+        {
+          trailing: options?.trailing ?? true,
+          leading: options?.leading ?? false,
+        }
+      )
       resetRect()
       window.addEventListener('resize', resetRect)
 
@@ -55,7 +74,7 @@ export function useElementRect(
       }
     }
     return noop
-  }, [element])
+  }, [element, wait, options?.leading, options?.trailing])
 
   return rect
 }

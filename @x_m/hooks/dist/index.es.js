@@ -1,8 +1,9 @@
-import s from "@babel/runtime-corejs3/helpers/slicedToArray";
-import { useState as m, useEffect as f, useRef as v } from "react";
-import S from "lodash/omit";
-import w from "lodash/noop";
-var p = {
+import m from "@babel/runtime-corejs3/helpers/slicedToArray";
+import { useState as w, useEffect as v, useRef as l } from "react";
+import L from "lodash/omit";
+import s from "lodash/noop";
+import S from "lodash/throttle";
+var E = {
   height: 0,
   width: 0,
   x: 0,
@@ -12,49 +13,59 @@ var p = {
   right: 0,
   top: 0,
   toJSON: function() {
-    return S(p, "toJson");
+    return L(E, "toJson");
   }
 };
-function A(e) {
-  var t = m(p), n = s(t, 2), u = n[0], i = n[1];
-  return f(function() {
-    var r = e instanceof HTMLElement ? e : e == null ? void 0 : e.current;
-    if (r) {
-      var o = function() {
-        i(r.getBoundingClientRect());
-      };
-      return o(), window.addEventListener("resize", o), function() {
-        window.removeEventListener("resize", o);
+function U(r, n, e) {
+  var u = w(E), a = m(u, 2), f = a[0], c = a[1];
+  return v(function() {
+    var d = r instanceof HTMLElement ? r : r == null ? void 0 : r.current;
+    if (d) {
+      var o, i, t = S(function() {
+        c(d.getBoundingClientRect());
+      }, n != null ? n : 500, {
+        trailing: (o = e == null ? void 0 : e.trailing) !== null && o !== void 0 ? o : !0,
+        leading: (i = e == null ? void 0 : e.leading) !== null && i !== void 0 ? i : !1
+      });
+      return t(), window.addEventListener("resize", t), function() {
+        window.removeEventListener("resize", t);
       };
     }
-    return w;
-  }, [e]), u;
+    return s;
+  }, [r, n, e == null ? void 0 : e.leading, e == null ? void 0 : e.trailing]), f;
 }
-function B(e, t) {
-  var n, u = v(t ? void 0 : e(performance.now())), i = m(u.current), r = s(i, 2), o = r[0], d = r[1], c = v(e), l = (n = t == null ? void 0 : t.enable) !== null && n !== void 0 ? n : !0;
-  return c.current = e, f(function() {
-    if (!l)
-      return w;
-    var a = -1, E = function R(b) {
-      d(c.current(b)), a = window.requestAnimationFrame(R);
-    };
-    return a = window.requestAnimationFrame(E), function() {
-      window.cancelAnimationFrame(a);
-    };
-  }, [l]), o;
+function q(r, n) {
+  var e = l(r), u = l(n);
+  u.current = n, v(function() {
+    u.current(r, e.current), e.current = r;
+  }, [r]);
 }
-function F() {
-  f(function() {
-    var e = function(n) {
-      return n.preventDefault(), n.returnValue = "before unload", "before unload";
+function x(r, n) {
+  var e, u = l(n ? void 0 : r(performance.now())), a = w(u.current), f = m(a, 2), c = f[0], d = f[1], o = l(r), i = (e = n == null ? void 0 : n.enable) !== null && e !== void 0 ? e : !0;
+  return o.current = r, v(function() {
+    if (!i)
+      return s;
+    var t = -1, R = function b(g) {
+      d(o.current(g)), t = window.requestAnimationFrame(b);
     };
-    return window.addEventListener("beforeunload", e), function() {
-      window.removeEventListener("beforeunload", e);
+    return t = window.requestAnimationFrame(R), function() {
+      window.cancelAnimationFrame(t);
+    };
+  }, [i]), c;
+}
+function y() {
+  v(function() {
+    var r = function(e) {
+      return e.preventDefault(), e.returnValue = "before unload", "before unload";
+    };
+    return window.addEventListener("beforeunload", r), function() {
+      window.removeEventListener("beforeunload", r);
     };
   }, []);
 }
 export {
-  A as useElementRect,
-  B as useRafLoop,
-  F as useWarnBeforeUnload
+  U as useElementRect,
+  q as useListen,
+  x as useRafLoop,
+  y as useWarnBeforeUnload
 };
