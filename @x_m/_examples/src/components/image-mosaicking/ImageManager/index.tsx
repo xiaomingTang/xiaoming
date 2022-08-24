@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import cln from 'classnames'
 import noop from 'lodash/noop'
-import { useElementRect } from '@x_m/hooks/src'
+import { useElementRect } from '@x_m/hooks'
 import styles from './index.module.scss'
 import { useImageMosaickingStore } from '../context'
 
@@ -23,7 +23,7 @@ export default function ImageManager({ className }: { className?: string }) {
       }
     }
     return noop
-  }, [images])
+  }, [images, rect])
 
   return (
     <canvas

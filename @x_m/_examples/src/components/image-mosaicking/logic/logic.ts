@@ -52,3 +52,18 @@ export class Shape {
     this.points = points
   }
 }
+
+export function createRectLayout() {
+  const points = [
+    new Point(0, 0),
+    new Point(0, 1),
+    new Point(1, 1),
+    new Point(1, 0),
+  ]
+  points.forEach((p) => {
+    // eslint-disable-next-line no-param-reassign
+    p.moveable = false
+  })
+  const shape = new Shape(points)
+  return shape
+}
