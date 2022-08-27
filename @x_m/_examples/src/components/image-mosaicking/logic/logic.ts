@@ -1,3 +1,5 @@
+// 可以使用 clip-path polygon 来处理
+
 /* eslint-disable max-classes-per-file */
 // import EventEmitter from "@x_m/event-emitter";
 
