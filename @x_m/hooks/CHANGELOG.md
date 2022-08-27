@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.9](https://github.com/xiaomingTang/xiaoming/compare/v0.1.8...v0.1.9) (2022-08-27)
+
+
+### Features
+
+* add throttle foruseElementRect & add useListen ([8b7b131](https://github.com/xiaomingTang/xiaoming/commit/8b7b1313307eeea8c89cbb285fd10c05750ab383))
+
+
+
+
+
 ## [0.1.8](https://github.com/xiaomingTang/xiaoming/compare/v0.1.7...v0.1.8) (2022-08-20)
 
 

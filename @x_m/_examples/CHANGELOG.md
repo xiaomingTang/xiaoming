@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.9](https://github.com/xiaomingTang/xiaoming/compare/v0.1.8...v0.1.9) (2022-08-27)
+
+
+### Features
+
+* 使 eslint 和 prettier 配合得更好 ([8d00fcc](https://github.com/xiaomingTang/xiaoming/commit/8d00fcc2b37e34c2d59e29936273aacb139fbe53))
+* 提高了键盘可访问性 ([1b2d3d1](https://github.com/xiaomingTang/xiaoming/commit/1b2d3d1da1653ea9db71803559ecee4ff9bdb086))
+* 新增图片 Map 存储唯一性鉴别 ([8532405](https://github.com/xiaomingTang/xiaoming/commit/8532405cf6aff0c6394cb0bb1f4369a080d0e82d))
+* 直接跳转(而非组件切换), 以使 beforeunload 生效 ([1755136](https://github.com/xiaomingTang/xiaoming/commit/1755136dd29e2af4ad960618e96f42c0c53d59ae))
+* createRectLayout ([60995ac](https://github.com/xiaomingTang/xiaoming/commit/60995acbc8d241574a4e810e08db6a619b8b21c6))
+* try to init Point, Line & Shape ([d288c5b](https://github.com/xiaomingTang/xiaoming/commit/d288c5b37639da13babfaae1e82b63a7d237944c))
+
+
+
+
+
 ## [0.1.8](https://github.com/xiaomingTang/xiaoming/compare/v0.1.7...v0.1.8) (2022-08-20)
 
 

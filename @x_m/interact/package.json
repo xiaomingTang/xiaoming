@@ -1,7 +1,7 @@
 {
   "name": "@x_m/interact",
   "license": "MIT",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "author": "xiaomingTang",
   "description": "interact",
   "private": false,
@@ -18,7 +18,7 @@
     "build:watch": "vite build --watch"
   },
   "dependencies": {
-    "@x_m/event-emitter": "^0.1.8",
+    "@x_m/event-emitter": "^0.1.9",
     "lodash": "^4.17.21"
   },
   "peerDependencies": {
