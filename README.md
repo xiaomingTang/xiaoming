@@ -23,3 +23,6 @@
 
 - [@x_m/type-utils](./@x_m/type-utils/README.md)
   - typescript 类型辅助函数
+
+- [@x_m/utils](./@x_m/utils/README.md)
+  - 一些常用功能函数
