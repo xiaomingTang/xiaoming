@@ -23,14 +23,10 @@ export default function PreviewGroup({ className }: { className?: string }) {
 
   return (
     <TransitionGroup className={cln(className, styles.root)}>
-      {store.files.map((item, idx) => (
-        <CSSTransition
-          key={`${item.name}-${item.size}-${item.lastModified}`}
-          timeout={500}
-          classNames={classNames}
-        >
+      {store.images.map((img, idx) => (
+        <CSSTransition key={img.src} timeout={500} classNames={classNames}>
           <PreviewItem
-            image={store.images[idx]}
+            image={img}
             className={styles.previewItem}
             onRemove={() => {
               store.splice(idx, 1)
