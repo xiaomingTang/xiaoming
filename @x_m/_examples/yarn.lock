@@ -294,50 +294,6 @@
   resolved "https://registry.npmjs.org/@types/scheduler/-/scheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
   integrity sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
 
-"@x_m/event-emitter@^0.1.5":
-  version "0.1.5"
-  resolved "https://registry.npmmirror.com/@x_m/event-emitter/-/event-emitter-0.1.5.tgz#349f7a0ec7dc82faf8fbf0bfe633fa47cd3c16bf"
-  integrity sha512-5tnQmnDKfUFjl0OCKYapVBQqYLkdi91XRxK98FlKB5APs1zvhZUtjGWlXLMYI1eYP4FMSYd3TpfRhK1TAM1Txw==
-
-"@x_m/hooks@^0.1.7":
-  version "0.1.7"
-  resolved "https://registry.npmmirror.com/@x_m/hooks/-/hooks-0.1.7.tgz#7cf5d24fff7c3025a6deec4ad448f7ace353fd00"
-  integrity sha512-sfNsTgRMwtQrigO0dpA3Cm07lY5FEZNCWsnFgUIagb46FPzF6Ndw3ZBzyLbMN3d6Xsc24gPOsJdrEzVsOmbg1Q==
-  dependencies:
-    lodash "^4.17.21"
-
-"@x_m/interact-dom@^0.1.7":
-  version "0.1.7"
-  resolved "https://registry.npmmirror.com/@x_m/interact-dom/-/interact-dom-0.1.7.tgz#0d4b9e2dc4a860f63ba7405292e83238cbfe4699"
-  integrity sha512-ZTfIh8DUJyV5FE+UIXzBA5r8ycHCxmf4sB4OhiGk+vntO6jAkBJZojtnxcIujNBztoDXNQs0pixHLbRBNwrc3w==
-  dependencies:
-    "@x_m/event-emitter" "^0.1.5"
-    "@x_m/interact" "^0.1.7"
-    gl-matrix "^3.4.3"
-
-"@x_m/interact@^0.1.7":
-  version "0.1.7"
-  resolved "https://registry.npmmirror.com/@x_m/interact/-/interact-0.1.7.tgz#6cf31eae4647fc743370d8569c69ff6d30b7580d"
-  integrity sha512-9rcOw7okk3s4wYHI138AlsGC4J2iupaf+F0cdwdKzdmQwCJS/+krzBPciaNUtrxj1mjMgI1M/uxHhINrgxNvYA==
-  dependencies:
-    "@x_m/event-emitter" "^0.1.5"
-    lodash "^4.17.21"
-
-"@x_m/prize-wheel-helper@^0.1.5":
-  version "0.1.5"
-  resolved "https://registry.npmmirror.com/@x_m/prize-wheel-helper/-/prize-wheel-helper-0.1.5.tgz#23d0c4a8e9b7cfb5bc5b7a785aa3665ab12877f2"
-  integrity sha512-QRR+zSVKHaaXn6xm+cJMlVxNlyQlGlhzSbu5Z6Oy+/RP+55DJh4wuwkDuZg8XqmALx8ziZajbezIoeQ8HlqLqA==
-  dependencies:
-    lodash "^4.17.21"
-
-"@x_m/prize-wheel@^0.1.5":
-  version "0.1.5"
-  resolved "https://registry.npmmirror.com/@x_m/prize-wheel/-/prize-wheel-0.1.5.tgz#d56e80bc5af2b5d43543cb6afdef2f56da2b0c8d"
-  integrity sha512-NG/WilHDv6Z6EOYuG2Sk0AuymBCRH2hXWdSBU74aMzgU0BviYkXJWhm5ICYSRG+wzz4zq+JTMZnKjaBPsz920A==
-  dependencies:
-    "@x_m/event-emitter" "^0.1.5"
-    lodash "^4.17.21"
-
 ansi-styles@^3.2.1:
   version "3.2.1"
   resolved "https://registry.npmmirror.com/ansi-styles/-/ansi-styles-3.2.1.tgz#41fbb20243e50b12be0f04b8dedbf07520ce841d"
@@ -408,7 +364,7 @@ classnames@^2.3.1:
   resolved "https://registry.npmjs.org/classnames/-/classnames-2.3.1.tgz#dfcfa3891e306ec1dad105d0e88f4417b8535e8e"
   integrity sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==
 
-clsx@^1.2.1:
+clsx@^1.1.1, clsx@^1.2.1:
   version "1.2.1"
   resolved "https://registry.npmmirror.com/clsx/-/clsx-1.2.1.tgz#0ddc4a20a549b59c93a4116bb26f5294ca17dc12"
   integrity sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==
@@ -494,11 +450,6 @@ function-bind@^1.1.1:
   version "1.1.1"
   resolved "https://registry.npmmirror.com/function-bind/-/function-bind-1.1.1.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"
   integrity sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==
-
-gl-matrix@^3.4.3:
-  version "3.4.3"
-  resolved "https://registry.npmmirror.com/gl-matrix/-/gl-matrix-3.4.3.tgz#fc1191e8320009fd4d20e9339595c6041ddc22c9"
-  integrity sha512-wcCp8vu8FT22BnvKVPjXa/ICBWRq/zjFfdofZy1WSpQZpphblv12/bOQLBC1rMM7SGOFS9ltVmKOHil5+Ml7gA==
 
 glob-parent@~5.1.2:
   version "5.1.2"
@@ -662,6 +613,13 @@ react-is@^18.2.0:
   version "18.2.0"
   resolved "https://registry.npmmirror.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
+
+react-toastify@^9.0.8:
+  version "9.0.8"
+  resolved "https://registry.npmmirror.com/react-toastify/-/react-toastify-9.0.8.tgz#3876c89fc6211a29027b3075010b5ec39ebe4f7e"
+  integrity sha512-EwM+teWt49HSHx+67qI08yLAW1zAsBxCXLCsUfxHYv1W7/R3ZLhrqKalh7j+kjgPna1h5LQMSMwns4tB4ww2yQ==
+  dependencies:
+    clsx "^1.1.1"
 
 react-transition-group@^4.4.5:
   version "4.4.5"

@@ -1,57 +1,59 @@
 import create from 'zustand'
-import {
-  deduplicateFiles,
-  fileMap,
-  geneFileKey,
-  geneImage,
-} from '../../utils/file'
+import { Uploader } from './Upload/Uploader'
+
+function deduplicate(list: HTMLImageElement[]) {
+  const map = {} as {
+    [key in string]: HTMLImageElement
+  }
+  const newList: HTMLImageElement[] = []
+  list.forEach((img) => {
+    if (!map[img.src]) {
+      newList.push(img)
+      map[img.src] = img
+    }
+  })
+  return newList
+}
 
 interface ImageMosaickingState {
-  files: File[]
   images: HTMLImageElement[]
-  splice: (start: number, deleteCount: number, ...items: File[]) => File[]
-  push: File[]['push']
+  splice: (
+    start: number,
+    deleteCount: number,
+    ...items: HTMLImageElement[]
+  ) => HTMLImageElement[]
+  push: HTMLImageElement[]['push']
 }
 
 export const useImageMosaickingStore = create<ImageMosaickingState>(
   (set, get) => ({
-    files: [],
     images: [],
-    splice: (start: number, deleteCount: number, ...items: File[]) => {
-      let newFiles: File[] = [...get().files]
-      const result = newFiles.splice(start, deleteCount, ...items)
-      result.forEach((f) => {
-        fileMap.delete(geneFileKey(f))
-      })
-      newFiles = deduplicateFiles(newFiles)
-      Promise.all(newFiles.map((f) => geneImage(f)))
-        .then((images) => {
-          set({
-            files: newFiles,
-            images,
+    splice: (
+      start: number,
+      deleteCount: number,
+      ...items: HTMLImageElement[]
+    ) => {
+      const newImages: HTMLImageElement[] = [...get().images]
+      const result = newImages.splice(start, deleteCount, ...items)
+      result.forEach((img) => {
+        // 仅删除不在新增列表中的 img
+        if (items.every((item) => item.src !== img.src)) {
+          Uploader.delete({
+            src: img.src,
           })
-        })
-        .catch(() => {
-          // eslint-disable-next-line no-alert
-          alert('image load error, open console to get more')
-        })
+        }
+      })
+      set({
+        images: deduplicate(newImages),
+      })
       return result
     },
-    push: (...files) => {
-      let newFiles = [...get().files]
-      const result = newFiles.push(...files)
-      newFiles = deduplicateFiles(newFiles)
-      Promise.all(newFiles.map((f) => geneImage(f)))
-        .then((images) => {
-          set({
-            files: newFiles,
-            images,
-          })
-        })
-        .catch(() => {
-          // eslint-disable-next-line no-alert
-          alert('image load error, open console to get more')
-        })
+    push: (...images) => {
+      const newImages: HTMLImageElement[] = [...get().images]
+      const result = newImages.push(...images)
+      set({
+        images: deduplicate(newImages),
+      })
       return result
     },
   })

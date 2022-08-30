@@ -1,4 +1,6 @@
 import React, { useMemo } from 'react'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import styles from './index.module.css'
 
 interface ComponentRouteProps {
@@ -92,6 +94,7 @@ export function App({
         ))}
       </aside>
       <main className={styles.main}>{curComponentRoute.component}</main>
+      <ToastContainer />
     </div>
   )
 }
