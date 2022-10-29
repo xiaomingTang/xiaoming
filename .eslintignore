@@ -3,3 +3,5 @@
 **/*.stories.tsx
 **/vite.config.ts
 **/vite.example-config.ts
+@x_m/_home/.next
+@x_m/_home/out

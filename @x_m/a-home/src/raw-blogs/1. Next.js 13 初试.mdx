@@ -1,0 +1,29 @@
+export const tags = [
+  'test', 'monkey',
+]
+
+# 1. Next.js 13 初试
+
+### TL;NR: 使用起来**心智负担极重**
+> - 错误提示不够友好, 错误定位只能靠猜
+> - `Client Component` & `Server Component` 在运行时区分得非常严格, 但在类型(智能提示)上几乎没有提示, 全靠使用者自觉, 过于依赖使用者的个人能力
+>     - 我之所以用 `ts`, 就是因为我傻, 我能力不够: 普通 `ts` 项目中, `api` 用错了, 编译器会提示我, 但 `Next.js 13` 却要求我自己承担一部分原本属于编译器的工作
+
+### 需要注意的点:
+
+- `app` 目录暂不支持 `next export`
+    - [https://beta.nextjs.org/docs/app-directory-roadmap](https://beta.nextjs.org/docs/app-directory-roadmap)
+
+- `fetch` 方法在 `Client Component` 不可用
+    - [fetch is currently not supported in Client Components and may trigger multiple re-renders.](https://beta.nextjs.org/docs/data-fetching/fetching#example-fetch-and-use-in-client-components)
+    - 经过我的实际使用, 不止 `fetch` 方法, `use` 方法也会导致同样的后果
+
+- `next/navigation` `redirect` 方法会在浏览器上打印一个很长的*错误*, 一定程度上干扰开发
+    - 我承认 `redirect` 方法本来就是通过抛出错误, 来中断当前流程, 并跳转到其他页面, 但是感觉可以在框架内部处理, 不必要打印一长串的*错误*, 或者让错误提示更友好些(短些)
+
+- `Link` 组件 `href` 不能含有 `ISO-8859-1` 以外的字符, 即, 不能含有中文(encodeURI 也没用), 否则跳转时直接报错:
+    - `TypeError: Failed to execute 'fetch' on 'Window': Failed to read the 'headers' property from 'RequestInit': String contains non ISO-8859-1 code point.`
+
+- 一旦客户端抛错(如上面说的 `Link` 组件包含中文), 会导致服务端不能正常执行 `Client Component imported by Server Component`, 抛错: `TypeError: Cannot read properties of undefined (reading 'MdxLoader')`, 刷新页面都没用, 必须重启服务器
+    - 这个问题在 '编辑文件导致页面 hot reload' 时也会出现
+    - 暂未找出原因和解决办法

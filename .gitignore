@@ -4,6 +4,5 @@
 *.log
 **/debug.log
 **/yarn-error.log
-@x_m/_examples/dist
 .vscode/
 /.local/

@@ -5,4 +5,5 @@
 *.d.ts
 *.js
 *.stories.tsx
-/@x_m/_examples/dist
+@x_m/_home/.next
+@x_m/_home/out
