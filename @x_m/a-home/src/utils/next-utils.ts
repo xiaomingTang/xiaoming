@@ -87,12 +87,12 @@ export const NextEntry = {
   generateStaticParams: <T extends NextParams = NextParams>(
     generateStaticParams?: GenerateStaticParamsFunc<T>
   ) => generateStaticParams,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   revalidate: <
     T extends Numeric | undefined,
     S extends T extends undefined ? T : NonNegative<NonNullable<T>>
   >(
     n: T,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     REVALIDATE_MUST_BE_NON_NEGATIVE: S extends T
       ? 'sec'
       : 'REVALIDATE_MUST_BE_NON_NEGATIVE'
