@@ -1,53 +1,18 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-interface NextParams {
-  [key: string]: string | string[] | undefined
-}
+'use server'
 
-interface NextSearchParams {
-  [key: string]: string | string[] | undefined
-}
-
-interface NextPageProps<
-  P extends NextParams = NextParams,
-  S extends NextSearchParams = NextSearchParams
-> {
-  params?: P
-  searchParams?: S
-}
-
-interface NextLayoutProps<P extends NextParams = NextParams> {
-  params?: P
-  children: React.ReactNode
-}
-
-interface NextHeadProps<P extends NextParams = NextParams> {
-  params?: P
-  children: React.ReactNode
-}
-
-interface NextErrorProps {
-  error: Error
-  reset: () => void
-}
-
-type GenerateStaticParamsFunc<T extends NextParams> = (
-  params?: T
-) => Promise<Record<string, string | string[]>[]>
-
-// https://github.com/sindresorhus/type-fest
-type Numeric = number | bigint
-type Zero = 0 | 0n
-type Negative<T extends Numeric> = T extends Zero
-  ? never
-  : `${T}` extends `-${string}`
-  ? T
-  : never
-type NonNegative<T extends Numeric> = T extends Zero
-  ? T
-  : Negative<T> extends never
-  ? T
-  : never
+import 'server-only'
+import {
+  GenerateStaticParamsFunc,
+  NextHeadProps,
+  NextLayoutProps,
+  NextPageProps,
+  NextParams,
+  NextSearchParams,
+  NonNegative,
+  Numeric,
+} from './next-utils-type'
 
 export function NextPage<
   T extends NextParams = Record<never, never>,
@@ -76,10 +41,6 @@ export function NextHead<T extends NextParams = Record<never, never>>(
 
 export function NextNotFound(notFount: () => React.ReactNode) {
   return notFount as (props: any) => ReturnType<typeof notFount>
-}
-
-export function NextError(error: (props: NextErrorProps) => React.ReactNode) {
-  return error as (props: any) => ReturnType<typeof error>
 }
 
 export const NextEntry = {
@@ -121,9 +82,6 @@ export const NextEntry = {
   },
   head: {
     default: NextHead,
-  },
-  error: {
-    default: NextError,
   },
   notFount: {
     default: NextNotFound,

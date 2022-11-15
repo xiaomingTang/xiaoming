@@ -1,3 +1,7 @@
+'use server'
+
+import 'server-only'
+
 export function B(rawValue = '', defaultValue = false): boolean {
   if (['true', 't', '1'].includes(rawValue.toLowerCase())) {
     return true

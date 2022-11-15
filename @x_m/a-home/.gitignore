@@ -36,3 +36,7 @@ yarn-error.log*
 next-env.d.ts
 
 .vscode
+
+/public/sw.js
+/public/workbox*.js
+/src/config/local.json

@@ -1,3 +1,7 @@
+'use server'
+
+import 'server-only'
+
 import { S } from './string'
 import commonConfig from './common.json'
 import developmentConfig from './development.json'
