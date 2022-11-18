@@ -19,7 +19,9 @@
   },
   "peerDependencies": {
     "@babel/runtime-corejs3": "^7.18.9",
-    "@zimi/type-utils": "^0.1.9",
     "core-js": "3"
+  },
+  "devDependencies": {
+    "@zimi/type-utils": "^0.1.9"
   }
 }

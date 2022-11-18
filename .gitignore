@@ -6,3 +6,4 @@
 **/yarn-error.log
 .vscode/
 /.local/
+/@zimi/*/dist/

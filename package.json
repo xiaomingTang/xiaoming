@@ -4,7 +4,10 @@
   "description": "packages",
   "author": "xiaomingTang",
   "license": "MIT",
-  "private": false,
+  "private": true,
+  "workspaces": [
+    "@zimi/*"
+  ],
   "repository": "https://github.com/xiaomingTang/xiaoming.git",
   "browserslist": {
     "production": [
