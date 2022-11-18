@@ -5,5 +5,5 @@
 *.d.ts
 *.js
 *.stories.tsx
-@x_m/_home/.next
-@x_m/_home/out
+@zimi/www/.next
+@zimi/www/out

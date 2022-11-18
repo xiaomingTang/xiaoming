@@ -24,7 +24,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['@x_m/a-home/**/*'],
+      files: ['@zimi/www/**/*'],
       extends: [
         'eslint:recommended',
         'airbnb-base',
@@ -35,13 +35,13 @@ module.exports = {
       ],
       settings: {
         next: {
-          rootDir: '@x_m/a-home'
+          rootDir: '@zimi/www'
         },
         "import/resolver": {
           alias: {
             map: [
-              ['@', '@x_m/a-home/src'],
-              ['@ROOT', '@x_m/a-home'],
+              ['@', '@zimi/www/src'],
+              ['@ROOT', '@zimi/www'],
             ],
           },
         }
@@ -57,11 +57,11 @@ module.exports = {
         "import/extensions": [
            "off",
         ],
-        "@next/next/no-html-link-for-pages": ["error", "@x_m/a-home/app/"]
+        "@next/next/no-html-link-for-pages": ["error", "@zimi/www/app/"]
       },
     },
     {
-      files: ['@x_m/a-home/app/**/*.{md,mdx}'],
+      files: ['@zimi/www/app/**/*.{md,mdx}'],
       extends: [
         'plugin:mdx/recommended',
       ],

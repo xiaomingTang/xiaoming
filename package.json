@@ -18,12 +18,12 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "dev": "cd @x_m/a-home && yarn dev",
-    "export": "cd @x_m/a-home && yarn build && yarn export",
-    "server": "cd @x_m/a-home/out && python -m http.server",
+    "dev": "cd @zimi/www && yarn dev",
+    "export": "cd @zimi/www && yarn build && yarn export",
+    "server": "cd @zimi/www/out && python -m http.server",
     "build": "lerna run build",
     "build:watch": "lerna run build:watch",
-    "lint": "eslint --fix @x_m",
+    "lint": "eslint --fix @zimi",
     "format": "prettier --write ."
   },
   "husky": {

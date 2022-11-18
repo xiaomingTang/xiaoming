@@ -12,7 +12,7 @@
     }
   },
   "packages": [
-    "@x_m/*"
+    "@zimi/*"
   ],
   "version": "0.1.9",
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
