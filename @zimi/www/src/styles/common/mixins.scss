@@ -1,0 +1,59 @@
+@use 'sass:meta';
+
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    @if not map-has-key($map, $key) {
+      @return null;
+    }
+    $map: map-get($map, $key);
+  }
+
+  @return $map;
+}
+
+/**
+ * 基于 media query & device type
+ * 将设备分为 3 类: https://box3.yuque.com/staff-khn556/cwm49a/zyew6g
+ * 使用方法:
+ * [xxx.module.scss]
+ * // 必须在最外层
+ * @include device('mobile', 'desktop') {
+ *   // 必须包含 moduled css
+ *   .content {
+ *     color: red;
+ *   }
+ * }
+ */
+@mixin device($types...) {
+  @each $type in $types {
+    @if $type == '' {
+      @content;
+    } @else if $type == 'mobile' {
+      @media screen and (max-width: 567px) {
+        @content;
+      }
+    } @else if $type == 'tablet' {
+      @media screen and (min-width: 568px) and (max-width: 1199px) {
+        @content;
+      }
+    } @else if $type == 'desktop' {
+      @media screen and (min-width: 1200px) {
+        @content;
+      }
+    }
+    // If the key doesn't exist in the map
+    @else {
+      @warn "Invalid device type: #{$type}";
+    }
+  }
+}
+
+@function gridOver($span, $gutter: 16px, $fullWidth: 100%) {
+  @return calc(
+    #{$span} * (#{$fullWidth} - #{$gutter} * 11) / 12 + (#{$span} - 1) * #{$gutter}
+  );
+}
+
+@function pvh($n) {
+  @return calc(var(--vh, 1vh) * $n);
+}

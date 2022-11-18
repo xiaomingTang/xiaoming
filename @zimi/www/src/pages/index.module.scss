@@ -1,0 +1,10 @@
+.root {
+  background-color: blue;
+}
+
+/* @TODO: scss 功能无效 */
+/* @include device('mobile') {
+  .root: {
+    background-color: black;
+  }
+} */

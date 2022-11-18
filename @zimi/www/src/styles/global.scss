@@ -1,4 +1,6 @@
-@tailwind base;
+/* tailwind base 将 mui 覆盖了 */
+/* @tailwind base; */
 @tailwind components;
 @tailwind utilities;
 @import 'normalize.css';
+@import 'toastify-js/src/toastify.css';
