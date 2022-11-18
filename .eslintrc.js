@@ -57,7 +57,7 @@ module.exports = {
         "import/extensions": [
            "off",
         ],
-        "@next/next/no-html-link-for-pages": ["error", "@zimi/www/app/"]
+        "@next/next/no-html-link-for-pages": ["error", "@zimi/www/src/app/"]
       },
     },
     {
