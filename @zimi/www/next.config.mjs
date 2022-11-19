@@ -2,6 +2,25 @@ import nextPwa from 'next-pwa'
 import * as path from 'path'
 import { getHashDigest } from 'loader-utils'
 import { fileURLToPath } from 'url'
+import nextMdx from '@next/mdx'
+
+const withMDX = nextMdx({
+  extension: /\.mdx?$/,
+  options: {
+    // If you use remark-gfm, you'll need to use next.config.mjs
+    // as the package is ESM only
+    // https://github.com/remarkjs/remark-gfm#install
+    remarkPlugins: [],
+    rehypePlugins: [],
+    // If you use `MDXProvider`, uncomment the following line.
+    // providerImportSource: "@mdx-js/react",
+  },
+})
+
+const withPWA = nextPwa({
+  dest: 'public',
+  disable: process.env.NODE_ENV !== 'production',
+})
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -23,11 +42,6 @@ function hashOnlyIdent(context, _, exportName) {
     6
   ).replace(/^(-?\d|--)/, '_$1')
 }
-
-const withPWA = nextPwa({
-  dest: 'public',
-  disable: process.env.NODE_ENV !== 'production',
-})
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -71,4 +85,4 @@ const nextConfig = {
   },
 }
 
-export default withPWA(nextConfig)
+export default withPWA(withMDX(nextConfig))
