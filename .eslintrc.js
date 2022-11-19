@@ -58,7 +58,7 @@ module.exports = {
            "off",
         ],
         // md 此处是以 overrides 的 rootDir 为起点的
-        "@next/next/no-html-link-for-pages": ["error", 'src/pages'],
+        // "@next/next/no-html-link-for-pages": ["error", 'src/pages'],
         "@typescript-eslint/no-shadow": ["warn", {
           ignoreTypeValueShadow: true,
           ignoreFunctionTypeParameterNameValueShadow: true,
