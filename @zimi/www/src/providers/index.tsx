@@ -10,6 +10,13 @@ const muiTheme = createTheme({
       desktop: 1024,
     },
   },
+  palette: {
+    primary: {
+      light: 'rgba(36, 116, 181, 0.7)',
+      main: 'rgba(36, 116, 181, 0.8)',
+      dark: 'rgba(36, 116, 181, 0.9)',
+    },
+  },
 })
 
 export default function Providers({

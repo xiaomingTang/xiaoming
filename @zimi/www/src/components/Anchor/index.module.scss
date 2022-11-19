@@ -1,6 +1,6 @@
 .anchor {
   cursor: pointer;
-  color: $color-primary-7;
+  color: $color-primary-main;
   text-decoration: none;
 }
 
@@ -15,10 +15,10 @@
 @include device('desktop') {
   .anchor.usePrimaryColorWhenhover {
     &:hover {
-      color: $color-primary-5;
+      color: $color-primary-dark;
     }
     &:active {
-      color: $color-primary-6;
+      color: $color-primary-light;
     }
   }
 }
@@ -26,7 +26,7 @@
 @include device('mobile', 'tablet') {
   .anchor.usePrimaryColorWhenhover {
     &:active {
-      color: $color-primary-8;
+      color: $color-primary-light;
     }
   }
 }
