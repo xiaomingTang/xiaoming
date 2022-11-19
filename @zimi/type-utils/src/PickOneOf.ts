@@ -44,4 +44,6 @@ type PickIntoKey<Obj extends AnyObj> = Obj extends any
  * }
  * ```
  */
-export type PickOneOf<Obj> = Obj extends any ? ValueOf<PickIntoKey<Obj>> : never
+export type PickOneOf<Obj> = Obj extends AnyObj
+  ? ValueOf<PickIntoKey<Obj>>
+  : never
