@@ -40,3 +40,11 @@ html {
     // Win old              中易宋体
     sans-serif; // System Fallback
 }
+
+// overrides toastify-js
+.toastify {
+  border-radius: 4px;
+  color: white;
+  background: $color-primary-main;
+  box-shadow: 0 3px 16px -1px $color-primary-light;
+}
