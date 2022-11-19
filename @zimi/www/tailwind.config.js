@@ -10,13 +10,13 @@ module.exports = {
         'desktop': '1024px', // => @media (min-width: 1024px) { ... }
       },
       height: {
-        screen: 'calc(var(--vh, 1vh)*100)',
+        screen: 'calc(max(var(--vh, 1vh), 1vh)*100)',
       },
       minHeight: {
-        screen: 'calc(var(--vh, 1vh)*100)',
+        screen: 'calc(max(var(--vh, 1vh), 1vh)*100)',
       },
       maxHeight: {
-        screen: 'calc(var(--vh, 1vh)*100)',
+        screen: 'calc(max(var(--vh, 1vh), 1vh)*100)',
       },
       colors: {
         primary: {

@@ -54,6 +54,7 @@
   );
 }
 
+// polyfill ios safari vh
 @function pvh($n) {
-  @return calc(var(--vh, 1vh) * $n);
+  @return calc(max(var(--vh, 1vh), 1vh) * $n);
 }
