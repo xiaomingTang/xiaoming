@@ -31,11 +31,13 @@
     "client-only": "^0.0.1",
     "core-js": "3",
     "html2canvas": "^1.4.1",
+    "loader-utils": "^3.2.1",
     "lodash-es": "^4.17.21",
     "next": "^13.0.4",
     "next-pwa": "^5.6.0",
     "next-query-params": "^4.1.0",
     "normalize.css": "^8.0.1",
+    "postcss-preset-env": "^7.8.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-error-boundary": "^3.1.4",
@@ -60,9 +62,11 @@
     "@zimi/type-utils": "^0.1.9",
     "autoprefixer": "^10.4.12",
     "postcss": "^8.4.18",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-import": "^15.0.0",
     "sass": "^1.55.0",
     "scss": "^0.2.4",
-    "tailwindcss": "^3.2.1",
+    "tailwindcss": "^3.2.4",
     "typescript": "^4.8.4"
   }
 }
