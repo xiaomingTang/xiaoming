@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 declare global {
   interface Window {
     NEXT_PUBLIC_APP_ENV: 'production' | 'development'

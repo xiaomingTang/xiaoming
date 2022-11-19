@@ -57,7 +57,17 @@ module.exports = {
         "import/extensions": [
            "off",
         ],
-        "@next/next/no-html-link-for-pages": ["error", "@zimi/www/src/pages/"]
+        // md 此处是以 overrides 的 rootDir 为起点的
+        "@next/next/no-html-link-for-pages": ["error", 'src/pages'],
+        "@typescript-eslint/no-shadow": ["warn", {
+          ignoreTypeValueShadow: true,
+          ignoreFunctionTypeParameterNameValueShadow: true,
+        }],
+        "@typescript-eslint/no-unused-vars": ["warn", {
+          args: "after-used",
+          argsIgnorePattern: "^_",
+          destructuredArrayIgnorePattern: "^_",
+        }],
       },
     },
     {
