@@ -1,0 +1,13 @@
+import { useEffect } from 'react'
+import Toastify from 'toastify-js'
+import { Button } from '@mui/material'
+
+# 我的博客开张了
+
+### 测试一下
+
+<Button variant='contained' onClick={() => {
+  Toastify({
+    text: 'clicked',
+  }).showToast()
+}}>测试按钮</Button>
