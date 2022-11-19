@@ -39,7 +39,8 @@ const APP_URL = new URL(ENV_CONFIG.public.appRoot)
  * </Link>
  * ```
  */
-function Anchor(
+// eslint-disable-next-line prefer-arrow-callback
+export default forwardRef(function Anchor(
   {
     underline = false,
     underlineOnHover = true,
@@ -81,6 +82,4 @@ function Anchor(
       {children}
     </a>
   )
-}
-
-export default forwardRef(Anchor)
+})
