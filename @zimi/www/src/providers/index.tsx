@@ -12,9 +12,9 @@ const muiTheme = createTheme({
   },
   palette: {
     primary: {
-      light: 'rgba(36, 116, 181, 0.7)',
-      main: 'rgba(36, 116, 181, 0.8)',
-      dark: 'rgba(36, 116, 181, 0.9)',
+      light: 'rgba(20, 74, 169, 0.7)',
+      main: 'rgba(20, 74, 169, 0.8)',
+      dark: 'rgba(20, 74, 169, 0.9)',
     },
   },
 })
