@@ -1,0 +1,32 @@
+.anchor {
+  cursor: pointer;
+  color: $color-primary-7;
+  text-decoration: none;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.underlineOnHover:hover {
+  text-decoration: underline;
+}
+
+@include device('desktop') {
+  .anchor.usePrimaryColorWhenhover {
+    &:hover {
+      color: $color-primary-5;
+    }
+    &:active {
+      color: $color-primary-6;
+    }
+  }
+}
+
+@include device('mobile', 'tablet') {
+  .anchor.usePrimaryColorWhenhover {
+    &:active {
+      color: $color-primary-8;
+    }
+  }
+}

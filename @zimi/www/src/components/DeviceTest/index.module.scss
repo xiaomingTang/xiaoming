@@ -1,0 +1,15 @@
+.colorTest {
+  color: black;
+}
+
+@include device('tablet') {
+  .colorTest {
+    color: red;
+  }
+}
+
+@include device('desktop') {
+  .colorTest {
+    color: blue;
+  }
+}

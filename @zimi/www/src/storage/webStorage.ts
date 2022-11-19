@@ -1,9 +1,8 @@
+import type { WindowSize } from '@/hooks/useWindowSize'
+
 export interface WebStorageMap {
   AUTHORIZATION: string
-  WINDOW_SIZE: {
-    width: number
-    height: number
-  }
+  WINDOW_SIZE: WindowSize
 }
 
 export type WebStorageKey = keyof WebStorageMap

@@ -66,6 +66,7 @@ const nextConfig = {
     includePaths: [resolveRoot('src/styles')],
     // styles/common 中的 scss 文件统一在此处引入, 无需手动引入
     additionalData: `
+      @use 'common/variables.scss' as *;
       @use 'common/mixins.scss' as *;
     `,
   },

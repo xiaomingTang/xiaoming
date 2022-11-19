@@ -1,15 +1,14 @@
 import { AppProps } from 'next/app'
 import Providers from '@/providers'
-import { usePolyfillVh } from '@/polyfills/usePolyfillVh'
+import PolyfillVh from '@/polyfills/PolyfillVh'
 import VConsoleLoader from '@/utils/VConsoleLoader'
 import InjectEnv from '@/config/InjectEnv'
 import '@/styles/global.scss'
 
 export default function App({ Component, pageProps }: AppProps) {
-  usePolyfillVh()
-
   return (
     <Providers>
+      <PolyfillVh />
       <InjectEnv />
       <VConsoleLoader />
       <Component {...pageProps} />

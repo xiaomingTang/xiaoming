@@ -29,15 +29,15 @@
     @if $type == '' {
       @content;
     } @else if $type == 'mobile' {
-      @media screen and (max-width: 567px) {
+      @media screen and (max-width: 640px) {
         @content;
       }
     } @else if $type == 'tablet' {
-      @media screen and (min-width: 568px) and (max-width: 1199px) {
+      @media screen and (min-width: 640px) and (max-width: 1024px) {
         @content;
       }
     } @else if $type == 'desktop' {
-      @media screen and (min-width: 1200px) {
+      @media screen and (min-width: 1024px) {
         @content;
       }
     }

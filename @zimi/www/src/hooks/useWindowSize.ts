@@ -2,66 +2,78 @@ import { useEffect, useRef, useState } from 'react'
 import { throttle } from 'lodash-es'
 import { WebStorage } from '@/storage/webStorage'
 
-export interface Size {
+type GetWindowSizeType = 'inner' | 'outer'
+
+interface Size {
   width: number
   height: number
 }
 
-const defaultSize: Size = WebStorage.getAndParse('WINDOW_SIZE') || {
-  width: typeof window === 'undefined' ? -1 : window.innerWidth,
-  height: typeof window === 'undefined' ? -1 : window.innerHeight,
+export interface WindowSize {
+  innerWidth: number
+  innerHeight: number
+  outerWidth: number
+  outerHeight: number
 }
 
-type GetWindowSizeType = 'inner' | 'outer'
-type GetWindowSizeProperties = `${GetWindowSizeType}${'Width' | 'Height'}`
+let clientRenderFinished = false
+const defaultSize: WindowSize = {
+  innerWidth: -1,
+  innerHeight: -1,
+  outerWidth: -1,
+  outerHeight: -1,
+}
 
 export function getWindowSize(type: GetWindowSizeType): Size {
+  const widthKey = `${type}Width` as const
+  const heightKey = `${type}Height` as const
   if (typeof window === 'undefined') {
     return {
-      ...defaultSize,
+      width: defaultSize[widthKey],
+      height: defaultSize[heightKey],
     }
   }
-  const widthKey: GetWindowSizeProperties = `${type}Width`
-  const heightKey: GetWindowSizeProperties = `${type}Height`
   return {
     width: window[widthKey],
     height: window[heightKey],
   }
 }
 
-let windowSizeInited = false
-
 export default function useWindowSize(type: GetWindowSizeType) {
   // 是否已被卸载
   const isUnloadedRef = useRef(true)
-  const [size, setSize] = useState(defaultSize)
+  const [size, setSize] = useState<Size>({
+    width: defaultSize[`${type}Width`],
+    height: defaultSize[`${type}Height`],
+  })
 
   useEffect(() => {
     isUnloadedRef.current = false
-    const onResize = throttle(
-      () => {
-        // 未被卸载才执行 setState
-        // (由于被 throttle, 可能在组件被卸载之后仍在执行, 所以需要加一个 flag)
-        if (!isUnloadedRef.current) {
-          const curWindowSize = getWindowSize(type)
-          // window size 缓存到 defaultSize 中
-          // 以供其他组件使用(其他组件默认就可以取到正确的 size)
-          defaultSize.width = curWindowSize.width
-          defaultSize.height = curWindowSize.height
-          WebStorage.setAndStringify('WINDOW_SIZE', curWindowSize)
-          setSize(curWindowSize)
-        }
-      },
-      500,
-      {
-        leading: false,
-        trailing: true,
+    const rawOnResize = () => {
+      // 未被卸载才执行 setState
+      // (由于被 throttle, 可能在组件被卸载之后仍在执行, 所以需要加一个 flag)
+      if (!isUnloadedRef.current) {
+        const curWindowSize = getWindowSize(type)
+        // window size 缓存到 defaultSize 中
+        // 以供其他组件使用(其他组件默认就可以取到正确的 size)
+        defaultSize[`${type}Width`] = curWindowSize.width
+        defaultSize[`${type}Height`] = curWindowSize.height
+        WebStorage.setAndStringify('WINDOW_SIZE', defaultSize)
+        setSize({
+          ...curWindowSize,
+        })
       }
-    )
-    // 初始化时主动调用一次
-    if (!windowSizeInited) {
-      windowSizeInited = true
-      onResize()
+    }
+    const onResize = throttle(rawOnResize, 500, {
+      leading: false,
+      trailing: true,
+    })
+    // 为了支持 ssr
+    if (!clientRenderFinished) {
+      window.setTimeout(() => {
+        rawOnResize()
+        clientRenderFinished = true
+      }, 0)
     }
     window.addEventListener('resize', onResize)
     return () => {

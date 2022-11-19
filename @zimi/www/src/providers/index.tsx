@@ -2,7 +2,15 @@ import { createTheme, ThemeProvider } from '@mui/material'
 import { NextAdapter } from 'next-query-params'
 import { QueryParamProvider } from 'use-query-params'
 
-const muiTheme = createTheme({})
+const muiTheme = createTheme({
+  breakpoints: {
+    values: {
+      mobile: 0,
+      tablet: 640,
+      desktop: 1024,
+    },
+  },
+})
 
 export default function Providers({
   children,

@@ -1,9 +1,0 @@
-.root {
-  background-color: blue;
-}
-
-@include device('mobile') {
-  .root {
-    background-color: black;
-  }
-}
