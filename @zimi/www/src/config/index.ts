@@ -1,5 +1,6 @@
 'use server'
 
+import manifest from '@ROOT/public/manifest.json'
 import { S } from './string'
 import commonConfig from './common.json'
 import developmentConfig from './development.json'
@@ -50,5 +51,5 @@ export const ENV_CONFIG = {
     nodeEnv: process.env.NODE_ENV,
     ...getEnvConfig(APP_ENV),
   },
-  private: {},
+  manifest,
 }

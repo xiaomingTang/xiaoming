@@ -59,3 +59,7 @@ html {
   background: $color-primary-main;
   box-shadow: 0 3px 16px -1px $color-primary-light;
 }
+
+.markdown-body img {
+  margin: auto;
+}

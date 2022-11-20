@@ -7656,6 +7656,11 @@ next-query-params@^4.1.0:
   dependencies:
     tslib "^2.0.3"
 
+next-seo@^5.14.1:
+  version "5.14.1"
+  resolved "https://registry.npmjs.org/next-seo/-/next-seo-5.14.1.tgz#d07322edc37634fbd9beca51fb04177910d8031c"
+  integrity sha512-NiJeQbxYP3z+EMp52q8k3Q+OfX2+Yv2WehERDj98r2wjXxL+woKpRBdsSVYolTD0Hm8IWs42SzaISE93RoQdOw==
+
 next@^13.0.4:
   version "13.0.4"
   resolved "https://registry.npmjs.org/next/-/next-13.0.4.tgz#52fc9d72df4642ed28e66f42f85137a624a98062"
@@ -9806,6 +9811,11 @@ synckit@^0.8.4:
   dependencies:
     "@pkgr/utils" "^2.3.1"
     tslib "^2.4.0"
+
+tailwind-scrollbar@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.npmjs.org/tailwind-scrollbar/-/tailwind-scrollbar-2.0.1.tgz#f08721173d513f1406a44601640b79726e3f9728"
+  integrity sha512-OcR7qHBbux4k+k6bWqnEQFYFooLK/F4dhkBz6nvswIoaA9ancZ5h20e0tyV7ifSWLDCUBtpG+1NHRA8HMRH/wg==
 
 tailwindcss@^3.2.4:
   version "3.2.4"

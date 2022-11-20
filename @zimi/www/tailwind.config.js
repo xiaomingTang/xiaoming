@@ -18,6 +18,9 @@ module.exports = {
       maxHeight: {
         screen: 'calc(max(var(--vh, 1vh), 1vh)*100)',
       },
+      zIndex: {
+        header: 1000,
+      },
       colors: {
         primary: {
           100: 'rgba(20, 74, 169, 0.1)',
@@ -66,5 +69,6 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/line-clamp'),
+    require('tailwind-scrollbar'),
   ],
 }

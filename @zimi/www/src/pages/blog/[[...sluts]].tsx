@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
+import { NextSeo } from 'next-seo'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { getAllArticles, getAllTags, getArticle } from '@/mdx/utils'
@@ -7,6 +8,7 @@ import DefaultLayout from '@/layout'
 import { BlogNotFound } from '@/modules/blog/BlogNotFound'
 import { BlogListPage } from '@/modules/blog/BlogListPage'
 import { BlogPage } from '@/modules/blog/BlogPage'
+import { ENV_CONFIG } from '@/config'
 
 import 'github-markdown-css'
 
@@ -70,6 +72,12 @@ export default function Blog(
   const { article, sluts } = props
   return (
     <DefaultLayout>
+      <NextSeo
+        title={`${article?.title ?? '博客列表页'} - ${
+          ENV_CONFIG.manifest.name
+        }`}
+        description={article?.description ?? ENV_CONFIG.manifest.description}
+      />
       <div className=' max-w-screen-desktop m-auto p-4'>
         {sluts.length > 0 &&
           (article ? (

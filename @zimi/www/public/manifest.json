@@ -1,7 +1,7 @@
 {
-  "name": "xiaoming's blog",
-  "short_name": "xiaoming",
-  "description": "xiaoming 的日常",
+  "name": "王小明博客",
+  "short_name": "王小明博客",
+  "description": "王小明的网络日常",
   "theme_color": "#FFFFFF",
   "background_color": "#FFFFFF",
   "start_url": "/",

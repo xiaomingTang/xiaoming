@@ -1,4 +1,3 @@
-
 import * as path from 'path'
 import { getHashDigest } from 'loader-utils'
 import { fileURLToPath } from 'url'

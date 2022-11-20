@@ -13,9 +13,9 @@
 .card {
   position: relative;
   width: 100%;
-  padding: 8px;
   display: flex;
   border-radius: 4px;
+  overflow: hidden;
   background-color: rgba(white, 0.5);
   box-shadow: 0 0 10px $color-black-1;
   cursor: pointer;
@@ -23,23 +23,27 @@
 }
 
 .imageWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 0;
   flex: 0 0 auto;
-  border-radius: 4px;
   background-color: $color-primary-2;
-  box-shadow: 0 0 16px $color-primary-3;
   overflow: hidden;
 }
 
 .image {
   object-fit: cover;
+  user-select: none;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   flex: 1 1 100%;
-  padding-left: 8px;
+  padding: 8px;
+  width: 100%;
+  overflow-x: auto;
 }
 
 .title {
@@ -49,7 +53,7 @@
 }
 
 .description {
-  @apply text-xs;
+  @apply text-sm;
   flex: 1 1 auto;
   padding-top: 8px;
   color: $color-primary-5;
@@ -60,13 +64,17 @@
 }
 
 .footer {
-  @apply text-xs;
+  @apply text-xs scrollbar-thin scrollbar-track-b-100;
   flex: 0 0 auto;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   color: $color-primary-5;
   transition: color 0.5s;
+  width: 100%;
+  // 让键盘导航时 active border 不至于被裁剪
+  padding: 2px 0;
+  overflow-x: auto;
 }
 
 .tag {
@@ -86,7 +94,7 @@
   }
   .image {
     width: 110px;
-    height: 110px;
+    height: 136px;
   }
 }
 
@@ -101,8 +109,8 @@
     @include onTagHover();
   }
   .image {
-    width: 120px * 1.5;
-    height: 120px;
+    width: 136px * 1.5;
+    height: 136px;
   }
 }
 
@@ -117,7 +125,7 @@
     @include onTagHover();
   }
   .image {
-    width: 150px * 1.5;
-    height: 150px;
+    width: 166px * 1.5;
+    height: 166px;
   }
 }

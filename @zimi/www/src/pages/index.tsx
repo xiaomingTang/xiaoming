@@ -1,30 +1,32 @@
-import { Button } from '@mui/material'
-import Link from 'next/link'
-import Toastify from 'toastify-js'
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { NextSeo } from 'next-seo'
 import DefaultLayout from '@/layout'
-import Anchor from '@/components/Anchor'
-import { DeviceTest } from '@/components/DeviceTest'
-import useWindowSize from '@/hooks/useWindowSize'
+import { getAllArticles, getAllTags } from '@/mdx/utils'
+import { BlogListPage } from '@/modules/blog/BlogListPage'
+import { ENV_CONFIG } from '@/config'
 
-export default function Index() {
-  const { width } = useWindowSize('inner')
+export const getStaticProps: GetStaticProps = async () => {
+  const allArticles = await getAllArticles()
+  const allTags = await getAllTags()
+  return {
+    props: {
+      allArticles,
+      allTags,
+    },
+  }
+}
+
+export default function Blog(
+  props: InferGetStaticPropsType<typeof getStaticProps>
+) {
   return (
     <DefaultLayout>
-      <DeviceTest />
-      <div className='p-4'>
-        <Button
-          variant='contained'
-          onClick={() => {
-            Toastify({
-              text: 'root on clicked',
-            }).showToast()
-          }}
-        >
-          root
-        </Button>
-        <Link href={`/?t=${width}`} passHref legacyBehavior>
-          <Anchor>超链接 {width}</Anchor>
-        </Link>
+      <NextSeo
+        title={`首页 - ${ENV_CONFIG.manifest.name}`}
+        description={ENV_CONFIG.manifest.description}
+      />
+      <div className=' max-w-screen-desktop m-auto p-4'>
+        <BlogListPage articles={props.allArticles} tags={props.allTags} />
       </div>
     </DefaultLayout>
   )

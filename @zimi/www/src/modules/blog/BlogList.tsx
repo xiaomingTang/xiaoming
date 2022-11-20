@@ -7,6 +7,9 @@ interface BlogListProps {
 }
 
 export function BlogList({ blogs: articles }: BlogListProps) {
+  if (articles.length === 0) {
+    return <div className=' text-b-light'>哪有文章啊, 我怎么不知道</div>
+  }
   return (
     <Grid container spacing={2}>
       {articles.map((article) => (

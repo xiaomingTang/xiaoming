@@ -29,7 +29,7 @@ export function BlogBriefCard({ article }: BlogBriefCardProps) {
           <div className={styles.imageWrapper}>
             <Image
               src={article.cover || DEFAULT_COVER}
-              width={800}
+              width={600}
               height={600}
               className={styles.image}
               alt=''
@@ -43,7 +43,10 @@ export function BlogBriefCard({ article }: BlogBriefCardProps) {
               </div>
             </div>
             <div className={styles.footer}>
-              <time dateTime={t.format('YYYY-MM-DD HH:mm:ss')} className='mr-2'>
+              <time
+                dateTime={t.format('YYYY-MM-DD HH:mm:ss')}
+                className='mr-2 whitespace-nowrap'
+              >
                 {t.format('YYYY-MM-DD')}
               </time>
               <TagList

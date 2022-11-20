@@ -1,4 +1,6 @@
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
+import { NextSeo } from 'next-seo'
+import { ENV_CONFIG } from '@/config'
 import { getAllTags, getArticlesByTag, getTagByName } from '@/mdx/utils'
 import { ArticleMeta } from '@/mdx/constants'
 import DefaultLayout from '@/layout'
@@ -59,6 +61,12 @@ export default function Blog(
   const { tag, sluts } = props
   return (
     <DefaultLayout>
+      <NextSeo
+        title={`${tag ? `${tag.description}(标签)` : '标签列表页'} - ${
+          ENV_CONFIG.manifest.name
+        }`}
+        description={tag?.description ?? ENV_CONFIG.manifest.description}
+      />
       <div className=' max-w-screen-desktop m-auto p-4'>
         {sluts.length > 0 &&
           (tag ? (
