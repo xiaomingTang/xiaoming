@@ -1,0 +1,123 @@
+@mixin onCardHover {
+  background-color: white;
+  box-shadow: 0 0 20px $color-black-2;
+  .title {
+    text-decoration: underline;
+  }
+}
+
+@mixin onTagHover {
+  background-color: $color-primary-3;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  padding: 8px;
+  display: flex;
+  border-radius: 4px;
+  background-color: rgba(white, 0.5);
+  box-shadow: 0 0 10px $color-black-1;
+  cursor: pointer;
+  transition: background-color 0.5s, box-shadow 0.5s;
+}
+
+.imageWrapper {
+  font-size: 0;
+  flex: 0 0 auto;
+  border-radius: 4px;
+  background-color: $color-primary-2;
+  box-shadow: 0 0 16px $color-primary-3;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 100%;
+  padding-left: 8px;
+}
+
+.title {
+  font-weight: bold;
+  flex: 0 0 auto;
+  color: $color-primary-dark;
+}
+
+.description {
+  @apply text-xs;
+  flex: 1 1 auto;
+  padding-top: 8px;
+  color: $color-primary-5;
+}
+
+.innerDescription {
+  @apply line-clamp-3;
+}
+
+.footer {
+  @apply text-xs;
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: $color-primary-5;
+  transition: color 0.5s;
+}
+
+.tag {
+  margin-left: 8px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: $color-primary-1;
+  transition: background-color 0.5s;
+}
+
+@include device('mobile') {
+  .card:active {
+    @include onCardHover();
+  }
+  .tag:active {
+    @include onTagHover();
+  }
+  .image {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+@include device('tablet') {
+  .card:active {
+    @include onCardHover();
+  }
+  .content {
+    padding-left: 16px;
+  }
+  .tag:active {
+    @include onTagHover();
+  }
+  .image {
+    width: 120px * 1.5;
+    height: 120px;
+  }
+}
+
+@include device('desktop') {
+  .card:hover {
+    @include onCardHover();
+  }
+  .content {
+    padding-left: 16px;
+  }
+  .tag:hover {
+    @include onTagHover();
+  }
+  .image {
+    width: 150px * 1.5;
+    height: 150px;
+  }
+}

@@ -1,12 +1,14 @@
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
-import { useEffect } from 'react'
-import type { MDXComponents } from 'mdx/types'
 import { serialize } from 'next-mdx-remote/serialize'
-import Toastify from 'toastify-js'
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
-import { Button } from '@mui/material'
+import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { getAllArticles, getAllTags, getArticle } from '@/mdx/utils'
 import { ArticleMeta } from '@/mdx/constants'
+import DefaultLayout from '@/layout'
+import { BlogNotFound } from '@/modules/blog/BlogNotFound'
+import { BlogListPage } from '@/modules/blog/BlogListPage'
+import { BlogPage } from '@/modules/blog/BlogPage'
+
+import 'github-markdown-css'
 
 type QueryParams = {
   sluts: string[]
@@ -32,7 +34,7 @@ export const getStaticPaths: GetStaticPaths<QueryParams> = async () => {
 
 type DestructPromise<T> = T extends Promise<infer R> ? R : never
 
-type Props = {
+type Props = QueryParams & {
   allArticles: ArticleMeta[]
   allTags: DestructPromise<ReturnType<typeof getAllTags>>
   article:
@@ -40,7 +42,7 @@ type Props = {
     | (DestructPromise<ReturnType<typeof getArticle>> & {
         source: MDXRemoteSerializeResult
       })
-} & QueryParams
+}
 
 export const getStaticProps: GetStaticProps<Props, QueryParams> = async (
   props
@@ -62,23 +64,23 @@ export const getStaticProps: GetStaticProps<Props, QueryParams> = async (
   }
 }
 
-const components: MDXComponents = {
-  Button,
-}
-
 export default function Blog(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
-  const { article } = props
-  if (typeof window !== 'undefined') {
-    window.Toastify = Toastify
-  }
-  if (article) {
-    return <MDXRemote {...article.source} components={components} />
-  }
+  const { article, sluts } = props
   return (
-    <>
-      <Button variant='contained'>测试</Button>
-    </>
+    <DefaultLayout>
+      <div className=' max-w-screen-desktop m-auto p-4'>
+        {sluts.length > 0 &&
+          (article ? (
+            <BlogPage article={article} recommends={props.allArticles} />
+          ) : (
+            <BlogNotFound recommends={props.allArticles} />
+          ))}
+        {sluts.length === 0 && (
+          <BlogListPage articles={props.allArticles} tags={props.allTags} />
+        )}
+      </div>
+    </DefaultLayout>
   )
 }

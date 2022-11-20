@@ -1,9 +1,18 @@
 @import 'normalize.css';
-// tailwind base 将 mui 覆盖了
-// @tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 @import 'toastify-js/src/toastify.css';
+
+@layer base {
+  // fix: mui Button 的样式被 tailwind base 覆盖掉了
+  button,
+  [type='button'],
+  [type='reset'],
+  [type='submit'] {
+    background-color: $color-primary-main;
+  }
+}
 
 html {
   // https://www.zhihu.com/question/37593717/answer/82327127
@@ -39,6 +48,8 @@ html {
     SimSun,
     // Win old              中易宋体
     sans-serif; // System Fallback
+  line-height: 1.5;
+  background-color: $color-white-9;
 }
 
 // overrides toastify-js
