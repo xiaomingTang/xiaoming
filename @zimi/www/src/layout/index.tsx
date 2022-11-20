@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import { DefaultFooter } from './DefaultFooter'
+import DefaultHead from './DefaultHead'
 import { DefaultHeader } from './DefaultHeader'
 
 export default function DefaultLayout({
@@ -16,6 +17,7 @@ export default function DefaultLayout({
         className
       )}
     >
+      <DefaultHead />
       <div className='min-h-screen'>
         <DefaultHeader />
         {children}
