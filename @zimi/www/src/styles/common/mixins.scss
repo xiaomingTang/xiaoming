@@ -12,6 +12,10 @@
 }
 
 /**
+ * @WARNING: 不同于 MUI, 此处的 device 表示 仅该类设备;
+ * 例如, tablet 表示仅 tablet, 即 设备尺寸 介于 640 到 1024 之间,
+ * 而非 MUI 的大于 640;
+ *
  * 基于 media query & device type
  * 将设备分为 3 类: https://box3.yuque.com/staff-khn556/cwm49a/zyew6g
  * 使用方法:
