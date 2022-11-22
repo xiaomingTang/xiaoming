@@ -14,7 +14,7 @@
   "packages": [
     "@zimi/*"
   ],
-  "version": "0.1.9",
+  "version": "0.1.10",
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
   "useNx": false,
   "useWorkspaces": true
