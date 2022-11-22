@@ -2,11 +2,11 @@
   "name": "王小明博客",
   "short_name": "王小明博客",
   "description": "王小明的网络日常",
-  "theme_color": "#e8e7e9",
-  "background_color": "#e8e7e9",
+  "theme_color": "#cdd2df",
+  "background_color": "#cdd2df",
   "start_url": "/",
   "display": "standalone",
-  "orientation": "portrait",
+  "orientation": "natural",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",

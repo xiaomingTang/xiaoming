@@ -9,3 +9,4 @@
     - [tailwind.config.js](tailwind.config.js) 中的 `colors`
     - [src/styles/common/variables.scss](src/styles/common/variables.scss)
     - [src/providers/index.tsx](src/providers/index.tsx) 中的 `muiTheme`
+    - 还有 [public/manifest.json](public/manifest.json) 中的 `theme_color` 和 `background_color`, 它们用的是 primary-1 的实色
