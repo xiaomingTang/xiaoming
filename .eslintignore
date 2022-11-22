@@ -3,5 +3,3 @@
 **/*.stories.tsx
 **/vite.config.ts
 **/vite.example-config.ts
-@zimi/www/.next
-@zimi/www/out
