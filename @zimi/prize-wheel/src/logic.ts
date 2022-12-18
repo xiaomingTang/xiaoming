@@ -125,8 +125,6 @@ export class PrizeWheel extends EventEmitter<PrizeWheelEventsOverview> {
 
     if (!this.running) {
       this.running = true
-      // deg 复原, 从头开始
-      this.deg = -1
       this.animate()
     }
   }
