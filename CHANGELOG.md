@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.12](https://github.com/xiaomingTang/xiaoming/compare/v0.1.11...v0.1.12) (2022-12-18)
+
+
+### Features
+
+* prize-wheel do NOT reset while run ([56d602d](https://github.com/xiaomingTang/xiaoming/commit/56d602d311fd28a160a8a803bc5b912469a2738f))
+
+
+
+
+
 ## [0.1.11](https://github.com/xiaomingTang/xiaoming/compare/v0.1.10...v0.1.11) (2022-12-18)
 
 

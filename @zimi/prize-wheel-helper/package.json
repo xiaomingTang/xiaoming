@@ -1,7 +1,7 @@
 {
   "name": "@zimi/prize-wheel-helper",
   "license": "MIT",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "author": "xiaomingTang",
   "description": "prize wheel helper",
   "private": false,
@@ -28,6 +28,6 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.186",
-    "@zimi/prize-wheel": "^0.1.11"
+    "@zimi/prize-wheel": "^0.1.12"
   }
 }
