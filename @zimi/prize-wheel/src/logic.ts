@@ -125,6 +125,9 @@ export class PrizeWheel extends EventEmitter<PrizeWheelEventsOverview> {
 
     if (!this.running) {
       this.running = true
+      // easeStartDeg 内的转动速度取决于 this.deg, 所以将 this.deg 降到 0-360
+      const normalizedDeg = this.deg % 360
+      this.deg = normalizedDeg
       this.animate()
     }
   }
