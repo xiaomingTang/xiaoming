@@ -92,9 +92,11 @@ export class PrizeWheel extends EventEmitter<PrizeWheelEventsOverview> {
 
   // 禁止外部设置 running 属性
   private set running(value: boolean) {
-    this.rawRunning = value
     if (value !== this.rawRunning) {
+      this.rawRunning = value
       this.emit(value ? 'start' : 'end')
+    } else {
+      this.rawRunning = value
     }
   }
 
