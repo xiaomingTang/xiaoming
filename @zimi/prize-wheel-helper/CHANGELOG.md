@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.11](https://github.com/xiaomingTang/xiaoming/compare/v0.1.10...v0.1.11) (2022-12-18)
+
+**Note:** Version bump only for package @zimi/prize-wheel-helper
+
+
+
+
+
 ## [0.1.10](https://github.com/xiaomingTang/xiaoming/compare/v0.1.9...v0.1.10) (2022-11-22)
 
 
