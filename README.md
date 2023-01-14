@@ -1,5 +1,4 @@
-- [online demo](https://tytcn.cn)
----
+
 - [@zimi/event-emitter](./@zimi/event-emitter/README.md)
   - 事件触发器
 
