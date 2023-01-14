@@ -1,4 +1,4 @@
-import EventEmitter from '@zimi/event-emitter/src'
+import EventEmitter from '@zimi/event-emitter'
 import { Interact, InteractEvents, Point } from './types'
 
 interface TouchFormatterProps {

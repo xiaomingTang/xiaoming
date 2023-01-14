@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import noop from 'lodash/noop'
 import type { PrizeWheel, PrizeWheelEventsOverview } from '@zimi/prize-wheel'
-import type { HandlersOf } from '@zimi/event-emitter/src'
+import type { HandlersOf } from '@zimi/event-emitter'
 
 export function usePrizeWheelState(wheel?: PrizeWheel) {
   const [deg, setDeg] = useState(-1)

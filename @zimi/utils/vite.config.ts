@@ -20,6 +20,12 @@ export default defineConfig({
     target: 'es2015',
     rollupOptions: {
       external: isExternal,
+      output: {
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM',
+        },
+      },
       plugins: [
         babel({
           babelHelpers: 'runtime',
