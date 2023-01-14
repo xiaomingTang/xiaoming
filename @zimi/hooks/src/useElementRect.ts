@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import omit from 'lodash/omit'
 import noop from 'lodash/noop'
 import throttle from 'lodash/throttle'
 import type { ThrottleSettings } from 'lodash'
@@ -14,7 +13,16 @@ const defaultRect: DOMRect = {
   right: 0,
   top: 0,
   toJSON() {
-    return omit(defaultRect, 'toJson')
+    return {
+      height: defaultRect.height,
+      width: defaultRect.width,
+      x: defaultRect.x,
+      y: defaultRect.y,
+      bottom: defaultRect.bottom,
+      left: defaultRect.left,
+      right: defaultRect.right,
+      top: defaultRect.top,
+    }
   },
 }
 
