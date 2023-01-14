@@ -1,7 +1,7 @@
 {
   "name": "@zimi/event-emitter",
   "license": "MIT",
-  "version": "0.1.10",
+  "version": "0.1.16",
   "author": "xiaomingTang",
   "description": "event emitter",
   "private": false,
@@ -23,6 +23,6 @@
     "core-js": "3"
   },
   "devDependencies": {
-    "@zimi/type-utils": "^0.1.10"
+    "@zimi/type-utils": "^0.1.16"
   }
 }

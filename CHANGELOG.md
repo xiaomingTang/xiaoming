@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.16](https://github.com/xiaomingTang/xiaoming/compare/v0.1.15...v0.1.16) (2023-01-14)
+
+
+### Bug Fixes
+
+* external output & wrong import path ([6c93a25](https://github.com/xiaomingTang/xiaoming/commit/6c93a25c479dc81b4d2a10c8eb07cb63e07c4b05))
+
+
+
+
+
 ## [0.1.15](https://github.com/xiaomingTang/xiaoming/compare/v0.1.14...v0.1.15) (2023-01-14)
 
 

@@ -1,7 +1,7 @@
 {
   "name": "@zimi/interact-dom",
   "license": "MIT",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "author": "xiaomingTang",
   "description": "interact dom",
   "private": false,
@@ -19,8 +19,8 @@
     "build:watch": "vite build --watch"
   },
   "dependencies": {
-    "@zimi/event-emitter": "^0.1.10",
-    "@zimi/interact": "^0.1.10",
+    "@zimi/event-emitter": "^0.1.16",
+    "@zimi/interact": "^0.1.16",
     "gl-matrix": "^3.4.3"
   },
   "peerDependencies": {
@@ -28,6 +28,6 @@
     "core-js": "3"
   },
   "devDependencies": {
-    "@zimi/story-helper": "^0.1.10"
+    "@zimi/story-helper": "^0.1.16"
   }
 }
