@@ -11,8 +11,7 @@
   "repository": "https://github.com/xiaomingTang/xiaoming.git",
   "browserslist": {
     "production": [
-      "> 1%",
-      "last 2 versions"
+      "> 1%"
     ],
     "development": [
       "last 2 chrome version",

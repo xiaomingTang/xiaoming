@@ -3,8 +3,6 @@ import path from 'path'
 import dts from 'vite-dts'
 import babel from '@rollup/plugin-babel'
 
-const isExternal = (id: string) => !id.startsWith('.') && !path.isAbsolute(id)
-
 export default defineConfig({
   // esbuild: {
   //   jsxInject: "import React from 'react'",
@@ -17,9 +15,8 @@ export default defineConfig({
       formats: ['es', 'umd'],
       fileName: (format) => `index.${format}.js`,
     },
-    target: 'es2015',
     rollupOptions: {
-      external: isExternal,
+      external: ['react', 'react-dom'],
       output: {
         globals: {
           react: 'React',

@@ -3,20 +3,17 @@ import path from 'path'
 import dts from 'vite-dts'
 import babel from '@rollup/plugin-babel'
 
-const isExternal = (id: string) => !id.startsWith('.') && !path.isAbsolute(id)
-
 export default defineConfig({
   build: {
-    sourcemap: false,
+    sourcemap: true,
     lib: {
       name: 'XM_PrizeWheelHelper',
       entry: path.resolve(__dirname, 'src/index.ts'),
       formats: ['es', 'umd'],
       fileName: (format) => `index.${format}.js`,
     },
-    target: 'es2015',
     rollupOptions: {
-      external: isExternal,
+      external: ['react', 'react-dom'],
       output: {
         globals: {
           react: 'React',

@@ -20,6 +20,7 @@
   },
   "peerDependencies": {
     "@babel/runtime-corejs3": "^7.18.9",
+    "@babel/runtime": "^7.20.7",
     "core-js": "3",
     "react": "^18.2.0"
   },

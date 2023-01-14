@@ -24,6 +24,7 @@
     "gl-matrix": "^3.4.3"
   },
   "peerDependencies": {
+    "@babel/runtime": "^7.20.7",
     "@babel/runtime-corejs3": "^7.18.9",
     "core-js": "3"
   },
