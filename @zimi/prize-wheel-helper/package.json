@@ -1,7 +1,7 @@
 {
   "name": "@zimi/prize-wheel-helper",
   "license": "MIT",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "author": "xiaomingTang",
   "description": "prize wheel helper",
   "private": false,
@@ -19,8 +19,8 @@
     "build:watch": "vite build --watch"
   },
   "dependencies": {
-    "lodash": "^4.17.21",
-    "@types/lodash": "^4.14.186"
+    "@types/lodash": "^4.14.186",
+    "lodash": "^4.17.21"
   },
   "peerDependencies": {
     "@babel/runtime": "^7.20.7",
@@ -30,6 +30,6 @@
   },
   "devDependencies": {
     "@zimi/event-emitter": "^0.3.0",
-    "@zimi/prize-wheel": "^0.3.0"
+    "@zimi/prize-wheel": "^0.3.1"
   }
 }

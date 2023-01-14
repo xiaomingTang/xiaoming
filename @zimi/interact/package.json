@@ -1,7 +1,7 @@
 {
   "name": "@zimi/interact",
   "license": "MIT",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "author": "xiaomingTang",
   "description": "interact",
   "private": false,
@@ -19,9 +19,9 @@
     "build:watch": "vite build --watch"
   },
   "dependencies": {
+    "@types/lodash": "^4.14.186",
     "@zimi/event-emitter": "^0.3.0",
-    "lodash": "^4.17.21",
-    "@types/lodash": "^4.14.186"
+    "lodash": "^4.17.21"
   },
   "peerDependencies": {
     "@babel/runtime": "^7.20.7",

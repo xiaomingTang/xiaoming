@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/xiaomingTang/xiaoming/compare/v0.3.0...v0.3.1) (2023-01-14)
+
+
+### Bug Fixes
+
+* tsc lint error ([5a6e259](https://github.com/xiaomingTang/xiaoming/commit/5a6e25983371287870158e6d37110968ee7545e8))
+
+
+
+
+
 # [0.3.0](https://github.com/xiaomingTang/xiaoming/compare/v0.2.0...v0.3.0) (2023-01-14)
 
 **Note:** Version bump only for package @zimi/prize-wheel

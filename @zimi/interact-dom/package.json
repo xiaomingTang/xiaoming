@@ -1,7 +1,7 @@
 {
   "name": "@zimi/interact-dom",
   "license": "MIT",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "author": "xiaomingTang",
   "description": "interact dom",
   "private": false,
@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@zimi/event-emitter": "^0.3.0",
-    "@zimi/interact": "^0.3.0",
+    "@zimi/interact": "^0.3.1",
     "gl-matrix": "^3.4.3"
   },
   "peerDependencies": {
