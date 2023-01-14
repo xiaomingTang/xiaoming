@@ -9,7 +9,7 @@ export default defineConfig({
   build: {
     sourcemap: false,
     lib: {
-      name: 'XM_PrizeWheelHelper',
+      name: 'XM_InteractDom',
       entry: path.resolve(__dirname, 'src/index.ts'),
       formats: ['es', 'umd'],
       fileName: (format) => `index.${format}.js`,
