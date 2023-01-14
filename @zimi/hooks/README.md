@@ -8,6 +8,7 @@ yarn add  @zimi/hooks
 ### examples
 
 [useElementRect](#useElementRect)    
+[useExactClick](#useExactClick)    
 [useListen](#useListen)    
 [useRafLoop](#useRafLoop)    
 [useWarnBeforeUnload](#useWarnBeforeUnload)    
@@ -15,11 +16,15 @@ yarn add  @zimi/hooks
 ---
 
 #### useElementRect
-``` typescript
+``` ts
 
-function MyComponent() {
+function Test() {
   const ref = useRef<HTMLElement>(null)
   const rect = useElementRect(ref)
+
+  return <div ref={ref}>
+    hello world
+  </div>
 }
 
 // or
@@ -27,17 +32,77 @@ function MyComponent() {
 // out of component
 const element = document.querySelector('xxx')
 
-function MyComponent() {
+function Test() {
   const rect = useElementRect(element)
 }
 
 ```
-[↑ examples ↑](#examples)
+[↑ all examples ↑](#examples)
+
+#### useExactClick
+``` tsx
+function Test() {
+  const { onPointerDown, checkExactClick } = useExactClick()
+
+  return <div
+    onPointerDown={onPointerDown}
+    onClick={(e) => {
+      if (checkExactClick(e)) {
+        // do something
+      }
+    }}
+  >
+    hello world
+  </div>
+}
+
+// or
+
+function Test() {
+  const { onPointerDown, checkExactClick } = useExactClick({
+    /**
+     * x/y 方向移动超过该值则认为不是 click;
+     * 
+     * 负数 表示不考量该参数;
+     * 
+     * @default 10
+     */
+    eps: 10,
+    /**
+     * 点击时间间隔超过该值则认为不是 click;
+     * 
+     * 负数 表示不考量该参数;
+     * 
+     * @default 500
+     */
+    durationMs: 500,
+    /**
+     * 是否允许移动后回到原处并触发 click;
+     * 
+     * @default false
+     */
+    enableMoveAndBack: false,
+  })
+
+  return <div
+    onPointerDown={onPointerDown}
+    onClick={(e) => {
+      if (checkExactClick(e)) {
+        // do something
+      }
+    }}
+  >
+    hello world
+  </div>
+}
+
+```
+[↑ all examples ↑](#examples)
 
 #### useListen
-``` typescript
+``` ts
 
-function Component() {
+function Test() {
   const [count, setCount] = useState(0)
 
   // will be triggered when count changed
@@ -47,21 +112,23 @@ function Component() {
 }
 
 ```
-[↑ examples ↑](#examples)
+[↑ all examples ↑](#examples)
 
 #### useRafLoop
 
-``` typescript react
+``` tsx
 
 import { useRafLoop } from '@zimi/hooks'
 
-function Component() {
+function Test() {
   const now = useRafLoop(() => Date.now())
 
   return <>{now}</>
 }
 
-function Component() {
+// or
+
+function Test() {
   const [visibility, setVisibility] = useState(true)
 
   useRafLoop(() => {
@@ -81,17 +148,17 @@ function Component() {
 }
 
 ```
-[↑ examples ↑](#examples)
+[↑ all examples ↑](#examples)
 
 #### useWarnBeforeUnload
 
-``` typescript
+``` ts
 
-function Component() {
+function Test() {
   // show a confirmation dialog before page unload (beforeunload event, NOT component unload)
   // https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event
   useWarnBeforeUnload()
 }
 
 ```
-[↑ examples ↑](#examples)
+[↑ all examples ↑](#examples)
