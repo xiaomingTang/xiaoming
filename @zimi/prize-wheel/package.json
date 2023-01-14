@@ -20,14 +20,12 @@
   },
   "dependencies": {
     "@zimi/event-emitter": "^0.3.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "@types/lodash": "^4.14.186"
   },
   "peerDependencies": {
     "@babel/runtime": "^7.20.7",
     "@babel/runtime-corejs3": "^7.18.9",
     "core-js": "3"
-  },
-  "devDependencies": {
-    "@types/lodash": "^4.14.186"
   }
 }
