@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/xiaomingTang/xiaoming/compare/v0.1.16...v0.2.0) (2023-01-14)
+
+
+### Features
+
+* 优化打包配置 与 包尺寸 ([171edf8](https://github.com/xiaomingTang/xiaoming/commit/171edf82059cd76a216f7c6ea14ededb7003d0ea))
+
+
+
+
+
 ## [0.1.16](https://github.com/xiaomingTang/xiaoming/compare/v0.1.15...v0.1.16) (2023-01-14)
 
 

@@ -1,7 +1,7 @@
 {
   "name": "@zimi/hooks",
   "license": "MIT",
-  "version": "0.1.16",
+  "version": "0.2.0",
   "author": "xiaomingTang",
   "description": "hooks",
   "private": false,
@@ -19,8 +19,8 @@
     "build:watch": "vite build --watch"
   },
   "peerDependencies": {
-    "@babel/runtime-corejs3": "^7.18.9",
     "@babel/runtime": "^7.20.7",
+    "@babel/runtime-corejs3": "^7.18.9",
     "core-js": "3",
     "react": "^18.2.0"
   },
