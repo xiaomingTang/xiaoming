@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/xiaomingTang/xiaoming/compare/v0.2.0...v0.3.0) (2023-01-14)
+
+
+### Features
+
+* remove huge dep: lodash/omit ([be95f3b](https://github.com/xiaomingTang/xiaoming/commit/be95f3b9f598a1ff056cdcdf0573cf1347918e5a))
+
+
+
+
+
 # [0.2.0](https://github.com/xiaomingTang/xiaoming/compare/v0.1.16...v0.2.0) (2023-01-14)
 
 
