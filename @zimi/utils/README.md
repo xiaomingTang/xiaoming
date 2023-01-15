@@ -33,7 +33,7 @@ window.addEventListener('resize', () => {
 
 
 ```
-[↑ examples ↑](#examples)
+[↑ all examples ↑](#examples)
 
 #### sleepMs
 
@@ -44,4 +44,4 @@ async function() {
 }
 
 ```
-[↑ examples ↑](#examples)
+[↑ all examples ↑](#examples)

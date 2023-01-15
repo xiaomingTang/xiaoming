@@ -2,15 +2,7 @@
 
 // https://dev.to/maxime1992/implement-a-generic-oneof-type-with-typescript-22em
 
-import type { AnyObj, ValueOf } from './Object'
-
-type PickByKeys<Obj extends AnyObj, Key extends keyof Obj> = Obj extends any
-  ? {
-      [k in Exclude<keyof Obj, Key>]?: never
-    } & {
-      [k in Key]: Obj[k]
-    }
-  : never
+import type { AnyObj, PickByKeys, ValueOf } from './Object'
 
 type PickIntoKey<Obj extends AnyObj> = Obj extends any
   ? {
@@ -44,6 +36,6 @@ type PickIntoKey<Obj extends AnyObj> = Obj extends any
  * }
  * ```
  */
-export type PickOneOf<Obj> = Obj extends AnyObj
+export type PickOneOf<Obj extends AnyObj> = Obj extends AnyObj
   ? ValueOf<PickIntoKey<Obj>>
   : never

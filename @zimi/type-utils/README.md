@@ -11,6 +11,7 @@ yarn add @zimi/type-utils
 
 [PickOneOf](#PickOneOf)    
 [StructAs](#StructAs)    
+[Or](#Or)    
 
 ---
 
@@ -41,7 +42,7 @@ interface Group {
  */
 type PickOneOfGroup = PickOneOf<Group>
 ```
-[↑ examples ↑](#examples)
+[↑ all examples ↑](#examples)
 
 #### StructAs
 
@@ -68,4 +69,35 @@ interface Group {
 type StructedGroup = StructAs<Group, 'type', 'value'>
 
 ```
-[↑ examples ↑](#examples)
+[↑ all examples ↑](#examples)
+
+#### Or
+
+``` typescript
+
+interface StringObj {
+  a: string
+  b: string
+}
+
+interface NumberObj {
+  b: number
+  c: number
+}
+
+function test1(input: StringObj | NumberObj) {
+  // error: Property 'c' does not exist on type 'StringObj'.ts(2339)
+  if (typeof input.c === 'number') {
+    console.log(input.b)
+  }
+}
+
+function test2(input: Or<StringObj, NumberObj>) {
+  if (typeof input.c === 'number') {
+    // correct: input.b is number
+    console.log(input.b)
+  }
+}
+
+```
+[↑ all examples ↑](#examples)
