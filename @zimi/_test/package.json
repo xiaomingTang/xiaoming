@@ -1,0 +1,42 @@
+{
+  "license": "MIT",
+  "version": "0.0.1",
+  "author": "xiaomingTang",
+  "description": "example for @zimi/*",
+  "private": true,
+  "main": "src/index.tsx",
+  "repository": "https://github.com/xiaomingTang/xiaoming/tree/master/%40zimi/_examples",
+  "scripts": {
+    "dev": "vite --config vite.config.ts"
+  },
+  "dependencies": {
+    "@babel/runtime-corejs3": "^7.18.9",
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/material": "^5.10.0",
+    "@zimi/event-emitter": "*",
+    "@zimi/hooks": "*",
+    "@zimi/interact": "*",
+    "@zimi/interact-dom": "*",
+    "@zimi/prize-wheel": "*",
+    "@zimi/prize-wheel-helper": "*",
+    "@zimi/utils": "*",
+    "classnames": "^2.3.1",
+    "core-js": "3",
+    "lodash": "^4.17.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-toastify": "^9.0.8",
+    "react-transition-group": "^4.4.5",
+    "zustand": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "@types/react-transition-group": "^4.4.5",
+    "@vitejs/plugin-react": "^3.1.0",
+    "@x_m/type-utils": "^0.1.9",
+    "sass": "^1.54.4",
+    "vite": "^4.1.1"
+  }
+}
