@@ -46,43 +46,62 @@ const defaultRect: DOMRect = {
  * ```
  */
 export function useElementRect(
-  element?: React.RefObject<HTMLElement> | HTMLElement | null,
+  element: React.RefObject<HTMLElement> | HTMLElement,
   /**
-   * ms; default: 500
+   * take effect only when ResizeObserver not available
+   * @default 500 ms
    */
-  wait?: number,
+  delayMs?: number,
   /**
-   * options.trailing; default: true
+   * take effect only when ResizeObserver not available
+   * @param options.trailing @default true
    *
-   * options.leading; default: false
+   * @param options.leading @default true
    */
   options?: ThrottleSettings
 ) {
   const [rect, setRect] = useState(defaultRect)
+  const { trailing = true, leading = true } = options ?? {}
 
   useEffect(() => {
     const finalElement =
       element instanceof HTMLElement ? element : element?.current
-    if (finalElement) {
-      const resetRect = throttle(
-        () => {
-          setRect(finalElement.getBoundingClientRect())
-        },
-        wait ?? 500,
-        {
-          trailing: options?.trailing ?? true,
-          leading: options?.leading ?? false,
+    if (!finalElement) {
+      return noop
+    }
+    if (typeof ResizeObserver !== 'undefined') {
+      const resizeObserver = new ResizeObserver((entries) => {
+        for (let i = 0; i < entries.length; i += 1) {
+          const entry = entries[i]
+          if (entry.target === finalElement) {
+            setRect(entry.contentRect)
+          }
         }
-      )
-      resetRect()
-      window.addEventListener('resize', resetRect)
+      })
+      resizeObserver.observe(finalElement)
 
       return () => {
-        window.removeEventListener('resize', resetRect)
+        resizeObserver.unobserve(finalElement)
       }
     }
-    return noop
-  }, [element, wait, options?.leading, options?.trailing])
+    const resetRect = throttle(
+      () => {
+        setRect(finalElement.getBoundingClientRect())
+      },
+      delayMs ?? 500,
+      {
+        trailing,
+        leading,
+      }
+    )
+    resetRect()
+
+    window.addEventListener('resize', resetRect)
+
+    return () => {
+      window.removeEventListener('resize', resetRect)
+    }
+  }, [element, delayMs, leading, trailing])
 
   return rect
 }

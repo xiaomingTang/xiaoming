@@ -17,12 +17,12 @@ export function useListen<T>(
   value: T,
   callback: (next: T, prev: T | undefined) => void
 ) {
-  const prev = useRef(value)
+  const prevRef = useRef(value)
   const callbackRef = useRef(callback)
   callbackRef.current = callback
 
   useEffect(() => {
-    callbackRef.current(value, prev.current)
-    prev.current = value
+    callbackRef.current(value, prevRef.current)
+    prevRef.current = value
   }, [value])
 }

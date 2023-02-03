@@ -7,13 +7,34 @@ yarn add  @zimi/hooks
 
 ### examples
 
+[useCombinedRefs](#useCombinedRefs)    
 [useElementRect](#useElementRect)    
 [useExactClick](#useExactClick)    
 [useListen](#useListen)    
 [useRafLoop](#useRafLoop)    
 [useWarnBeforeUnload](#useWarnBeforeUnload)    
+[useWindowSize](#useWindowSize)    
 
 ---
+
+#### useCombinedRefs
+
+see [https://itnext.io/reusing-the-ref-from-forwardref-with-react-hooks-4ce9df693dd](https://itnext.io/reusing-the-ref-from-forwardref-with-react-hooks-4ce9df693dd)
+
+``` tsx
+
+const MeaturedInput = forwardRef<HTMLInputElement>((props, ref) => {
+  const innerRef = useCombinedRefs(ref)
+
+  useEffect(() => {
+    console.log(innerRef.current?.getBoundingClientRect())
+  }, [innerRef])
+
+  return <input ref={innerRef} />
+})
+
+```
+[↑ all examples ↑](#examples)
 
 #### useElementRect
 ``` ts
@@ -40,6 +61,9 @@ function Test() {
 [↑ all examples ↑](#examples)
 
 #### useExactClick
+
+> It is helpful in canvas / threejs
+
 ``` tsx
 function Test() {
   const { onPointerDown, checkExactClick } = useExactClick()
@@ -158,6 +182,17 @@ function Test() {
   // show a confirmation dialog before page unload (beforeunload event, NOT component unload)
   // https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event
   useWarnBeforeUnload()
+}
+
+```
+[↑ all examples ↑](#examples)
+
+#### useWindowSize
+``` tsx
+
+function Test() {
+  const innerSize = useWindowSize('inner')
+  const outerSize = useWindowSize('outer')
 }
 
 ```

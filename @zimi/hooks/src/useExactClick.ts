@@ -30,7 +30,7 @@ interface ExactClickProps {
   enableMoveAndBack?: boolean
 }
 
-function isOutOfBounds(posA: Position, posB: Position, eps: number) {
+function checkOutOfBounds(posA: Position, posB: Position, eps: number) {
   return (
     Math.abs(posA.clientX - posB.clientX) > eps ||
     Math.abs(posA.clientY - posB.clientY) > eps
@@ -86,7 +86,7 @@ export function useExactClick({
       }
     }
     const onWindowPointerMove = (e: Position) => {
-      if (isOutOfBounds(startPosRef.current, e, eps)) {
+      if (checkOutOfBounds(startPosRef.current, e, eps)) {
         isMoveAndBackRef.current = true
       }
     }
@@ -99,13 +99,13 @@ export function useExactClick({
 
   const checkExactClick = useCallback(
     (e: Position) => {
-      if (durationMs >= 0 && Date.now() - startTimeRef.current > durationMs) {
-        return false
-      }
       if (!enableMoveAndBack && isMoveAndBackRef.current) {
         return false
       }
-      if (eps >= 0 && isOutOfBounds(startPosRef.current, e, eps)) {
+      if (durationMs >= 0 && Date.now() - startTimeRef.current > durationMs) {
+        return false
+      }
+      if (eps >= 0 && checkOutOfBounds(startPosRef.current, e, eps)) {
         return false
       }
       return true
