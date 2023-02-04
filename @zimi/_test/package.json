@@ -45,6 +45,7 @@
   "devDependencies": {
     "@types/node": "^18.11.18",
     "@types/react-transition-group": "^4.4.5",
+    "@types/toastify-js": "^1.11.1",
     "@vitejs/plugin-react": "^3.1.0",
     "@x_m/type-utils": "^0.1.9",
     "sass": "^1.54.4",
