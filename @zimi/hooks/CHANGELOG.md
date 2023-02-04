@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/xiaomingTang/xiaoming/compare/v0.4.0...v0.5.0) (2023-02-04)
+
+
+### Features
+
+* 新增 useCombinedRefs & useWindowSize; 优化 useElementRect with ResizeObserver ([b87d851](https://github.com/xiaomingTang/xiaoming/commit/b87d851276c2c044652f6f5e331a9b6d4bf4209a))
+
+
+
+
+
 # [0.4.0](https://github.com/xiaomingTang/xiaoming/compare/v0.3.1...v0.4.0) (2023-01-15)
 
 **Note:** Version bump only for package @zimi/hooks
