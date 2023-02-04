@@ -10,6 +10,7 @@ yarn add @zimi/utils
 ### examples
 
 [genePromiseOnce](#genePromiseOnce)    
+[historyStateManager](#historyStateManager)    
 [resizeTo](#resizeTo)    
 [sleepMs](#sleepMs)    
 
@@ -32,6 +33,38 @@ window.addEventListener('resize', () => {
     })
 })
 
+
+```
+[↑ all examples ↑](#examples)
+
+#### historyStateManager
+
+``` typescript react
+
+// you should call this function as early as possible
+// WARNING: this function includes `window.history.replaceState(xxx)`
+historyStateManager.init()
+
+function App() {
+  const [num, setNum] = useState(0)
+  return (
+    <Button
+      onClick={() => {
+        setNum((prev) => prev + 1)
+        historyStateManager.push(async () => {
+          if (window.confirm('Are you sure?')) {
+            setNum((prev) => prev - 1)
+          } else {
+            Toastify({ text: 'User rejected' }).showToast()
+            throw new Error('reject')
+          }
+        })
+      }}
+    >
+      {num}
+    </Button>
+  )
+}
 
 ```
 [↑ all examples ↑](#examples)
