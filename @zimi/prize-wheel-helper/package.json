@@ -1,7 +1,7 @@
 {
   "name": "@zimi/prize-wheel-helper",
   "license": "MIT",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "author": "xiaomingTang",
   "description": "prize wheel helper",
   "private": false,
@@ -29,7 +29,7 @@
     "react": "^18.2.0"
   },
   "devDependencies": {
-    "@zimi/event-emitter": "^0.5.0",
-    "@zimi/prize-wheel": "^0.5.0"
+    "@zimi/event-emitter": "^0.6.0",
+    "@zimi/prize-wheel": "^0.6.0"
   }
 }

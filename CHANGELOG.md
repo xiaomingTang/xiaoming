@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/xiaomingTang/xiaoming/compare/v0.5.0...v0.6.0) (2023-02-04)
+
+
+### Features
+
+* 新增 resizeTo ([3c078fe](https://github.com/xiaomingTang/xiaoming/commit/3c078fef00e9372f9c04cee3e503c5e3dbb74bce))
+* test 新增 tailwind ([467015b](https://github.com/xiaomingTang/xiaoming/commit/467015b5084442aed5010163c21e3bea9ae9a2fc))
+
+
+
+
+
 # [0.5.0](https://github.com/xiaomingTang/xiaoming/compare/v0.4.0...v0.5.0) (2023-02-04)
 
 

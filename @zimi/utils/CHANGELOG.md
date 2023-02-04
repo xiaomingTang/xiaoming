@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/xiaomingTang/xiaoming/compare/v0.5.0...v0.6.0) (2023-02-04)
+
+
+### Features
+
+* 新增 resizeTo ([3c078fe](https://github.com/xiaomingTang/xiaoming/commit/3c078fef00e9372f9c04cee3e503c5e3dbb74bce))
+
+
+
+
+
 # [0.5.0](https://github.com/xiaomingTang/xiaoming/compare/v0.4.0...v0.5.0) (2023-02-04)
 
 **Note:** Version bump only for package @zimi/utils
