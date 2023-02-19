@@ -1,5 +1,5 @@
 import EventEmitter from '@zimi/event-emitter'
-import './inputdevicecapabilities-polyfill.js'
+import '@zimi/input-device-capabilities-polyfill'
 import { Interact, InteractEvents } from './types'
 
 /**

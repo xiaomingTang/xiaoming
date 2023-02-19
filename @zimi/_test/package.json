@@ -1,7 +1,7 @@
 {
   "name": "@zimi/test",
   "license": "MIT",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "author": "xiaomingTang",
   "description": "example for @zimi/*",
   "private": true,
@@ -17,13 +17,13 @@
     "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.10.0",
     "@tailwindcss/line-clamp": "^0.4.2",
-    "@zimi/event-emitter": "^0.7.0",
-    "@zimi/hooks": "^0.7.0",
-    "@zimi/interact": "^0.7.0",
-    "@zimi/interact-dom": "^0.7.0",
-    "@zimi/prize-wheel": "^0.7.0",
-    "@zimi/prize-wheel-helper": "^0.7.0",
-    "@zimi/utils": "^0.7.0",
+    "@zimi/event-emitter": "workspace:*",
+    "@zimi/hooks": "workspace:*",
+    "@zimi/interact": "workspace:*",
+    "@zimi/interact-dom": "workspace:*",
+    "@zimi/prize-wheel": "workspace:*",
+    "@zimi/prize-wheel-helper": "workspace:*",
+    "@zimi/utils": "workspace:*",
     "autoprefixer": "^10.4.13",
     "classnames": "^2.3.1",
     "core-js": "3",
@@ -43,12 +43,18 @@
     "zustand": "^4.0.0"
   },
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.19.6",
+    "@babel/preset-env": "^7.20.2",
+    "@rollup/plugin-babel": "^6.0.3",
     "@types/node": "^18.11.18",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
     "@types/react-transition-group": "^4.4.5",
     "@types/toastify-js": "^1.11.1",
     "@vitejs/plugin-react": "^3.1.0",
-    "@x_m/type-utils": "^0.1.9",
+    "@zimi/type-utils": "workspace:*",
     "sass": "^1.54.4",
-    "vite": "^4.1.1"
+    "vite": "^4.1.2",
+    "vite-plugin-dts": "2.0.0-beta.1"
   }
 }

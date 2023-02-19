@@ -1,13 +1,13 @@
 import { defineConfig } from 'vite'
 import path from 'path'
-import dts from 'vite-dts'
+import dts from 'vite-plugin-dts'
 import babel from '@rollup/plugin-babel'
 
 export default defineConfig({
   build: {
     sourcemap: true,
     lib: {
-      name: 'XM_Hooks',
+      name: 'ZM_Hooks',
       entry: path.resolve(__dirname, 'src/index.ts'),
       formats: ['es', 'umd'],
       fileName: (format) => `index.${format}.js`,

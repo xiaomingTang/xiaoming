@@ -1,5 +1,8 @@
 # 貌似不支持 '!'
 
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
 *.json
 *.md
 *.d.ts

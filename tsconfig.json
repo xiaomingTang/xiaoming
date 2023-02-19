@@ -5,6 +5,7 @@
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": false,
     "baseUrl": ".",
+    "declaration": true,
     "skipLibCheck": true,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
@@ -16,6 +17,6 @@
     "isolatedModules": true,
     "jsx": "react-jsx"
   },
-  "include": ["@zimi", "types"],
+  "include": ["@zimi"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

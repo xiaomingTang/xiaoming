@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
+    "strict": true,
     "composite": true,
-    "module": "ESNext",
+    "module": "CommonJS",
+    "target": "ES2019",
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true
   },
   "include": [
-    "vite.base-react-config.ts",
-    "**/vite.config.ts",
-    "**/vite.example-config.ts"
+    "@zimi/*/vite.config.ts",
+    "utils"
   ]
 }

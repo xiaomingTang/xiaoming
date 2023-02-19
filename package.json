@@ -1,7 +1,7 @@
 {
   "name": "xiaoming",
-  "version": "0.0.1",
-  "description": "packages",
+  "version": "0.0.2",
+  "description": "@zimi packages",
   "author": "xiaomingTang",
   "license": "MIT",
   "private": true,
@@ -11,7 +11,9 @@
   "repository": "https://github.com/xiaomingTang/xiaoming.git",
   "browserslist": {
     "production": [
-      "> 1%"
+      ">1% in US",
+      ">1% in CN",
+      "maintained node versions"
     ],
     "development": [
       "last 2 chrome version",
@@ -20,14 +22,16 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "build": "lerna run build",
-    "build:watch": "lerna run build:watch",
+    "analyze": "source-map-explorer @zimi/*/dist/*.es.js",
+    "analyze-simple": "ts-node --project tsconfig.node.json utils/analyze.ts",
+    "build": "pnpm --filter ./@zimi/* run build",
+    "build:watch": "pnpm --filter ./@zimi/* run build:watch",
     "lint": "eslint --fix @zimi",
     "format": "prettier --write ."
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint --quiet && yarn lint-staged --quiet"
+      "pre-commit": "yarn lint-staged --quiet"
     }
   },
   "lint-staged": {
@@ -35,28 +39,22 @@
       "prettier --write"
     ],
     "*.{js,jsx}": [
+      "yarn lint",
       "prettier --write"
     ],
     "*.{css,scss}": [
       "prettier --write"
     ],
     "*.{ts,tsx}": [
+      "yarn lint",
       "prettier --parser=typescript --write"
     ]
   },
-  "dependencies": {
-    "@babel/runtime-corejs3": "^7.18.9",
-    "core-js": "3"
-  },
   "devDependencies": {
-    "@babel/plugin-transform-runtime": "^7.18.9",
-    "@babel/preset-env": "^7.18.9",
-    "@rollup/plugin-babel": "^5.3.1",
-    "@types/node": "^18.11.18",
-    "@types/react-dom": "^18.0.6",
+    "@changesets/cli": "^2.26.0",
+    "@types/glob": "^8.0.1",
     "@typescript-eslint/eslint-plugin": "^5.32.0",
     "@typescript-eslint/parser": "^5.32.0",
-    "@vitejs/plugin-react": "^2.0.0",
     "eslint": "^8.21.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.0.0",
@@ -66,17 +64,15 @@
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.1",
-    "lerna": "^5.3.0",
-    "lerna-update-wizard": "^1.1.2",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "typescript": "^4.7.4",
-    "vite": "^3.0.4",
-    "vite-dts": "^1.0.4"
+    "ts-node": "^10.9.1"
   },
   "TODO": [
     "test"
-  ]
+  ],
+  "dependencies": {
+    "glob": "^8.1.0",
+    "utils": "^0.3.1"
+  }
 }
