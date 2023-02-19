@@ -1,5 +1,17 @@
 # Change Log
 
+## 1.0.0
+
+### Minor Changes
+
+- feat: 改用 pnpm & 新增 input-device-capabilities-polyfill
+
+### Patch Changes
+
+- Updated dependencies
+  - @zimi/event-emitter@0.8.0
+  - @zimi/interact@0.8.0
+
 ## 0.7.1
 
 ### Patch Changes
