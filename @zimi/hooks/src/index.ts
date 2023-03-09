@@ -1,6 +1,5 @@
 export * from './useCombinedRefs'
 export * from './useElementRect'
-export * from './useExactClick'
 export * from './useListen'
 export * from './useRafLoop'
 export * from './useWarnBeforeUnload'

@@ -1,3 +1,4 @@
+export * from './ExactClickChecker'
 export * from './genePromiseOnce'
 export * from './historyStateManager'
 export * from './resizeTo'

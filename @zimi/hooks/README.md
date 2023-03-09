@@ -9,7 +9,6 @@ yarn add  @zimi/hooks
 
 [useCombinedRefs](#useCombinedRefs)    
 [useElementRect](#useElementRect)    
-[useExactClick](#useExactClick)    
 [useListen](#useListen)    
 [useRafLoop](#useRafLoop)    
 [useWarnBeforeUnload](#useWarnBeforeUnload)    
@@ -55,69 +54,6 @@ const element = document.querySelector('xxx')
 
 function Test() {
   const rect = useElementRect(element)
-}
-
-```
-[↑ all examples ↑](#examples)
-
-#### useExactClick
-
-> It is helpful in canvas / threejs
-
-``` tsx
-function Test() {
-  const { onPointerDown, checkExactClick } = useExactClick()
-
-  return <div
-    onPointerDown={onPointerDown}
-    onClick={(e) => {
-      if (checkExactClick(e)) {
-        // do something
-      }
-    }}
-  >
-    hello world
-  </div>
-}
-
-// or
-
-function Test() {
-  const { onPointerDown, checkExactClick } = useExactClick({
-    /**
-     * x/y 方向移动超过该值则认为不是 click;
-     * 
-     * 负数 表示不考量该参数;
-     * 
-     * @default 10
-     */
-    eps: 10,
-    /**
-     * 点击时间间隔超过该值则认为不是 click;
-     * 
-     * 负数 表示不考量该参数;
-     * 
-     * @default 500
-     */
-    durationMs: 500,
-    /**
-     * 是否允许移动后回到原处并触发 click;
-     * 
-     * @default false
-     */
-    enableMoveAndBack: false,
-  })
-
-  return <div
-    onPointerDown={onPointerDown}
-    onClick={(e) => {
-      if (checkExactClick(e)) {
-        // do something
-      }
-    }}
-  >
-    hello world
-  </div>
 }
 
 ```

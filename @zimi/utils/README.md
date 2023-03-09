@@ -9,12 +9,36 @@ yarn add @zimi/utils
 
 ### examples
 
+[ExactClickChecker](#ExactClickChecker)    
 [genePromiseOnce](#genePromiseOnce)    
 [historyStateManager](#historyStateManager)    
 [resizeTo](#resizeTo)    
 [sleepMs](#sleepMs)    
 
 ---
+
+#### ExactClickChecker
+
+```typescript
+
+const clickChecker = new ExactClickChecker()
+clickChecker.bindEvents()
+
+// or you can check in mouseup / touchend / click / dblclick
+canvas.addEventListener('pointerup', () => {
+  if (clickChecker.checkIsClick()) {
+    // is exact click
+  }
+  if (clickChecker.checkIsClick({ durationMs: 300 })) {
+    // is exact click
+  }
+  if (clickChecker.checkIsDoubleClick()) {
+    // is exact double click
+  }
+})
+
+```
+[↑ all examples ↑](#examples)
 
 #### genePromiseOnce
 
