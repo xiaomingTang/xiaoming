@@ -1,5 +1,20 @@
 # Change Log
 
+## 0.9.0
+
+### Minor Changes
+
+- feat: add ExactClickChecker & remove useExactClick
+
+### Patch Changes
+
+- Updated dependencies
+  - @zimi/event-emitter@0.9.0
+  - @zimi/interact@0.9.0
+  - @zimi/interact-dom@2.0.0
+  - @zimi/prize-wheel@0.9.0
+  - @zimi/prize-wheel-helper@0.9.0
+
 ## 0.8.0
 
 ### Minor Changes

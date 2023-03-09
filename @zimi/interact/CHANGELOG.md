@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.9.0
+
+### Minor Changes
+
+- feat: add ExactClickChecker & remove useExactClick
+
+### Patch Changes
+
+- Updated dependencies
+  - @zimi/event-emitter@0.9.0
+  - @zimi/input-device-capabilities-polyfill@0.9.0
+
 ## 0.8.0
 
 ### Minor Changes

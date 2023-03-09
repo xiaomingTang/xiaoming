@@ -1,5 +1,17 @@
 # Change Log
 
+## 2.0.0
+
+### Minor Changes
+
+- feat: add ExactClickChecker & remove useExactClick
+
+### Patch Changes
+
+- Updated dependencies
+  - @zimi/event-emitter@0.9.0
+  - @zimi/interact@0.9.0
+
 ## 1.0.0
 
 ### Minor Changes
