@@ -3,6 +3,9 @@ on:
   push:
     tags:
       - '*'
+env:
+  # https://stackoverflow.com/a/75486166
+  CI: true
 jobs:
   version:
     timeout-minutes: 15
@@ -26,7 +29,8 @@ jobs:
         with:
           version: 7.29.0
           run_install: |
-            - args: [--frozen-lockfile]
+            - recursive: true
+              args: [--frozen-lockfile]
 
       - name: create and publish versions
         uses: changesets/action@v1
