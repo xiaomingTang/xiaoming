@@ -32,6 +32,8 @@ jobs:
             - recursive: true
               args: [--no-frozen-lockfile]
 
+      - run: pnpm run build
+
       - name: create and publish versions
         uses: changesets/action@v1
         with:
