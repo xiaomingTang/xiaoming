@@ -38,7 +38,6 @@ jobs:
       - name: create and publish versions
         uses: changesets/action@v1
         with:
-          version: $GITHUB_REF_NAME
           commit: "chore: update to $GITHUB_REF_NAME"
           title: "chore: update to $GITHUB_REF_NAME"
           publish: pnpm publish --access public -r
