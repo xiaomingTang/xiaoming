@@ -28,8 +28,7 @@ jobs:
         uses: pnpm/action-setup@v2
         with:
           version: 7.29.0
-          run_install: |
-            - args: [--frozen-lockfile]
+          run_install: true
 
       - name: create and publish versions
         uses: changesets/action@v1
