@@ -26,8 +26,7 @@ jobs:
         with:
           version: 7.29.0
           run_install: |
-            - recursive: true
-              args: [--frozen-lockfile]
+            - args: [--frozen-lockfile]
 
       - name: create and publish versions
         uses: changesets/action@v1
