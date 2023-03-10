@@ -1,0 +1,38 @@
+name: Production deploy
+on:
+  push:
+    tags:
+      - '*'
+jobs:
+  version:
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: setup node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          registry-url: 'https://registry.npmjs.org'
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: pnpm install
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7.29.0
+          run_install: |
+            - recursive: true
+            - args: [--frozen-lockfile]
+
+      - name: create and publish versions
+        uses: changesets/action@v1
+        with:
+          version: $GITHUB_REF_NAME
+          commit: "chore: update to $GITHUB_REF_NAME"
+          title: "chore: update to $GITHUB_REF_NAME"
+          publish: pnpm publish --access public -r
