@@ -43,7 +43,7 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
-          publish: pnpm publish --access public -r
+          publish: pnpm publish --no-git-checks --access public -r
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
