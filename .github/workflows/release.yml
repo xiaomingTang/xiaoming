@@ -45,10 +45,7 @@ jobs:
         with:
           commit: "feat: update version"
           title: "feat: update version"
-          publish: |
-            git add -A . && 
-            git commit -m "feat: update version" && 
-            pnpm publish --access public -r
+          publish: pnpm publish --access public -r
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -63,4 +60,3 @@ jobs:
             const pull_number = "${{ steps.changesets.outputs.pullRequestNumber }}";
             await github.rest.pulls.merge({ owner, repo, pull_number, merge_method: "squash"});
             return true;
-

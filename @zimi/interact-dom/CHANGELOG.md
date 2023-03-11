@@ -1,5 +1,29 @@
 # Change Log
 
+## 4.0.0
+
+### Minor Changes
+
+- update version
+
+### Patch Changes
+
+- Updated dependencies
+  - @zimi/event-emitter@0.11.0
+  - @zimi/interact@0.11.0
+
+## 3.0.0
+
+### Minor Changes
+
+- update version
+
+### Patch Changes
+
+- Updated dependencies
+  - @zimi/event-emitter@0.10.0
+  - @zimi/interact@0.10.0
+
 ## 2.0.1
 
 ### Patch Changes

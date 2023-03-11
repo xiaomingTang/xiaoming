@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.11.0
+
+### Minor Changes
+
+- update version
+
+## 0.10.0
+
+### Minor Changes
+
+- update version
+
 ## 0.9.1
 
 ### Patch Changes

@@ -1,5 +1,39 @@
 # Change Log
 
+## 0.11.0
+
+### Minor Changes
+
+- update version
+
+### Patch Changes
+
+- Updated dependencies
+  - @zimi/prize-wheel-helper@0.11.0
+  - @zimi/event-emitter@0.11.0
+  - @zimi/interact-dom@4.0.0
+  - @zimi/prize-wheel@0.11.0
+  - @zimi/interact@0.11.0
+  - @zimi/hooks@0.10.0
+  - @zimi/utils@0.10.0
+
+## 0.10.0
+
+### Minor Changes
+
+- update version
+
+### Patch Changes
+
+- Updated dependencies
+  - @zimi/event-emitter@0.10.0
+  - @zimi/hooks@0.9.0
+  - @zimi/interact@0.10.0
+  - @zimi/interact-dom@3.0.0
+  - @zimi/prize-wheel@0.10.0
+  - @zimi/prize-wheel-helper@0.10.0
+  - @zimi/utils@0.9.0
+
 ## 0.9.1
 
 ### Patch Changes
