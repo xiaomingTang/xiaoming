@@ -42,6 +42,7 @@ jobs:
         with:
           commit: "chore: update to $GITHUB_REF_NAME"
           title: "chore: update to $GITHUB_REF_NAME"
+          publish: pnpm publish --no-git-checks --access public -r
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -57,6 +58,3 @@ jobs:
             await github.rest.pulls.merge({ owner, repo, pull_number, merge_method: "squash"});
             return true;
 
-      - name: Publish to npm
-        if: steps.merge_request.outputs.result == true
-        run: pnpm publish --no-git-checks --access public -r
