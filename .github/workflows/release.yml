@@ -31,7 +31,6 @@ jobs:
           version: 7.29.0
           run_install: |
             - recursive: true
-              args: [--no-frozen-lockfile]
 
       - name: Build
         run: pnpm run build
@@ -42,7 +41,7 @@ jobs:
         with:
           commit: "chore: update to $GITHUB_REF_NAME"
           title: "chore: update to $GITHUB_REF_NAME"
-          publish: pnpm publish --no-git-checks --access public -r
+          publish: pnpm publish --access public -r
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

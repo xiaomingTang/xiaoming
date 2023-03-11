@@ -243,13 +243,13 @@ importers:
       '@babel/runtime': registry.npmjs.org/@babel/runtime/7.21.0
       '@babel/runtime-corejs3': registry.npmjs.org/@babel/runtime-corejs3/7.21.0
       '@zimi/event-emitter': link:../event-emitter
-      '@zimi/interact': link:../interact
       core-js: registry.npmjs.org/core-js/3.29.0
       gl-matrix: registry.npmjs.org/gl-matrix/3.4.3
     devDependencies:
       '@babel/plugin-transform-runtime': registry.npmjs.org/@babel/plugin-transform-runtime/7.21.0_@babel+core@7.21.0
       '@babel/preset-env': registry.npmjs.org/@babel/preset-env/7.20.2_@babel+core@7.21.0
       '@rollup/plugin-babel': registry.npmjs.org/@rollup/plugin-babel/6.0.3_@babel+core@7.21.0
+      '@zimi/interact': link:../interact
       vite: registry.npmjs.org/vite/4.1.4
       vite-plugin-dts: registry.npmjs.org/vite-plugin-dts/2.0.0-beta.1_vite@4.1.4
 
