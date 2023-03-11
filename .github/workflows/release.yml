@@ -18,6 +18,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Chmod
+        run: chmod ug+x .husky/*
+
       - name: Setup node.js
         uses: actions/setup-node@v2
         with:
