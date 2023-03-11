@@ -1,5 +1,19 @@
 # Change Log
 
+## 0.9.1
+
+### Patch Changes
+
+- add comitlint & husky hooks
+- Updated dependencies
+  - @zimi/event-emitter@0.9.1
+  - @zimi/hooks@0.8.1
+  - @zimi/interact@0.9.1
+  - @zimi/interact-dom@2.0.1
+  - @zimi/prize-wheel@0.9.1
+  - @zimi/prize-wheel-helper@0.9.1
+  - @zimi/utils@0.8.1
+
 ## 0.9.0
 
 ### Minor Changes

@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.9.1
+
+### Patch Changes
+
+- add comitlint & husky hooks
+- Updated dependencies
+  - @zimi/event-emitter@0.9.1
+  - @zimi/input-device-capabilities-polyfill@0.9.1
+
 ## 0.9.0
 
 ### Minor Changes

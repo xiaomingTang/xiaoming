@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.8.1
+
+### Patch Changes
+
+- add comitlint & husky hooks
+
 ## 0.8.0
 
 ### Minor Changes

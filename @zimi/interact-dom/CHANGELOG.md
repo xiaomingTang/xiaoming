@@ -1,5 +1,14 @@
 # Change Log
 
+## 2.0.1
+
+### Patch Changes
+
+- add comitlint & husky hooks
+- Updated dependencies
+  - @zimi/event-emitter@0.9.1
+  - @zimi/interact@0.9.1
+
 ## 2.0.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.9.1
+
+### Patch Changes
+
+- add comitlint & husky hooks
+
 ## 0.9.0
 
 ### Minor Changes
