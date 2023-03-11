@@ -1,5 +1,11 @@
 # @zimi/input-device-capabilities-polyfill
 
+## 0.13.0
+
+### Minor Changes
+
+- ci: try to fix error when create mr
+
 ## 0.12.0
 
 ### Minor Changes

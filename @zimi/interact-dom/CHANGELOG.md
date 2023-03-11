@@ -1,5 +1,17 @@
 # Change Log
 
+## 6.0.0
+
+### Minor Changes
+
+- ci: try to fix error when create mr
+
+### Patch Changes
+
+- Updated dependencies
+  - @zimi/event-emitter@0.13.0
+  - @zimi/interact@0.13.0
+
 ## 5.0.0
 
 ### Minor Changes
