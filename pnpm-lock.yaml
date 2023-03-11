@@ -184,13 +184,13 @@ importers:
       '@babel/runtime-corejs3': registry.npmjs.org/@babel/runtime-corejs3/7.21.0
       core-js: registry.npmjs.org/core-js/3.29.0
       lodash: registry.npmjs.org/lodash/4.17.21
+      react: registry.npmjs.org/react/18.2.0
     devDependencies:
       '@babel/plugin-transform-runtime': registry.npmjs.org/@babel/plugin-transform-runtime/7.21.0_@babel+core@7.21.0
       '@babel/preset-env': registry.npmjs.org/@babel/preset-env/7.20.2_@babel+core@7.21.0
       '@rollup/plugin-babel': registry.npmjs.org/@rollup/plugin-babel/6.0.3_@babel+core@7.21.0
       '@types/lodash': registry.npmjs.org/@types/lodash/4.14.191
       '@types/react': registry.npmjs.org/@types/react/18.0.28
-      react: registry.npmjs.org/react/18.2.0
       vite: registry.npmjs.org/vite/4.1.4
       vite-plugin-dts: registry.npmjs.org/vite-plugin-dts/2.0.0-beta.1_vite@4.1.4
 
@@ -301,7 +301,6 @@ importers:
       '@babel/runtime-corejs3': registry.npmjs.org/@babel/runtime-corejs3/7.21.0
       core-js: registry.npmjs.org/core-js/3.29.0
       lodash: registry.npmjs.org/lodash/4.17.21
-      react: registry.npmjs.org/react/18.2.0
     devDependencies:
       '@babel/plugin-transform-runtime': registry.npmjs.org/@babel/plugin-transform-runtime/7.21.0_@babel+core@7.21.0
       '@babel/preset-env': registry.npmjs.org/@babel/preset-env/7.20.2_@babel+core@7.21.0
@@ -310,6 +309,7 @@ importers:
       '@types/react': registry.npmjs.org/@types/react/18.0.28
       '@zimi/event-emitter': link:../event-emitter
       '@zimi/prize-wheel': link:../prize-wheel
+      react: registry.npmjs.org/react/18.2.0
       vite: registry.npmjs.org/vite/4.1.4
       vite-plugin-dts: registry.npmjs.org/vite-plugin-dts/2.0.0-beta.1_vite@4.1.4
 
