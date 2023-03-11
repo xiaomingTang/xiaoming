@@ -26,12 +26,17 @@
     "analyze-simple": "ts-node --project tsconfig.node.json utils/analyze.ts",
     "build": "pnpm --filter ./@zimi/* run build",
     "build:watch": "pnpm --filter ./@zimi/* run build:watch",
+    "commit": "git-cz",
     "lint": "eslint --fix @zimi",
+    "lint:commit": "commitlint -e",
+    "lint-staged": "lint-staged --quiet",
     "format": "prettier --write ."
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint-staged --quiet"
+      "pre-commit": "pnpm run lint-staged",
+      "pre-push": "pnpm run lint",
+      "commit-msg": "pnpm run lint:commit"
     }
   },
   "lint-staged": {
@@ -39,16 +44,21 @@
       "prettier --write"
     ],
     "*.{js,jsx}": [
-      "yarn lint",
+      "eslint --fix",
       "prettier --write"
     ],
     "*.{css,scss}": [
       "prettier --write"
     ],
     "*.{ts,tsx}": [
-      "yarn lint",
+      "eslint --fix",
       "prettier --parser=typescript --write"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.0",
@@ -72,6 +82,10 @@
     "test"
   ],
   "dependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
     "glob": "^8.1.0",
     "utils": "^0.3.1"
   }
