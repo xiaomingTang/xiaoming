@@ -34,12 +34,4 @@ jobs:
               args: [--no-frozen-lockfile]
 
       - run: pnpm run build
-
-      - name: create and publish versions
-        uses: changesets/action@v1
-        with:
-          commit: "chore: update to $GITHUB_REF_NAME"
-          title: "chore: update to $GITHUB_REF_NAME"
-          publish: pnpm publish --no-git-checks --access public -r
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: pnpm publish --access public -r
