@@ -8,16 +8,16 @@ env:
   CI: true
 
 jobs:
-  version:
+  release:
     timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
-      - name: checkout code repository
+      - name: checkout repo
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
 
-      - name: setup node.js
+      - name: Setup node.js
         uses: actions/setup-node@v2
         with:
           node-version: 16
@@ -25,7 +25,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: pnpm install
+      - name: Install deps
         uses: pnpm/action-setup@v2
         with:
           version: 7.29.0
@@ -33,5 +33,30 @@ jobs:
             - recursive: true
               args: [--no-frozen-lockfile]
 
-      - run: pnpm run build
-      - run: pnpm publish --access public -r
+      - name: Build
+        run: pnpm run build
+
+      - name: Create release pull request
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          commit: "chore: update to $GITHUB_REF_NAME"
+          title: "chore: update to $GITHUB_REF_NAME"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Merge pull request
+        id: merge_request
+        if: steps.changesets.outputs.pullRequestNumber > 0
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const owner = "$GITHUB_REPOSITORY_OWNER";
+            const repo = "${{ github.event.repository.name }}";
+            const pull_number = "${{ steps.changesets.outputs.pullRequestNumber }}";
+            await github.rest.pulls.merge({ owner, repo, pull_number, merge_method: "squash"});
+            return true;
+
+      - name: Publish to npm
+        if: steps.merge_request.outputs.result == true
+        run: pnpm publish --no-git-checks --access public -r
