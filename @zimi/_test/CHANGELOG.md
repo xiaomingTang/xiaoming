@@ -1,5 +1,22 @@
 # Change Log
 
+## 0.13.0
+
+### Minor Changes
+
+- ci: try to fix error when create mr
+
+### Patch Changes
+
+- Updated dependencies
+  - @zimi/event-emitter@0.13.0
+  - @zimi/hooks@0.12.0
+  - @zimi/interact@0.13.0
+  - @zimi/interact-dom@6.0.0
+  - @zimi/prize-wheel@0.13.0
+  - @zimi/prize-wheel-helper@0.13.0
+  - @zimi/utils@0.12.0
+
 ## 0.12.0
 
 ### Minor Changes
