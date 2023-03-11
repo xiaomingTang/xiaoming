@@ -51,7 +51,7 @@ jobs:
 
       - name: Merge pull request
         id: merge_request
-        if: steps.changesets.outputs.pullRequestNumber > 0
+        if: ${{ steps.changesets.outputs.pullRequestNumber > 0 }}
         uses: actions/github-script@v6
         with:
           script: |

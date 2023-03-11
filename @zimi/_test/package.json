@@ -1,7 +1,7 @@
 {
   "name": "@zimi/test",
   "license": "MIT",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "author": "xiaomingTang",
   "description": "example for @zimi/*",
   "private": true,

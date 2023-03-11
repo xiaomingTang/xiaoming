@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.12.0
+
+### Minor Changes
+
+- update version
+
+### Patch Changes
+
+- Updated dependencies
+  - @zimi/event-emitter@0.12.0
+  - @zimi/input-device-capabilities-polyfill@0.12.0
+
 ## 0.11.0
 
 ### Minor Changes
