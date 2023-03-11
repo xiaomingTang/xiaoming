@@ -1,8 +1,9 @@
 name: Production deploy
 on:
   push:
-    tags:
-      - '*'
+    branches:
+      - "master"
+
 env:
   # https://stackoverflow.com/a/75486166
   CI: true
@@ -39,8 +40,6 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
-          commit: "chore: update to $GITHUB_REF_NAME"
-          title: "chore: update to $GITHUB_REF_NAME"
           publish: pnpm publish --access public -r
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
