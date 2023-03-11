@@ -43,10 +43,12 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
+          commit: "feat: update version"
+          title: "feat: update version"
           publish: |
-            - git add -A .
-            - git commit -m 'feat: update version'
-            - pnpm publish --no-git-checks --access public -r
+            git add -A . && \
+            git commit -m 'feat: update version' && \
+            pnpm publish --no-git-checks --access public -r
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
