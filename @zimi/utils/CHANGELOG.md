@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.13.0
+
+### Minor Changes
+
+- ci: require git checks
+
 ## 0.12.0
 
 ### Minor Changes

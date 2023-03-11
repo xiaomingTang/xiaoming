@@ -1,5 +1,17 @@
 # Change Log
 
+## 7.0.0
+
+### Minor Changes
+
+- ci: require git checks
+
+### Patch Changes
+
+- Updated dependencies
+  - @zimi/event-emitter@0.14.0
+  - @zimi/interact@0.14.0
+
 ## 6.0.0
 
 ### Minor Changes

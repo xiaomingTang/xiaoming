@@ -1,5 +1,22 @@
 # Change Log
 
+## 0.14.0
+
+### Minor Changes
+
+- ci: require git checks
+
+### Patch Changes
+
+- Updated dependencies
+  - @zimi/event-emitter@0.14.0
+  - @zimi/hooks@0.13.0
+  - @zimi/interact@0.14.0
+  - @zimi/interact-dom@7.0.0
+  - @zimi/prize-wheel@0.14.0
+  - @zimi/prize-wheel-helper@0.14.0
+  - @zimi/utils@0.13.0
+
 ## 0.13.0
 
 ### Minor Changes

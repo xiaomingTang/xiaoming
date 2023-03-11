@@ -1,5 +1,11 @@
 # @zimi/input-device-capabilities-polyfill
 
+## 0.14.0
+
+### Minor Changes
+
+- ci: require git checks
+
 ## 0.13.0
 
 ### Minor Changes
