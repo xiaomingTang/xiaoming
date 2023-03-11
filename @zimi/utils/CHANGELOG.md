@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.14.0
+
+### Minor Changes
+
+- 6eb75ad: run changeset locally
+
 ## 0.13.0
 
 ### Minor Changes
