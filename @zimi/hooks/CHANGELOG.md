@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.15.0
+
+### Minor Changes
+
+- 66c2048: ci test
+
 ## 0.14.0
 
 ### Minor Changes

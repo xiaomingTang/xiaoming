@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.16.0
+
+### Minor Changes
+
+- 66c2048: ci test
+
+### Patch Changes
+
+- Updated dependencies [66c2048]
+  - @zimi/input-device-capabilities-polyfill@0.16.0
+  - @zimi/event-emitter@0.16.0
+
 ## 0.15.0
 
 ### Minor Changes
