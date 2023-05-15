@@ -1,8 +1,8 @@
 name: Production deploy
 on:
   push:
-    branches:
-      - "master"
+    tags:
+      - 'v*'
 
 env:
   # https://stackoverflow.com/a/75486166
@@ -44,8 +44,8 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
-          commit: "feat: update version"
-          title: "feat: update version"
+          commit: 'feat: update version'
+          title: 'feat: update version'
           publish: pnpm publish --access public -r
 
       - name: Merge pull request
