@@ -1,5 +1,17 @@
 # Change Log
 
+## 9.0.0
+
+### Minor Changes
+
+- 911f851: update workflow doc
+
+### Patch Changes
+
+- Updated dependencies [911f851]
+  - @zimi/event-emitter@0.16.0
+  - @zimi/interact@0.16.0
+
 ## 8.0.0
 
 ### Minor Changes

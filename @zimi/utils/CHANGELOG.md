@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.16.0
+
+### Minor Changes
+
+- 911f851: update workflow doc
+
 ## 0.15.0
 
 ### Minor Changes

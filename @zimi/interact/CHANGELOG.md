@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.16.0
+
+### Minor Changes
+
+- 911f851: update workflow doc
+
+### Patch Changes
+
+- Updated dependencies [911f851]
+  - @zimi/event-emitter@0.16.0
+  - @zimi/input-device-capabilities-polyfill@0.16.0
+
 ## 0.15.0
 
 ### Minor Changes
