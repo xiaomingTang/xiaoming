@@ -14,3 +14,7 @@
 - `pnpm changeset`
    - 然后把 change 文件提交到 git (即 `git add .` 和 `git commit -m 'xxx: xxx'`)
 - `git push origin release/xxx`
+
+### TODO
+
+- release ci 中自动往 master 合
