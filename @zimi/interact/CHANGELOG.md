@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.16.0
+
+### Minor Changes
+
+- 8ef2a35: revert ci test
+
+### Patch Changes
+
+- Updated dependencies [8ef2a35]
+  - @zimi/event-emitter@0.16.0
+  - @zimi/input-device-capabilities-polyfill@0.16.0
+
 ## 0.15.0
 
 ### Minor Changes
