@@ -27,23 +27,8 @@ export default defineConfig({
         babel({
           babelHelpers: 'runtime',
           extensions: ['.ts', '.tsx'],
-          presets: [
-            [
-              '@babel/preset-env',
-              {
-                corejs: 3,
-                useBuiltIns: 'usage',
-              },
-            ],
-          ],
-          plugins: [
-            [
-              '@babel/plugin-transform-runtime',
-              {
-                corejs: 3,
-              },
-            ],
-          ],
+          presets: ['@babel/preset-env'],
+          plugins: ['@babel/plugin-transform-runtime'],
         }),
       ],
     },
