@@ -6,4 +6,4 @@ ReactDOM.createRoot(document.querySelector('#root') as HTMLElement).render(
   <App />
 )
 
-console.log('test-ci-5')
+console.log('test-ci-6')

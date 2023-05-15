@@ -1,4 +1,4 @@
 export * from './logic'
 export * from './animations'
 
-console.log('test-ci-5')
+console.log('test-ci-6')
