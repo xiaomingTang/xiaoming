@@ -1,8 +1,8 @@
 name: Production deploy
 on:
   push:
-    tags:
-      - 'v*'
+    branches:
+      - 'release/*'
 
 env:
   # https://stackoverflow.com/a/75486166
