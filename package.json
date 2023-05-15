@@ -21,7 +21,7 @@
     ]
   },
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "husky install && bash -c 'chmod ug+x .husky/*'",
     "analyze": "source-map-explorer @zimi/*/dist/*.es.js",
     "analyze-simple": "ts-node --project tsconfig.node.json utils/analyze.ts",
     "build": "pnpm --filter ./@zimi/* run build",
