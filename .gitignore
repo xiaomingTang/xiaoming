@@ -9,3 +9,4 @@
 /@zimi/*/dist/
 .npmrc
 .yarnrc
+!/@zimi/input-device-capabilities-polyfill/dist/
