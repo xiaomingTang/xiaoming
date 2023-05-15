@@ -162,4 +162,4 @@ export type HandlersOf<T extends EventsOverview> = T extends EventsOverview
     }
   : never
 
-console.log('test-ci-6')
+console.log('test-ci-7')

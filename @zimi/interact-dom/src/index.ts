@@ -142,4 +142,4 @@ export default class InteractDom extends EventEmitter<{
   }
 }
 
-console.log('test-ci-6')
+console.log('test-ci-7')

@@ -40,4 +40,4 @@ export function usePrizeWheelState(wheel?: PrizeWheel) {
   }
 }
 
-console.log('test-ci-6')
+console.log('test-ci-7')
