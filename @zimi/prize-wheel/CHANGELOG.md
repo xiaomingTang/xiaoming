@@ -1,5 +1,16 @@
 # Change Log
 
+## 0.16.0
+
+### Minor Changes
+
+- 8411919: test ci
+
+### Patch Changes
+
+- Updated dependencies [8411919]
+  - @zimi/event-emitter@0.16.0
+
 ## 0.15.0
 
 ### Minor Changes

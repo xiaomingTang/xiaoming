@@ -1,5 +1,17 @@
 # Change Log
 
+## 9.0.0
+
+### Minor Changes
+
+- 8411919: test ci
+
+### Patch Changes
+
+- Updated dependencies [8411919]
+  - @zimi/event-emitter@0.16.0
+  - @zimi/interact@0.16.0
+
 ## 8.0.0
 
 ### Minor Changes

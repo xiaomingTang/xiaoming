@@ -1,5 +1,11 @@
 # @zimi/input-device-capabilities-polyfill
 
+## 0.16.0
+
+### Minor Changes
+
+- 8411919: test ci
+
 ## 0.15.0
 
 ### Minor Changes
