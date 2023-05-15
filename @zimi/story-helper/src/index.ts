@@ -69,4 +69,4 @@ export function createSBArgs<T extends StoryInputArgs>(args: T): T {
   return args
 }
 
-console.log('test-ci-8')
+console.log('test-ci-9')

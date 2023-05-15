@@ -4,4 +4,4 @@ export * from './historyStateManager'
 export * from './resizeTo'
 export * from './sleepMs'
 
-console.log('test-ci-8')
+console.log('test-ci-9')
