@@ -198,3 +198,5 @@
     }
   }
 })(this)
+
+console.log('test-ci-5')

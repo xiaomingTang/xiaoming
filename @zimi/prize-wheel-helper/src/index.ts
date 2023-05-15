@@ -39,3 +39,5 @@ export function usePrizeWheelState(wheel?: PrizeWheel) {
     running,
   }
 }
+
+console.log('test-ci-5')

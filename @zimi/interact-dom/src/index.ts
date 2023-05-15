@@ -141,3 +141,5 @@ export default class InteractDom extends EventEmitter<{
     return `matrix(${m[0]},${m[1]},${m[3]},${m[4]},${m[6]},${m[7]})`
   }
 }
+
+console.log('test-ci-5')

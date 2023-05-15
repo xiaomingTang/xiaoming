@@ -68,3 +68,5 @@ export type StoryOutputArgs<T extends StoryInputArgs> = {
 export function createSBArgs<T extends StoryInputArgs>(args: T): T {
   return args
 }
+
+console.log('test-ci-5')
