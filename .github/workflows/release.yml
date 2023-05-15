@@ -47,7 +47,7 @@ jobs:
           commit: 'feat: update version'
           title: 'feat: update version'
           version: pnpm changeset version
-          publish: pnpm publish --no-git-checks --access public -r
+          publish: pnpm publish --access public -r
 
       - name: Merge pull request
         id: merge_request
