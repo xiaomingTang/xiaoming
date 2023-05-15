@@ -56,7 +56,7 @@ jobs:
         with:
           script: |
             const owner = process.env.GITHUB_REPOSITORY_OWNER;
-            const repo = "${{ github.event.repository.name }}";
+            const repo = "master";
             const pull_number = "${{ steps.changesets.outputs.pullRequestNumber }}";
             await github.rest.pulls.merge({ owner, repo, pull_number, merge_method: "squash"});
             return true;
