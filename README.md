@@ -9,7 +9,6 @@
 - `git push`
 
 ##### 切换到 release 分支
-- **不要手动打 tag 或升级版本(npm version patch 之类的)**
 - `git checkout -b release/xxx`
 - `pnpm changeset`
    - 然后把 change 文件提交到 git (即 `git add .` 和 `git commit -m 'xxx: xxx'`)
