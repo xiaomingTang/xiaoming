@@ -22,7 +22,7 @@ jobs:
       - name: Setup node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 16
+          node-version: 16.15.1
           registry-url: 'https://registry.npmjs.org'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -30,7 +30,7 @@ jobs:
       - name: Install deps
         uses: pnpm/action-setup@v2
         with:
-          version: 7.29.0
+          version: 8.4.0
           run_install: |
             - recursive: true
 
@@ -46,7 +46,7 @@ jobs:
         with:
           commit: 'feat: update version'
           title: 'feat: update version'
-          publish: pnpm publish --access public -r
+          publish: pnpm publish --access public --tag latest -r
 
       - name: Merge pull request
         id: merge_request
