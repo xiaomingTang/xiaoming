@@ -36,8 +36,8 @@ jobs:
           name: build assets
           path: '@zimi.zip'
       - run: ls -lah
-      - run: unzip @zimi.zip -d @zimi
-      - run: rm @zimi.zip
+      - run: unzip ./@zimi.zip -d @zimi
+      - run: rm ./@zimi.zip
 
       - name: Create release pull request
         id: changesets
