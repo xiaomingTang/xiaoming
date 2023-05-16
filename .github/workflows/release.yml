@@ -35,6 +35,7 @@ jobs:
         with:
           name: build assets
           path: '@zimi.zip'
+      - run: chmod 666 ./@zimi.zip
       - run: ls -lah
       - run: unzip ./@zimi.zip -d @zimi
       - run: rm ./@zimi.zip
