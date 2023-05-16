@@ -34,7 +34,8 @@ jobs:
       - uses: actions/download-artifact@master
         with:
           name: build assets
-          path: ./@zimi
+          path: '@zimi.zip'
+      - run: unzip @zimi.zip -d @zimi
 
       - name: Create release pull request
         id: changesets

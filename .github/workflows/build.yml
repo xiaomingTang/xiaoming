@@ -31,8 +31,9 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile --prefer-offline
       - run: pnpm build
+      - run: zip -r @zimi.zip @zimi
       # store build assets
       - uses: actions/upload-artifact@master
         with:
           name: build assets
-          path: ./@zimi
+          path: '@zimi.zip'
