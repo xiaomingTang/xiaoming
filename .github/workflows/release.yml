@@ -11,12 +11,31 @@ env:
 
 jobs:
   build:
-    uses: './.github/workflows/ci.yml'
+    uses: './.github/workflows/build.yml'
   release:
     timeout-minutes: 15
     needs: build
     runs-on: ubuntu-latest
     steps:
+      # install deps
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7.29.0
+      - uses: actions/setup-node@v3
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        with:
+          node-version: 16
+          cache: 'pnpm'
+      - run: pnpm install --frozen-lockfile --prefer-offline
+
+      # download build assets
+      - uses: actions/download-artifact@master
+        with:
+          name: build assets
+          path: ./@zimi
+
       - name: Create release pull request
         id: changesets
         uses: changesets/action@v1

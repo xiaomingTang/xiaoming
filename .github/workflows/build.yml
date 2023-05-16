@@ -1,4 +1,6 @@
-name: CI
+# 需要额外建一个 test.yml
+
+name: build
 on:
   push:
     branches:
@@ -13,7 +15,7 @@ env:
   CI: true
 
 jobs:
-  ci:
+  build:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -28,5 +30,9 @@ jobs:
           node-version: 16
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile --prefer-offline
-      # 应该是 test, 但是现在没有 test
       - run: pnpm build
+      # store build assets
+      - uses: actions/upload-artifact@master
+        with:
+          name: build assets
+          path: ./@zimi
