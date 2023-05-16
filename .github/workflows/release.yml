@@ -10,36 +10,13 @@ env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
+  build:
+    uses: './.github/workflows/ci.yml'
   release:
     timeout-minutes: 15
+    needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: checkout repo
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-
-      - name: Setup node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16
-          registry-url: 'https://registry.npmjs.org'
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Install deps
-        uses: pnpm/action-setup@v2
-        with:
-          version: 7.29.0
-          run_install: |
-            - recursive: true
-
-      - name: Build
-        run: pnpm run build
-
-      - name: Chmod
-        run: chmod ug+x .husky/*
-
       - name: Create release pull request
         id: changesets
         uses: changesets/action@v1
