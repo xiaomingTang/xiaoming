@@ -1,6 +1,6 @@
 {
   "name": "xiaoming",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "description": "@zimi packages",
   "author": "xiaomingTang",
   "license": "MIT",
@@ -21,12 +21,14 @@
     ]
   },
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "prepare": "husky install && bash -c 'chmod ug+x .husky/*'",
     "analyze": "source-map-explorer @zimi/*/dist/*.es.js",
     "analyze-simple": "ts-node --project tsconfig.node.json utils/analyze.ts",
     "build": "pnpm --filter ./@zimi/* run build",
     "build:watch": "pnpm --filter ./@zimi/* run build:watch",
     "commit": "git-cz",
+    "test": "echo todo test",
     "lint": "eslint --fix @zimi",
     "lint:commit": "commitlint -e",
     "lint-staged": "lint-staged --quiet",
