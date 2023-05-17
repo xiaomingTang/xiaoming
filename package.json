@@ -28,6 +28,7 @@
     "build": "pnpm --filter ./@zimi/* run build",
     "build:watch": "pnpm --filter ./@zimi/* run build:watch",
     "commit": "git-cz",
+    "test": "echo todo test",
     "lint": "eslint --fix @zimi",
     "lint:commit": "commitlint -e",
     "lint-staged": "lint-staged --quiet",

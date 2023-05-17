@@ -10,11 +10,11 @@ env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
-  build:
-    uses: './.github/workflows/build.yml'
+  test:
+    uses: './.github/workflows/test.yml'
   release:
     timeout-minutes: 15
-    needs: build
+    needs: test
     runs-on: ubuntu-latest
     steps:
       # install deps
@@ -29,16 +29,7 @@ jobs:
           node-version: 16
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile --prefer-offline
-
-      # download build assets
-      - uses: actions/download-artifact@master
-        with:
-          name: build assets
-          path: '@zimi.zip'
-      - run: chmod 777 ./@zimi.zip
-      - run: ls -lah
-      - run: unzip ./@zimi.zip -d @zimi
-      - run: rm ./@zimi.zip
+      - run: pnpm build
 
       - name: Create release pull request
         id: changesets

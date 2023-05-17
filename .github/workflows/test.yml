@@ -1,6 +1,6 @@
 # 需要额外建一个 test.yml
 
-name: build
+name: test
 on:
   push:
     branches:
@@ -15,7 +15,7 @@ env:
   CI: true
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -24,16 +24,8 @@ jobs:
         with:
           version: 7.29.0
       - uses: actions/setup-node@v3
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         with:
           node-version: 16
           cache: 'pnpm'
       - run: pnpm install --frozen-lockfile --prefer-offline
-      - run: pnpm build
-      - run: zip -r @zimi.zip @zimi -x "**/node_modules/*"
-      # store build assets
-      - uses: actions/upload-artifact@master
-        with:
-          name: build assets
-          path: '@zimi.zip'
+      - run: pnpm test
