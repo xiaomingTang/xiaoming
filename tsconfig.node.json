@@ -8,7 +8,6 @@
     "allowSyntheticDefaultImports": true
   },
   "include": [
-    "@zimi/*/vite.config.ts",
     "utils"
   ]
 }

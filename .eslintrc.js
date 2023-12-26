@@ -11,7 +11,7 @@ module.exports = {
     'react-hooks'
   ],
   parserOptions: {
-    project: './tsconfig.json'
+    project: ['./tsconfig.json', './tsconfig.node.json']
   },
   rules: {
     'no-console': 'off',

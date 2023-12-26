@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "ES2018",
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": false,
     "baseUrl": ".",
+    "sourceMap": true,
     "declaration": true,
     "skipLibCheck": true,
     "esModuleInterop": false,
@@ -17,6 +18,5 @@
     "isolatedModules": true,
     "jsx": "react-jsx"
   },
-  "include": ["@zimi"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["@zimi"]
 }

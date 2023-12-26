@@ -6,8 +6,8 @@
   "description": "common utils",
   "private": false,
   "sideEffects": false,
-  "main": "dist/index.umd.js",
-  "module": "dist/index.es.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": "https://github.com/xiaomingTang/xiaoming/tree/master/%40zimi/utils",
   "files": [
@@ -15,21 +15,13 @@
     "dist"
   ],
   "scripts": {
-    "build": "vite build",
-    "build:watch": "vite build --watch"
+    "build": "tsc",
+    "build:watch": "tsc --watch"
   },
   "dependencies": {
-    "@babel/runtime": "^7.20.7",
-    "@babel/runtime-corejs3": "^7.18.9",
-    "core-js": "3",
     "lodash-es": "^4.17.21"
   },
   "devDependencies": {
-    "@babel/plugin-transform-runtime": "^7.19.6",
-    "@babel/preset-env": "^7.20.2",
-    "@rollup/plugin-babel": "^6.0.3",
-    "@types/lodash-es": "^4.17.6",
-    "vite": "^4.1.1",
-    "vite-plugin-dts": "2.0.0-beta.1"
+    "@types/lodash-es": "^4.17.6"
   }
 }

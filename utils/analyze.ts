@@ -1,5 +1,4 @@
-import { promisify } from 'node:util'
-import * as glob from 'glob'
+import { glob } from 'glob'
 import * as fs from 'fs'
 import * as path from 'path'
 
@@ -15,10 +14,10 @@ const map: Record<
 > = {}
 
 async function main() {
-  const matches = await promisify(glob)(pattern)
+  const matches = glob.sync(pattern)
 
   matches.forEach((p) => {
-    const matchArr = /@zimi\/([^/\\]+)\/dist\/index\.(\w+)\.js$/.exec(p)
+    const matchArr = /@zimi\/([^/\\]+)\/dist\/(\w+)\.js$/.exec(p)
     if (matchArr) {
       const [, libName, libType] = matchArr
       const size = `${(fs.statSync(p).size / 1000).toFixed(2)}kb`

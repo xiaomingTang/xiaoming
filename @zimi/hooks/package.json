@@ -6,8 +6,8 @@
   "description": "hooks",
   "private": false,
   "sideEffects": false,
-  "main": "dist/index.umd.js",
-  "module": "dist/index.es.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": "https://github.com/xiaomingTang/xiaoming/tree/master/%40zimi/hooks",
   "files": [
@@ -15,23 +15,15 @@
     "dist"
   ],
   "scripts": {
-    "build": "vite build",
-    "build:watch": "vite build --watch"
+    "build": "tsc",
+    "build:watch": "tsc --watch"
   },
   "devDependencies": {
-    "@babel/plugin-transform-runtime": "^7.19.6",
-    "@babel/preset-env": "^7.20.2",
-    "@rollup/plugin-babel": "^6.0.3",
     "@types/lodash": "^4.14.186",
     "@types/react": "^18.0.28",
-    "react": ">=16.8",
-    "vite": "^4.1.1",
-    "vite-plugin-dts": "2.0.0-beta.1"
+    "react": ">=16.8"
   },
   "dependencies": {
-    "@babel/runtime": "^7.20.7",
-    "@babel/runtime-corejs3": "^7.18.9",
-    "core-js": "3",
     "lodash": "^4.17.21",
     "react": ">=16.8"
   },
