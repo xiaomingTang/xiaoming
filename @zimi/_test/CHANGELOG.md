@@ -1,5 +1,19 @@
 # Change Log
 
+## 0.16.1
+
+### Patch Changes
+
+- Updated dependencies [6385d1b]
+- Updated dependencies [bfafa20]
+  - @zimi/event-emitter@0.17.0
+  - @zimi/hooks@0.16.0
+  - @zimi/interact@0.17.0
+  - @zimi/interact-dom@10.0.0
+  - @zimi/prize-wheel@0.17.0
+  - @zimi/prize-wheel-helper@0.17.0
+  - @zimi/utils@0.17.0
+
 ## 0.16.0
 
 ### Minor Changes

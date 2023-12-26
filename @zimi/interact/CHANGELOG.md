@@ -1,5 +1,19 @@
 # Change Log
 
+## 0.17.0
+
+### Minor Changes
+
+- 6385d1b: deploy
+- bfafa20: use tsc instead of vite
+
+### Patch Changes
+
+- Updated dependencies [6385d1b]
+- Updated dependencies [bfafa20]
+  - @zimi/event-emitter@0.17.0
+  - @zimi/input-device-capabilities-polyfill@0.17.0
+
 ## 0.16.0
 
 ### Minor Changes

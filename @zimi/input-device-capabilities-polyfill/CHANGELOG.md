@@ -1,5 +1,12 @@
 # @zimi/input-device-capabilities-polyfill
 
+## 0.17.0
+
+### Minor Changes
+
+- 6385d1b: deploy
+- bfafa20: use tsc instead of vite
+
 ## 0.16.0
 
 ### Minor Changes
