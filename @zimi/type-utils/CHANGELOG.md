@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.17.0
+
+### Minor Changes
+
+- bfafa20: use tsc instead of vite
+
 ## 0.16.0
 
 ### Minor Changes
