@@ -1,5 +1,16 @@
 # Change Log
 
+## 0.17.0
+
+### Minor Changes
+
+- bfafa20: use tsc instead of vite
+
+### Patch Changes
+
+- Updated dependencies [bfafa20]
+  - @zimi/event-emitter@0.17.0
+
 ## 0.16.0
 
 ### Minor Changes
