@@ -105,9 +105,9 @@ importers:
       '@zimi/interact':
         specifier: workspace:*
         version: link:../interact
-      '@zimi/interact-dom':
+      '@zimi/interact-web':
         specifier: workspace:*
-        version: link:../interact-dom
+        version: link:../interact-web
       '@zimi/prize-wheel':
         specifier: workspace:*
         version: link:../prize-wheel
@@ -249,7 +249,7 @@ importers:
         specifier: ^4.17.0
         version: 4.17.0
 
-  '@zimi/interact-dom':
+  '@zimi/interact-web':
     dependencies:
       '@zimi/event-emitter':
         specifier: workspace:*

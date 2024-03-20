@@ -8,9 +8,9 @@ import {
 } from '@zimi/interact'
 import EventEmitter from '@zimi/event-emitter'
 
-export default class InteractDom extends EventEmitter<{
+export default class InteractWeb extends EventEmitter<{
   // eslint-disable-next-line no-use-before-define
-  change: [InteractDom]
+  change: [InteractWeb]
 }> {
   private originTranslate: Point = {
     x: 0,
@@ -103,7 +103,7 @@ export default class InteractDom extends EventEmitter<{
     formatterTypes: FormatterTypes[] = ['mouse', 'touch']
   ) {
     if (!element) {
-      console.error('[interact-dom]: element is required')
+      console.error('[interact-web]: element is required')
       return
     }
     this.setOriginTranslateFromElement(element)

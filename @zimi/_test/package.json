@@ -20,7 +20,7 @@
     "@zimi/event-emitter": "workspace:*",
     "@zimi/hooks": "workspace:*",
     "@zimi/interact": "workspace:*",
-    "@zimi/interact-dom": "workspace:*",
+    "@zimi/interact-web": "workspace:*",
     "@zimi/prize-wheel": "workspace:*",
     "@zimi/prize-wheel-helper": "workspace:*",
     "@zimi/utils": "workspace:*",

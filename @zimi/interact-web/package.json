@@ -1,5 +1,5 @@
 {
-  "name": "@zimi/interact-dom",
+  "name": "@zimi/interact-web",
   "license": "MIT",
   "version": "0.17.0",
   "author": "xiaomingTang",
@@ -9,7 +9,7 @@
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
-  "repository": "https://github.com/xiaomingTang/xiaoming/tree/master/%40zimi/interact-dom",
+  "repository": "https://github.com/xiaomingTang/xiaoming/tree/master/%40zimi/interact-web",
   "files": [
     "src",
     "dist"
