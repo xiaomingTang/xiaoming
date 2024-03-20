@@ -26,9 +26,9 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.17.0",
-    "@types/react": "^18.2.67",
+    "@types/react": ">=16.8",
     "@zimi/event-emitter": "workspace:*",
     "@zimi/prize-wheel": "workspace:*",
-    "react": "^18.2.0"
+    "react": ">=16.8"
   }
 }

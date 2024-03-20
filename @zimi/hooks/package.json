@@ -20,12 +20,11 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.17.0",
-    "@types/react": "^18.2.67",
-    "react": ">=16.8"
+    "@types/react": ">=16.8"
   },
   "dependencies": {
     "lodash": "^4.17.21",
-    "react": "^18.2.0"
+    "react": ">=16.8"
   },
   "peerDependencies": {
     "react": ">=16.8"
