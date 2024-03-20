@@ -1,6 +1,9 @@
 ### publish
 
 ##### 从 master 切换到 release 分支
+
+> 艹了, 别在 master 开发完了再切分支啊, 先切分支, 再写代码 !!!
+
 - `git checkout -b release/xxx`
 - `pnpm version patch` (or `minor` or `major`)
 - `git push origin release/xxx`
