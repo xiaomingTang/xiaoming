@@ -9,13 +9,53 @@ yarn add @zimi/utils
 
 ### examples
 
+[createSsrStore_createJsonStorage](#createSsrStore_createJsonStorage)    
 [ExactClickChecker](#ExactClickChecker)    
 [genePromiseOnce](#genePromiseOnce)    
 [historyStateManager](#historyStateManager)    
 [resizeTo](#resizeTo)    
 [sleepMs](#sleepMs)    
+[withStatic](#withStatic)    
 
 ---
+
+#### createSsrStore_createJsonStorage
+
+It created for Next.js ssr,   
+match server-side rendering with client-side rendering,   
+and apply local stored value a little later.
+
+``` tsx
+
+import { create } from 'zustand'
+
+const defaultCounter = {
+  count: 0,
+  privateKey: 'This value wont be stored'
+}
+
+const useCounter = createSsrStore(() => defaultCounter, {
+  name: 'key-of-storage',
+  storage: createJsonStorage({
+    partialKeys: ['count'],
+  })
+})
+
+function App() {
+  const { count } = useCounter()
+
+  const inc = () => {
+    useCounter.setState((prev) => prev + 1)
+  }
+
+  return <div>
+    <p> count: {count} </p>
+    <Button onClick={inc}> inc </Button>
+  </div>
+}
+
+```
+[↑ all examples ↑](#examples)
 
 #### ExactClickChecker
 
@@ -137,6 +177,39 @@ const srcFitContain = resizeTo({
 async function() {
   await sleepMs(500)
 }
+
+```
+[↑ all examples ↑](#examples)
+
+#### withStatic
+
+``` tsx
+
+import { create } from 'zustand'
+
+const useRawCounter = create(() => ({
+  count: 0,
+}))
+
+const useCounter = withStatic(useRawCounter, {
+  inc() {
+    useRawCounter.setState((prev) => prev + 1),
+  },
+  dec() {
+    useRawCounter.setState((prev) => prev - 1),
+  },
+})
+
+function App() {
+  const { count } = useCounter()
+
+  return <div>
+    <Button onClick={useCounter.inc}> inc </Button>
+    <p> count: {count} </p>
+    <Button onClick={useCounter.dec}> dec </Button>
+  </div>
+}
+
 
 ```
 [↑ all examples ↑](#examples)

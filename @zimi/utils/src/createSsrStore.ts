@@ -16,6 +16,40 @@ interface SsrStorageOptions<T> {
   storage: DecodedStorage<Partial<T>>
 }
 
+/**
+ * It created for Next.js ssr,
+ * match server-side rendering with client-side rendering,
+ * and apply local stored value a little later.
+ *
+ * ``` typescript react
+ * import { create } from 'zustand'
+ *
+ * const defaultCounter = {
+ *   count: 0,
+ *   privateKey: 'This value wont be stored'
+ * }
+ *
+ * const useCounter = createSsrStore(() => defaultCounter, {
+ *   name: 'key-of-storage',
+ *   storage: createJsonStorage({
+ *     partialKeys: ['count'],
+ *   })
+ * })
+ *
+ * function App() {
+ *   const { count } = useCounter()
+ *
+ *   const inc = () => {
+ *     useCounter.setState((prev) => prev + 1)
+ *   }
+ *
+ *   return <div>
+ *     <p> count: {count} </p>
+ *     <Button onClick={inc}> inc </Button>
+ *   </div>
+ * }
+ * ```
+ */
 export function createSsrStore<C>(
   initializer: () => C,
   options: SsrStorageOptions<C>

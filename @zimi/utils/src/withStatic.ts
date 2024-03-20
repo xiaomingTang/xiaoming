@@ -3,6 +3,34 @@ interface StaticFuncs {
   [key: string]: (...args: any[]) => any
 }
 
+/**
+ * ```tsx
+ * import { create } from 'zustand'
+ *
+ * const useRawCounter = create(() => ({
+ *   count: 0,
+ * }))
+ *
+ * const useCounter = withStatic(useRawCounter, {
+ *   inc() {
+ *     useRawCounter.setState((prev) => prev + 1),
+ *   },
+ *   dec() {
+ *     useRawCounter.setState((prev) => prev - 1),
+ *   },
+ * })
+ *
+ * function App() {
+ *   const { count } = useCounter()
+ *
+ *   return <div>
+ *     <Button onClick={useCounter.inc}> inc </Button>
+ *     <p> count: {count} </p>
+ *     <Button onClick={useCounter.dec}> dec </Button>
+ *   </div>
+ * }
+ * ```
+ */
 export function withStatic<T extends object, S extends StaticFuncs>(
   useStore: T,
   staticFuncs: S
