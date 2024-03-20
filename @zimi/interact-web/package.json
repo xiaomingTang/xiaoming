@@ -1,7 +1,7 @@
 {
   "name": "@zimi/interact-web",
   "license": "MIT",
-  "version": "0.17.0",
+  "version": "0.17.1",
   "author": "xiaomingTang",
   "description": "interact dom",
   "private": false,
