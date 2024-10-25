@@ -19,17 +19,16 @@
     "build:watch": "tsc --watch"
   },
   "dependencies": {
-    "lodash-es": "^4.17.21"
+    "lodash-es": "^4.17.21",
+    "zustand": ">=4.5"
   },
   "devDependencies": {
-    "@types/react": ">=16.8",
-    "react": ">=16.8",
-    "zustand": "^4.5.2",
     "@types/lodash-es": "^4.17.12",
-    "@zimi/type-utils": "workspace:*"
+    "@types/react": ">=16.8",
+    "@zimi/type-utils": "workspace:*",
+    "react": ">=16.8"
   },
   "peerDependencies": {
-    "react": ">=16.8",
-    "zustand": "^4.5.2"
+    "react": ">=16.8"
   }
 }
