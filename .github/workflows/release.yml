@@ -30,7 +30,8 @@ jobs:
           node-version: 20
           cache: 'pnpm'
           # Please note that you need to set the registry-url to https://registry.npmjs.org/ in setup-node to properly configure your credentials.
-          registry-url: 'https://registry.npmjs.org'
+          registry-url: 'https://registry.npmjs.org/'
+          always-auth: true
       - run: pnpm install --frozen-lockfile --prefer-offline
       - run: pnpm build
 
