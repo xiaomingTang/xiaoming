@@ -8,6 +8,7 @@ env:
   # https://stackoverflow.com/a/75486166
   CI: true
   HUSKY: 0
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   test:
