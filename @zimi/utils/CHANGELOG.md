@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.18.0
+
+### Minor Changes
+
+- update zustand to v5 & add some new hooks
+
 ## 0.17.0
 
 ### Minor Changes
