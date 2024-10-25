@@ -2,7 +2,7 @@ type OnPopState = () => void | Promise<void>
 
 const KEY = '@zimi/history-state-manager' as const
 
-let inited = false
+let initialized = false
 const onPopStateCallbacks = [] as OnPopState[]
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -47,10 +47,10 @@ export const historyStateManager = {
    * @WARNING this function includes `window.history.replaceState(xxx)`
    */
   init: () => {
-    if (inited || typeof window === 'undefined') {
+    if (initialized || typeof window === 'undefined') {
       return
     }
-    inited = true
+    initialized = true
     // 初始化
     window.history.replaceState({ type: KEY }, '')
 
@@ -75,7 +75,7 @@ export const historyStateManager = {
     })
   },
   push: (onPopState: OnPopState) => {
-    if (!inited) {
+    if (!initialized) {
       console.warn(
         '[historyStateManager]: you should call init() before push()'
       )
