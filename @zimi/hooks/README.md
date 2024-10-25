@@ -10,7 +10,9 @@ yarn add  @zimi/hooks
 [useCombinedRefs](#useCombinedRefs)    
 [useElementRect](#useElementRect)    
 [useListen](#useListen)    
+[useLoading](#useLoading)    
 [useRafLoop](#useRafLoop)    
+[useSimulateClick](#useSimulateClick)    
 [useWarnBeforeUnload](#useWarnBeforeUnload)    
 [useWindowSize](#useWindowSize)    
 
@@ -74,6 +76,29 @@ function Test() {
 ```
 [↑ all examples ↑](#examples)
 
+#### useLoading
+``` ts
+
+function Test() {
+  const [loading, withLoading] = useLoading()
+
+  const { data } = useSWR('xxx', withLoading(asyncTask1))
+
+  return <>
+    <Spin spinning={loading} />
+
+    <Button
+      onClick={withLoading(asyncTask2)}
+    >
+      async task
+    </Button>
+  </>
+}
+
+
+```
+[↑ all examples ↑](#examples)
+
 #### useRafLoop
 
 ``` tsx
@@ -105,6 +130,27 @@ function Test() {
       toggle visibility
     </button>
   </>
+}
+
+```
+[↑ all examples ↑](#examples)
+
+#### useSimulateClick
+
+``` ts
+
+function Test() {
+  const setClickElem = useSimulateClick({
+    onClick: () => {
+      console.log('strictly clicked.')
+    },
+  })
+
+  return (
+    <Button ref={setClickElem}>
+      Click Me
+    </Button>
+  )
 }
 
 ```

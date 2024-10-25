@@ -1,4 +1,7 @@
-import { useRef, useEffect } from 'react'
+import { useRef } from 'react'
+
+import { useMuiEnhancedEffect } from './useMuiEnhancedEffect'
+import { useMuiEventCallback } from './useMuiEventCallback'
 
 /**
  * @example
@@ -17,12 +20,17 @@ export function useListen<T>(
   value: T,
   callback: (next: T, prev: T | undefined) => void
 ) {
-  const prevRef = useRef(value)
-  const callbackRef = useRef(callback)
-  callbackRef.current = callback
+  const isFirstCallbackRef = useRef(true)
+  const prevRef = useRef<T | undefined>(undefined)
+  const callbackRef = useMuiEventCallback(callback)
 
-  useEffect(() => {
-    callbackRef.current(value, prevRef.current)
+  useMuiEnhancedEffect(() => {
+    // useEffect 在 dev 环境会执行 2 遍, 此处避免该行为造成的影响
+    if (value === prevRef.current && !isFirstCallbackRef.current) {
+      return
+    }
+    isFirstCallbackRef.current = false
+    callbackRef(value, prevRef.current)
     prevRef.current = value
-  }, [value])
+  }, [value, callbackRef])
 }
