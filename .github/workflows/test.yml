@@ -20,13 +20,13 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
         with:
-          version: 7.29.0
-      - uses: actions/setup-node@v3
+          version: 9.1.2
+      - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
           cache: 'pnpm'
           # Please note that you need to set the registry-url to https://registry.npmjs.org/ in setup-node to properly configure your credentials.
           registry-url: 'https://registry.npmjs.org'
