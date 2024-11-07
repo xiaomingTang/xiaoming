@@ -1,7 +1,7 @@
 {
   "name": "@zimi/event-emitter",
   "license": "MIT",
-  "version": "0.17.1",
+  "version": "0.17.2",
   "author": "xiaomingTang",
   "description": "event emitter",
   "private": false,
