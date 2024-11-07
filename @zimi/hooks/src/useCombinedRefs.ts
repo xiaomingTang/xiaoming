@@ -1,4 +1,6 @@
-import { ForwardedRef, useEffect, useRef } from 'react'
+import { MutableRefObject, useEffect, useRef } from 'react'
+
+type Ref<T> = ((instance: T | null) => void) | MutableRefObject<T | null>
 
 /**
  * https://itnext.io/reusing-the-ref-from-forwardref-with-react-hooks-4ce9df693dd
@@ -15,7 +17,7 @@ import { ForwardedRef, useEffect, useRef } from 'react'
  * })
  * ```
  */
-export function useCombinedRefs<T>(...refs: ForwardedRef<T>[]) {
+export function useCombinedRefs<T>(...refs: Ref<T>[]) {
   const targetRef = useRef<T>(null)
 
   useEffect(() => {
