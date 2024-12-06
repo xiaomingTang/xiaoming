@@ -16,7 +16,6 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.15.14",
     "@mui/material": "^5.15.14",
-    "@tailwindcss/line-clamp": "^0.4.4",
     "@zimi/event-emitter": "workspace:*",
     "@zimi/hooks": "workspace:*",
     "@zimi/interact": "workspace:*",

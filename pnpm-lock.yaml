@@ -93,9 +93,6 @@ importers:
       '@mui/material':
         specifier: ^5.15.14
         version: https://registry.npmjs.org/@mui/material/-/material-5.15.14.tgz(@emotion/react@https://registry.npmjs.org/@emotion/react/-/react-11.11.4.tgz(@types/react@18.3.12)(react@https://registry.npmjs.org/react/-/react-18.2.0.tgz))(@emotion/styled@https://registry.npmjs.org/@emotion/styled/-/styled-11.11.0.tgz(@emotion/react@https://registry.npmjs.org/@emotion/react/-/react-11.11.4.tgz(@types/react@18.3.12)(react@https://registry.npmjs.org/react/-/react-18.2.0.tgz))(@types/react@18.3.12)(react@https://registry.npmjs.org/react/-/react-18.2.0.tgz))(@types/react@18.3.12)(react-dom@https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz(react@https://registry.npmjs.org/react/-/react-18.2.0.tgz))(react@https://registry.npmjs.org/react/-/react-18.2.0.tgz)
-      '@tailwindcss/line-clamp':
-        specifier: ^0.4.4
-        version: https://registry.npmjs.org/@tailwindcss/line-clamp/-/line-clamp-0.4.4.tgz(tailwindcss@https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.4.1.tgz)
       '@zimi/event-emitter':
         specifier: workspace:*
         version: link:../event-emitter
@@ -296,6 +293,12 @@ importers:
       react:
         specifier: '>=16.8'
         version: https://registry.npmjs.org/react/-/react-18.2.0.tgz
+
+  '@zimi/remote':
+    dependencies:
+      eventemitter3:
+        specifier: ^5.0.1
+        version: 5.0.1
 
   '@zimi/story-helper': {}
 
@@ -2180,12 +2183,6 @@ packages:
     resolution: {integrity: sha512-2jweO1O57BYP5qdBGl6apJLB+aRIn5ccIRTPDyULh0KMwVzFqWtw6IZWt1qtUoZD/pD2RNkIOosH6Cq45rIYeg==, tarball: https://registry.npmjs.org/@rushstack/ts-command-line/-/ts-command-line-4.17.1.tgz}
     version: 4.17.1
 
-  '@tailwindcss/line-clamp@https://registry.npmjs.org/@tailwindcss/line-clamp/-/line-clamp-0.4.4.tgz':
-    resolution: {integrity: sha512-5U6SY5z8N42VtrCrKlsTAA35gy2VSyYtHWCsg1H87NU1SXnEfekTVlrga9fzUDrrHcGi2Lb5KenUWb4lRQT5/g==, tarball: https://registry.npmjs.org/@tailwindcss/line-clamp/-/line-clamp-0.4.4.tgz}
-    version: 0.4.4
-    peerDependencies:
-      tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
-
   '@types/argparse@https://registry.npmjs.org/@types/argparse/-/argparse-1.0.38.tgz':
     resolution: {integrity: sha512-ebDJ9b0e702Yr7pWgB0jzm+CX4Srzz8RcXtLJDJB+BSccqMa36uyH/zUsSYao5+BD1ytv3k3rPYCq4mAE1hsXA==, tarball: https://registry.npmjs.org/@types/argparse/-/argparse-1.0.38.tgz}
     version: 1.0.38
@@ -3533,9 +3530,8 @@ packages:
     version: 2.0.3
     engines: {node: '>=0.10.0'}
 
-  eventemitter3@https://registry.npmjs.org/eventemitter3/-/eventemitter3-5.0.1.tgz:
-    resolution: {integrity: sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==, tarball: https://registry.npmjs.org/eventemitter3/-/eventemitter3-5.0.1.tgz}
-    version: 5.0.1
+  eventemitter3@5.0.1:
+    resolution: {integrity: sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==}
 
   execa@https://registry.npmjs.org/execa/-/execa-8.0.1.tgz:
     resolution: {integrity: sha512-VyhnebXciFV2DESc+p6B+y0LjSm0krU4OgJN44qFAhBY0TJ+1V61tYD2+wHusZ6F9n5K+vl8k0sTy7PEfV4qpg==, tarball: https://registry.npmjs.org/execa/-/execa-8.0.1.tgz}
@@ -8269,10 +8265,6 @@ snapshots:
       colors: https://registry.npmjs.org/colors/-/colors-1.2.5.tgz
       string-argv: https://registry.npmjs.org/string-argv/-/string-argv-0.3.2.tgz
 
-  '@tailwindcss/line-clamp@https://registry.npmjs.org/@tailwindcss/line-clamp/-/line-clamp-0.4.4.tgz(tailwindcss@https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.4.1.tgz)':
-    dependencies:
-      tailwindcss: https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.4.1.tgz
-
   '@types/argparse@https://registry.npmjs.org/@types/argparse/-/argparse-1.0.38.tgz': {}
 
   '@types/babel__core@7.20.5':
@@ -9737,7 +9729,7 @@ snapshots:
 
   esutils@https://registry.npmjs.org/esutils/-/esutils-2.0.3.tgz: {}
 
-  eventemitter3@https://registry.npmjs.org/eventemitter3/-/eventemitter3-5.0.1.tgz: {}
+  eventemitter3@5.0.1: {}
 
   execa@https://registry.npmjs.org/execa/-/execa-8.0.1.tgz:
     dependencies:
@@ -10555,7 +10547,7 @@ snapshots:
     dependencies:
       cli-truncate: https://registry.npmjs.org/cli-truncate/-/cli-truncate-4.0.0.tgz
       colorette: https://registry.npmjs.org/colorette/-/colorette-2.0.20.tgz
-      eventemitter3: https://registry.npmjs.org/eventemitter3/-/eventemitter3-5.0.1.tgz
+      eventemitter3: 5.0.1
       log-update: https://registry.npmjs.org/log-update/-/log-update-6.1.0.tgz
       rfdc: https://registry.npmjs.org/rfdc/-/rfdc-1.4.1.tgz
       wrap-ansi: https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-9.0.0.tgz
