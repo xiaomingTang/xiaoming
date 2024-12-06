@@ -16,11 +16,12 @@ module.exports = {
   rules: {
     'no-console': 'off',
     'react-hooks/exhaustive-deps': 'warn',
-
     // tsc 会检查, 无需 lint
     'no-dupe-class-members': 'off',
-
     'import/prefer-default-export': 'off',
+    'no-void': ['warn', {
+      allowAsStatement: true,
+    }],
   },
   settings: {
     react: {
