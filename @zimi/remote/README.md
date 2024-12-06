@@ -37,7 +37,7 @@ export type FuncsFromChild = {
 import { Remote, createIframeAdaptor } from '@zimi/remote'
 
 function getOpWindow() {
-  return (document.getElementById('child-iframe') as HTMLIFrameElement | null)?.contentWindow
+  return document.querySelector<HTMLIFrameElement>('#child-iframe')?.contentWindow
 }
 
 // 我们提供了生成 iframe adaptor 的工具函数
