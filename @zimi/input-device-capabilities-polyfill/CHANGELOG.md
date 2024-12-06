@@ -1,5 +1,11 @@
 # @zimi/input-device-capabilities-polyfill
 
+## 0.17.2
+
+### Patch Changes
+
+- update deprecated deps
+
 ## 0.17.0
 
 ### Minor Changes

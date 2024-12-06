@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.17.2
+
+### Patch Changes
+
+- update deprecated deps
+- Updated dependencies
+  - @zimi/interact@0.17.2
+  - @zimi/event-emitter@0.17.2
+
 ## 10.0.0
 
 ### Minor Changes

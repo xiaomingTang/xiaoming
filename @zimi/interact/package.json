@@ -1,7 +1,7 @@
 {
   "name": "@zimi/interact",
   "license": "MIT",
-  "version": "0.17.1",
+  "version": "0.17.3",
   "author": "xiaomingTang",
   "description": "interact",
   "private": false,
@@ -24,6 +24,7 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "@types/lodash": "^4.17.0"
+    "@types/lodash": "^4.17.0",
+    "typescript": "^5.6.3"
   }
 }

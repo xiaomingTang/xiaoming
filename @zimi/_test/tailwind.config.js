@@ -71,7 +71,6 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/line-clamp'),
     require('tailwind-scrollbar'),
   ],
   // 覆盖了 mui 基础样式, 因此禁用

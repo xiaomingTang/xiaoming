@@ -1,5 +1,19 @@
 # Change Log
 
+## 0.16.3
+
+### Patch Changes
+
+- update deprecated deps
+- Updated dependencies
+  - @zimi/interact@0.17.2
+  - @zimi/hooks@0.18.1
+  - @zimi/event-emitter@0.17.2
+  - @zimi/interact-web@0.17.2
+  - @zimi/prize-wheel@0.17.2
+  - @zimi/prize-wheel-helper@0.17.2
+  - @zimi/utils@0.18.1
+
 ## 0.16.2
 
 ### Patch Changes

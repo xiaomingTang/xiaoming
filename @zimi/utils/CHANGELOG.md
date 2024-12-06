@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.18.1
+
+### Patch Changes
+
+- update deprecated deps
+
 ## 0.18.0
 
 ### Minor Changes

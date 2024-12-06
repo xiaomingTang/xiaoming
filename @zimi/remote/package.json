@@ -1,15 +1,15 @@
 {
-  "name": "@zimi/prize-wheel",
+  "name": "@zimi/remote",
   "license": "MIT",
-  "version": "0.17.3",
+  "version": "0.1.0",
   "author": "xiaomingTang",
-  "description": "prize wheel",
+  "description": "call remote functions as local",
   "private": false,
   "sideEffects": false,
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
-  "repository": "https://github.com/xiaomingTang/xiaoming/tree/master/%40zimi/prize-wheel",
+  "repository": "https://github.com/xiaomingTang/xiaoming/tree/master/%40zimi/remote",
   "files": [
     "src",
     "dist"
@@ -19,10 +19,6 @@
     "build:watch": "tsc --watch"
   },
   "dependencies": {
-    "@zimi/event-emitter": "workspace:*",
-    "lodash": "^4.17.21"
-  },
-  "devDependencies": {
-    "@types/lodash": "^4.17.0"
+    "eventemitter3": "^5.0.1"
   }
 }
