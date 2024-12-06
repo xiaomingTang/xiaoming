@@ -3,8 +3,8 @@
 像调用本地函数一样调用远端的函数
 
 - 本地可以是浏览器、服务器，甚至一些受限的 `js` 子集
-- 远端可以是任何语言，如 `Java`
-- 对远端响应的数据格式也不严格限制
+- 远端可以是任何终端，如 `iframe` / `Java` 服务器 等
+- 对远端响应的数据格式也不严格限制（可以集中解析）
 
 ## install
 ```
@@ -44,6 +44,7 @@ function getOpWindow() {
 // 你也可以参考实现自己的 adaptor, 没多少代码
 const adaptor = createIframeAdaptor({
   onEmit: (data) => {
+    // 此处仅为示意，业务场景下应当限制对方的域名
     getOpWindow()?.postMessage(data, '*')
   },
 })
@@ -70,6 +71,7 @@ function getOpWindow() {
 // 你也可以参考实现自己的 adaptor, 没多少代码
 const adaptor = createIframeAdaptor({
   onEmit: (data) => {
+    // 此处仅为示意，业务场景下应当限制对方的域名
     getOpWindow()?.postMessage(data, '*')
   },
 })
