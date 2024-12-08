@@ -1,6 +1,4 @@
-# @zimi/remote
-
-像调用本地函数一样调用远端的函数
+> 代码见 [@zimi/remote](https://github.com/xiaomingTang/xiaoming/tree/master/%40zimi/remote)
 
 - 本地可以是浏览器、服务器，甚至一些受限的 `js` 子集
 - 远端可以是任何终端，如 `iframe` / `Java` 服务器 等
@@ -13,7 +11,22 @@ pnpm i @zimi/remote
 
 ## examples
 
-### iframe 与父级通信
+### 使用示例
+
+```ts
+
+// 远端
+remote.register('something', async (params: Whatever) => {
+  return WhatYouWant
+})
+
+// 本地
+// res === WhatYouWant
+const res = await remote._.something(xxx)
+
+```
+
+### iframe 与父级相互调用
 
 ```ts
 // 1. 声明各自能提供的函数类型
@@ -184,3 +197,16 @@ await remote._.xxx(anyData)
 ### 与其他端通信（如 websocket）略
 
 你可以看看 `iframe adaptor` / `http adaptor` 源码，包含空行也就 30 行，依葫芦画瓢很轻易就能写一个。
+
+## 与 rpc 相比的优势
+
+- 不局限于与服务端的通信，无论对方是任何端，只要能与 js 通信，就能使用该包；
+- 相互通信，不存在“主从”的概念，通信双方是平等的；
+- 类型严格；
+- 包较底层，对项目整体的侵入较小，几乎不限制对方的响应的数据格式（因为可以自由解析对方的响应，即自由 emit）；
+
+## 协议
+
+> 由于通信双方是平等的，所以 B 调用 A 的流程也是一样的
+
+![protocol.png](https://cdn.16px.cc/public/2024-12-08/fm5up4GM9UCz.png?r=1682x836)
