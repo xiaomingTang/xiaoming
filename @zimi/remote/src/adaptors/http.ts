@@ -21,6 +21,7 @@ export function createHttpAdaptor({
 }) {
   const adaptor: Adaptor = {
     every: remoteEventManager.onEvery.bind(remoteEventManager),
+    on: remoteEventManager.on.bind(remoteEventManager),
     once: remoteEventManager.once.bind(remoteEventManager),
     off: remoteEventManager.off.bind(remoteEventManager),
     emit: onEmit,
