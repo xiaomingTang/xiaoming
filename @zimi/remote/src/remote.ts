@@ -239,7 +239,10 @@ export class Remote<
   })
 
   self = new Proxy<MF>({} as MF, {
-    get: (_, k) => this.map[k as string]?.callback,
+    get: (_, k) => (data: unknown) =>
+      this.map[k as string]?.callback(data, {
+        deviceId: this.deviceId,
+      }),
   })
 }
 
