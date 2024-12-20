@@ -1,5 +1,11 @@
 # @zimi/remote
 
+## 0.1.1-alpha.0
+
+### Patch Changes
+
+- add remote value
+
 ## 0.1.0
 
 ### Minor Changes
