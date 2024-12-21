@@ -87,12 +87,26 @@ interface ExposeProps {
    * ['*'] or ['device_id_1', 'device_id_2']
    */
   exposeTo: string[]
+  /**
+   * 你可以在该回调中抛错，以阻止远程调用
+   */
+  onRequest?: (e: AdaptorPackageData) => void | Promise<void>
+}
+
+function defaultOnRequest(e: AdaptorPackageData) {
+  return e
 }
 
 export function exposeToRemote<T extends object>(obj: T, options: ExposeProps) {
-  const { globalName, adaptor, exposeTo } = options
+  const {
+    globalName,
+    adaptor,
+    exposeTo,
+    onRequest = defaultOnRequest,
+  } = options
   const callback = async (e: AdaptorPackageData) => {
     try {
+      await onRequest(e)
       if (!exposeTo.includes(e.deviceId) && !exposeTo.includes('*')) {
         throw new RemoteError('permission denied')
       }
