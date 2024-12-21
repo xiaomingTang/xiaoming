@@ -16,6 +16,7 @@
     "@zimi/utils": "0.18.2"
   },
   "changesets": [
-    "hungry-rats-shout"
+    "hungry-rats-shout",
+    "nice-mugs-serve"
   ]
 }
