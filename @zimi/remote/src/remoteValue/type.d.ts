@@ -20,6 +20,8 @@ export type ToFunc<T extends object> = {
         : never
 }
 
+// 下面的都是测试代码，用于测试 ToFunc
+
 type Assert<T extends true> = T
 
 interface TestObj {
