@@ -28,6 +28,7 @@ export interface Adaptor {
    * off 用于移除 once 注册的事件，当事件超时后，需要主动 off
    */
   off: (name: string, callback: AdaptorCallback) => void
+  on: (name: string, callback: AdaptorCallback) => void
   once: (name: string, callback: AdaptorCallback) => void
   emit: (data: AdaptorPackageData) => void
 }

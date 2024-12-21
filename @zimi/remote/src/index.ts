@@ -8,3 +8,5 @@ export {
 } from './response'
 export { createIframeAdaptor } from './adaptors/iframe'
 export { createHttpAdaptor, remoteEventManager } from './adaptors/http'
+export { remoteValue } from './remoteValue/remoteValue'
+export { exposeToRemote } from './remoteValue/exposeToRemote'
