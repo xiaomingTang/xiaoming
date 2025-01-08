@@ -1,5 +1,11 @@
 # @zimi/remote
 
+## 0.2.1-alpha.7
+
+### Patch Changes
+
+- c393b8e: feat: remote value 新增 log
+
 ## 0.2.1-alpha.6
 
 ### Patch Changes

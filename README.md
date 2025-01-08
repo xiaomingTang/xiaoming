@@ -6,7 +6,7 @@
 
 - `git checkout -b release/xxx`
 - `git add .` + `git commit -m 'xxx'` + `pnpm changeset` + `pnpm changeset version`
-   - or `pnpm changeset` + `git commit -m 'docs: changeset'` + `pnpm changeset pre exit` + `pnpm changeset pre enter alpha` + `git commit -m 'docs: changeset'`
+   - or `pnpm changeset` + `git commit -m 'docs: changeset'` + `pnpm changeset pre exit` + `pnpm changeset pre enter alpha` + `git commit -m 'docs: changeset'` + `pnpm changeset version`
 - `pnpm version patch` (or `minor` or `major`)
 - `git push origin release/xxx`
 - github action 会发起向 master 的 mr, 只要同意一下就好了
