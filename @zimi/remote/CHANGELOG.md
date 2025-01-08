@@ -1,5 +1,11 @@
 # @zimi/remote
 
+## 0.2.1-alpha.6
+
+### Patch Changes
+
+- 3954f36: fix: type.d.ts 没有打包到 dist 中
+
 ## 0.2.1-alpha.5
 
 ### Patch Changes
