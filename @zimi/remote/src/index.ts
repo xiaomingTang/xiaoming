@@ -10,4 +10,7 @@ export { createIframeAdaptor } from './adaptors/iframe'
 export { createHttpAdaptor, remoteEventManager } from './adaptors/http'
 export type { ToFunc } from './remoteValue/type'
 export { remoteValue } from './remoteValue/remoteValue'
-export { exposeToRemote } from './remoteValue/exposeToRemote'
+export {
+  exposeToRemote,
+  isRemoteValueEvent,
+} from './remoteValue/exposeToRemote'

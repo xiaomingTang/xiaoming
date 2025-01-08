@@ -18,6 +18,10 @@ function defaultOnRequest(e: AdaptorPackageData) {
   return e
 }
 
+export function isRemoteValueEvent(eventName: string) {
+  return eventName.startsWith('__REMOTE_VALUE_REQ__')
+}
+
 export function exposeToRemote<T extends object>(obj: T, options: ExposeProps) {
   const {
     globalName,
