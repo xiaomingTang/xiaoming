@@ -1,5 +1,5 @@
 export { Remote, isRemoteAdaptorData } from './remote'
-export type { AdaptorPackageData, Adaptor } from './adaptor'
+export type { Adaptor, AdaptorCallback, AdaptorPackageData } from './adaptor'
 export {
   RemoteError,
   RemoteNotFoundError,
