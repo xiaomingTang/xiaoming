@@ -20,7 +20,7 @@ export interface AdaptorPackageData {
 
 type Func<D = unknown, R = unknown> = (data: D) => R
 
-type AdaptorCallback = Func<AdaptorPackageData, void>
+export type AdaptorCallback = Func<AdaptorPackageData, void>
 
 export interface Adaptor {
   every: (callback: AdaptorCallback) => void
