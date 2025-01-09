@@ -20,6 +20,15 @@ interface RemoteChannel {
  *     remoteChannel.sendServerEvent(e)
  *   },
  * } satisfies Adaptor
+ *
+ * export const remote = new Remote<RemoteFuncsFromClient, RemoteFuncsFromServer>(
+ *   remoteAdaptor,
+ *   {
+ *     deviceId: `client-${Math.random().toString(36).slice(2)}`,
+ *   }
+ * )
+ *
+ * void remote._.initConnection()
  * ```
  */
 export class ClientSideRemoteChannelEventManager extends EventEmitter<{

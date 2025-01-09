@@ -28,7 +28,7 @@ interface RemoteChannel<T extends GamePlayerEntityLike> {
  *   on: remoteManager.on.bind(remoteManager),
  *   once: remoteManager.once.bind(remoteManager),
  *   emit: (e) => {
- *     const entity = getEntity(e.targetDeviceId)
+ *     const entity = remoteManager.getEntity(e.targetDeviceId)
  *     if (!entity) {
  *       console.error('entity not found')
  *       return
@@ -37,6 +37,21 @@ interface RemoteChannel<T extends GamePlayerEntityLike> {
  *   },
  * } satisfies Adaptor
  *
+ * export const remote = new Remote<RemoteFuncsFromServer, RemoteFuncsFromClient>(
+ *   remoteAdaptor,
+ *   {
+ *     deviceId: 'server',
+ *   }
+ * )
+ *
+ * remote.register('initConnection', async () => {
+ *   // 什么也不干，单纯的让客户端在服务端“备案”
+ * })
+ *
+ * export const getEntity = remoteManager.getEntity.bind(remoteManager)
+ * export const getIdByEntity = remoteManager.getIdByEntity.bind(remoteManager)
+ * export const waitForRegister = remoteManager.waitForRegister.bind(remoteManager)
+ * export const remoteTo = remoteManager.remoteTo.bind(remoteManager)
  * ```
  */
 export class ServerSideRemoteChannelEventManager<
