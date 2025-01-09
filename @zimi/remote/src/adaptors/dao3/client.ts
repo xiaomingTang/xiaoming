@@ -1,5 +1,6 @@
 import EventEmitter from 'eventemitter3'
-import { isRemoteAdaptorData, type AdaptorPackageData } from '../../index'
+import { isRemoteAdaptorData } from '../../remote'
+import { type AdaptorPackageData } from '../../adaptor'
 
 interface RemoteChannel {
   onClientEvent(fn: (e: unknown) => void): void

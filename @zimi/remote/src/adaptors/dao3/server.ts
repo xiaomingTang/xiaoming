@@ -1,9 +1,7 @@
 import EventEmitter from 'eventemitter3'
-import {
-  isRemoteAdaptorData,
-  isRemoteValueEvent,
-  type AdaptorPackageData,
-} from '../../index'
+import { isRemoteAdaptorData } from '../../remote'
+import { isRemoteValueEvent } from '../../remoteValue/exposeToRemote'
+import { type AdaptorPackageData } from '../../adaptor'
 
 interface GamePlayerEntityLike {
   player: {
