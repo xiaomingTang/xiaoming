@@ -88,7 +88,9 @@ export type TestB2 = Assert<
   ToFunc<TestObj>['b']['b2'] extends () => Promise<number[]> ? true : false
 >
 export type TestB3 = Assert<
-  ToFunc<TestObj>['b']['b3'] extends () => Promise<[number, string]> ? true : false
+  ToFunc<TestObj>['b']['b3'] extends () => Promise<[number, string]>
+    ? true
+    : false
 >
 export type TestB4 = Assert<
   ToFunc<TestObj>['b']['b4'] extends () => Promise<{
@@ -105,7 +107,9 @@ export type TestB6 = Assert<
   ToFunc<TestObj>['b']['b6'] extends () => Promise<number[]> ? true : false
 >
 export type TestB7 = Assert<
-  ToFunc<TestObj>['b']['b7'] extends () => Promise<[number, string]> ? true : false
+  ToFunc<TestObj>['b']['b7'] extends () => Promise<[number, string]>
+    ? true
+    : false
 >
 export type TestF = Assert<
   ToFunc<TestObj>['f']['b'] extends () => Promise<number> ? true : false

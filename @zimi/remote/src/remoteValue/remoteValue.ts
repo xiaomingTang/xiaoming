@@ -13,15 +13,28 @@ type RemoteValueProps = Pick<
   globalName: string
   adaptor: Adaptor
   timeoutMs?: number
+  log?: boolean
 }
 
 function geneProxy<T extends object>(paths: string[], props: RemoteValueProps) {
   return new Proxy<ToFunc<T>>(noop as unknown as ToFunc<T>, {
     apply(target, thisArg, argArray) {
-      const { adaptor, globalName, timeoutMs = 30000, ...restProps } = props
+      const {
+        adaptor,
+        globalName,
+        timeoutMs = 30000,
+        log = false,
+        ...restProps
+      } = props
       const randomStr = Math.random().toString(36).slice(2)
       const name = `__REMOTE_VALUE_REQ__${globalName}`
       const responseName = `__REMOTE_VALUE_RES__${[globalName, ...paths].join('.')}-${randomStr}`
+
+      if (log) {
+        console.log(
+          `[remoteValue] [${restProps.deviceId}] 正在访问远端 [${restProps.targetDeviceId}] 的变量: "${[globalName, ...paths].join('.')}"`
+        )
+      }
 
       return new Promise((resolve, reject) => {
         let timer: NodeJS.Timeout | undefined

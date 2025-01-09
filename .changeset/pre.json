@@ -10,12 +10,16 @@
     "@zimi/interact-web": "0.17.3",
     "@zimi/prize-wheel": "0.17.3",
     "@zimi/prize-wheel-helper": "0.17.3",
-    "@zimi/remote": "0.2.1-alpha.2",
+    "@zimi/remote": "0.2.1-alpha.6",
     "@zimi/story-helper": "0.17.3",
     "@zimi/type-utils": "0.17.3",
     "@zimi/utils": "0.18.2"
   },
   "changesets": [
+    "famous-adults-travel",
+    "hungry-nails-taste",
+    "nasty-moose-turn",
+    "tame-nails-wave",
     "witty-shoes-flow"
   ]
 }

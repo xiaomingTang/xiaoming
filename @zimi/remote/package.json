@@ -1,7 +1,7 @@
 {
   "name": "@zimi/remote",
   "license": "MIT",
-  "version": "0.2.1-alpha.3",
+  "version": "0.2.1-alpha.7",
   "author": "xiaomingTang",
   "description": "call remote functions as local",
   "private": false,
