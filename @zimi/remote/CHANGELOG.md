@@ -1,5 +1,11 @@
 # @zimi/remote
 
+## 0.2.1-alpha.9
+
+### Patch Changes
+
+- d9e93c2: feat: 改成 export \*
+
 ## 0.2.1-alpha.8
 
 ### Patch Changes
