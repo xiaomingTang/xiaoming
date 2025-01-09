@@ -1,5 +1,11 @@
 # @zimi/remote
 
+## 0.2.1-alpha.8
+
+### Patch Changes
+
+- 4f563a8: feat: remote 新增 dao3 adaptor
+
 ## 0.2.1-alpha.7
 
 ### Patch Changes
