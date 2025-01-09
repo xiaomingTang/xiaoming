@@ -22,6 +22,17 @@ module.exports = {
     'no-void': ['warn', {
       allowAsStatement: true,
     }],
+    '@typescript-eslint/no-unused-vars': [
+      'warn',
+      {
+        args: 'after-used',
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+        caughtErrorsIgnorePattern: "^_",
+        destructuredArrayIgnorePattern: '^_',
+      },
+    ],
+    '@typescript-eslint/no-floating-promises': 'warn',
   },
   settings: {
     react: {

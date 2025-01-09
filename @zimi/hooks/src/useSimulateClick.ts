@@ -101,7 +101,7 @@ export function useSimulateClick({
           },
         })
       ) {
-        onClick(e)
+        void onClick(e)
       }
       lastPointer = defaultPointer
     }

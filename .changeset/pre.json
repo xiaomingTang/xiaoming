@@ -4,13 +4,13 @@
   "initialVersions": {
     "@zimi/test": "0.16.3",
     "@zimi/event-emitter": "0.17.3",
-    "@zimi/hooks": "0.18.2",
+    "@zimi/hooks": "0.18.3",
     "@zimi/input-device-capabilities-polyfill": "0.17.2",
     "@zimi/interact": "0.17.3",
     "@zimi/interact-web": "0.17.3",
     "@zimi/prize-wheel": "0.17.3",
     "@zimi/prize-wheel-helper": "0.17.3",
-    "@zimi/remote": "0.2.1-alpha.6",
+    "@zimi/remote": "0.2.1-alpha.9",
     "@zimi/story-helper": "0.17.3",
     "@zimi/type-utils": "0.17.3",
     "@zimi/utils": "0.18.2"
@@ -19,7 +19,10 @@
     "famous-adults-travel",
     "hungry-nails-taste",
     "nasty-moose-turn",
+    "pink-dots-crash",
+    "silent-coats-float",
     "tame-nails-wave",
+    "twenty-roses-whisper",
     "witty-shoes-flow"
   ]
 }
