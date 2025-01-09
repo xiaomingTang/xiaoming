@@ -1,5 +1,11 @@
 # @zimi/remote
 
+## 0.2.1-alpha.10
+
+### Patch Changes
+
+- a1d38e4: feat: 完善注释 demo
+
 ## 0.2.1-alpha.9
 
 ### Patch Changes
