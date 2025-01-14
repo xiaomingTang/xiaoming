@@ -1,6 +1,6 @@
 import { RemoteError, RemoteTimeoutError, response } from '../response'
 import { Adaptor, AdaptorCallback, AdaptorPackageData } from '../adaptor'
-import type { ToFunc } from './type'
+import type { RemoteCallData, ToFunc } from './type'
 
 function noop() {
   // pass
@@ -62,7 +62,7 @@ function geneProxy<T extends object>(paths: string[], props: RemoteValueProps) {
           data: {
             paths,
             args: argArray,
-          },
+          } satisfies RemoteCallData,
         })
       })
     },

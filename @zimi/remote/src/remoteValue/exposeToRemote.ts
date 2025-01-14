@@ -1,5 +1,8 @@
 import { Adaptor, AdaptorPackageData } from '../adaptor'
 import { RemoteError, response } from '../response'
+import { RemoteCallData } from './type'
+
+type AdaptorData = AdaptorPackageData<RemoteCallData>
 
 interface ExposeProps {
   globalName: string
@@ -9,13 +12,14 @@ interface ExposeProps {
    */
   exposeTo: string[]
   /**
-   * 你可以在该回调中抛错，以阻止远程调用
+   * 你可以在该回调中抛错，以阻止远程调用，
+   * 也可以修改传入的 data
    */
-  onRequest?: (e: AdaptorPackageData) => void | Promise<void>
+  onRequest?: (e: AdaptorData) => RemoteCallData | Promise<RemoteCallData>
 }
 
-function defaultOnRequest(e: AdaptorPackageData) {
-  return e
+function defaultOnRequest(e: AdaptorData) {
+  return e.data
 }
 
 export function isRemoteValueEvent(eventName: string) {
@@ -31,11 +35,10 @@ export function exposeToRemote<T extends object>(obj: T, options: ExposeProps) {
   } = options
   const callback = async (e: AdaptorPackageData) => {
     try {
-      await onRequest(e)
+      const { paths, args } = await onRequest(e as AdaptorData)
       if (!exposeTo.includes(e.deviceId) && !exposeTo.includes('*')) {
         throw new RemoteError('permission denied')
       }
-      const { paths, args } = e.data as { paths: string[]; args: unknown[] }
       let target = obj
       for (let i = 0; i < paths.length; i += 1) {
         target = target[paths[i] as keyof typeof target] as typeof target

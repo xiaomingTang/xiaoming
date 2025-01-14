@@ -1,4 +1,4 @@
-export interface AdaptorPackageData {
+export interface AdaptorPackageData<D = unknown> {
   /**
    * 自身设备 id，应确保唯一性（对方能凭借该 deviceId 找到该设备）
    */
@@ -11,7 +11,7 @@ export interface AdaptorPackageData {
    * 远程调用的对方的方法名
    */
   name: string
-  data: unknown
+  data: D
   /**
    * 所需回调的方法名（如果需要回调的话）
    */

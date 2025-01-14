@@ -4,7 +4,7 @@ export * from './response'
 
 export * from './remoteValue/remoteValue'
 export * from './remoteValue/exposeToRemote'
-export type { ToFunc } from './remoteValue/type'
+export type { ToFunc, RemoteCallData } from './remoteValue/type'
 
 export * from './adaptors/iframe'
 export * from './adaptors/http'
