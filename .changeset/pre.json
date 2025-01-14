@@ -10,13 +10,14 @@
     "@zimi/interact-web": "0.17.3",
     "@zimi/prize-wheel": "0.17.3",
     "@zimi/prize-wheel-helper": "0.17.3",
-    "@zimi/remote": "0.2.1-alpha.9",
+    "@zimi/remote": "0.2.1-alpha.10",
     "@zimi/story-helper": "0.17.3",
     "@zimi/type-utils": "0.17.3",
     "@zimi/utils": "0.18.2"
   },
   "changesets": [
     "famous-adults-travel",
+    "honest-goats-joke",
     "hungry-nails-taste",
     "nasty-moose-turn",
     "pink-dots-crash",
