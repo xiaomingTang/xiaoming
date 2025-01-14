@@ -1,5 +1,17 @@
 # @zimi/remote
 
+## 0.2.1-alpha.13
+
+### Patch Changes
+
+- a93e4a6: 新增 handler 便于在业务中配置自定义 handler
+
+## 0.2.1-alpha.11
+
+### Patch Changes
+
+- 0eccc54: refactor: 允许通过 on-request 修改对方传入的参数
+
 ## 0.2.1-alpha.10
 
 ### Patch Changes
