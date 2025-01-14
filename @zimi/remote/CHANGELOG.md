@@ -1,5 +1,11 @@
 # @zimi/remote
 
+## 0.2.1-alpha.13
+
+### Patch Changes
+
+- a93e4a6: 新增 handler 便于在业务中配置自定义 handler
+
 ## 0.2.1-alpha.11
 
 ### Patch Changes
