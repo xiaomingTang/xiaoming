@@ -212,3 +212,74 @@ await remote._.xxx(anyData)
 > 由于通信双方是平等的，所以 B 调用 A 的流程也是一样的
 
 ![protocol.png](https://cdn.16px.cc/public/2024-12-08/fm5up4GM9UCz.png?r=1682x836)
+
+---
+---
+
+## remote value
+
+> 像使用 local value 一样使用 remote value
+
+**首先强调一遍，这个包是一个通信的包，不负责权限控制，需要使用者在业务层面进行恰当的处理，控制好什么该暴露，什么不该暴露。**
+
+如果我们（暂且称为 甲 端）需要访问其他端（可能是服务器，也可能是其他 iframe or whatever，暂且称为 乙 端）的一些数据/对象/方法，我们通常是这么做的：
+
+// 乙 端
+```ts
+const obj = {
+  value: number,
+  setValue: (newValue: number) => {
+    obj.value = newValue
+  }
+}
+
+register({
+  method: 'get',
+  name: 'getValue',
+  handler: () => {
+    return obj.value
+  }
+})
+
+register({
+  method: 'post',
+  name: 'setValue',
+  handler: (newValue: string) => {
+    obj.setValue(newValue)
+  }
+})
+```
+
+// 甲 端
+```ts
+const value = await fetch.get('getValue')
+await fetch.post('setValue', newValue)
+```
+
+有没有感觉在重复劳动？我 乙 端已经有了一个现成的`obj`，可是我还是需要在`register`处“封装”一下。
+
+---
+
+那么，**下面这个**怎么样：
+
+// 乙 端
+```ts
+exposeToRemote(obj, config)
+```
+
+// 甲 端
+```ts
+import { type obj } from '/path/to/obj'
+
+const remoteObj = remoteValue<typeof obj>(config)
+
+// 很遗憾没能实现 await remoteObj.value 直接取值，
+// 无论是值还是函数，必须在后面加一个括号调用，才能取到结果。
+const value = await remoteObj.value()
+const subValue = await remoteObj.deep.path.to.value()
+
+await remoteObj.setValue(newValue)
+await remoteObj.deep.path.to.func(...params)
+```
+
+**再次强调一遍，这个包是一个通信的包，不负责权限控制，需要使用者在业务层面进行恰当的处理，控制好什么该暴露，什么不该暴露。**
