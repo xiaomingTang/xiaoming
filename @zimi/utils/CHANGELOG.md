@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.18.3
+
+### Patch Changes
+
+- perf: with static 支持任何类型的属性传入
+
 ## 0.18.1
 
 ### Patch Changes

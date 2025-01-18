@@ -85,5 +85,6 @@ export function createSsrStore<C>(
     getState: useRawStore.getState,
     setState: useRawStore.setState,
     subscribe: useRawStore.subscribe,
+    getInitialState: useRawStore.getInitialState,
   })
 }
