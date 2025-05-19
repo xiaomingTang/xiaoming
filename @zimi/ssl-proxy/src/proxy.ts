@@ -2,7 +2,7 @@
 
 import { createCommand } from 'commander'
 
-import { realpathSync } from 'fs'
+import { realpathSync, readFileSync } from 'fs'
 import { fileURLToPath } from 'url'
 import path from 'path'
 import { proxy, ProxyServerConfig } from './index.js'
@@ -41,7 +41,14 @@ function main() {
   const absPath = toAbsPath(parsed.config)
   console.log(`[${name}] config file path: ${absPath}`)
 
-  const config: ProxyServerConfig | ProxyServerConfig[] = require(absPath)
+  const content = readFileSync(absPath, 'utf8')
+  let config: ProxyServerConfig | ProxyServerConfig[]
+
+  try {
+    config = JSON.parse(content)
+  } catch (e) {
+    throw new Error(`[${name}] config file parse error: ${e}`)
+  }
 
   if (Array.isArray(config)) {
     config.forEach((item) => {

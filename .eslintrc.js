@@ -44,9 +44,6 @@ module.exports = {
       },
     ],
     '@typescript-eslint/no-floating-promises': 'warn',
-    'import/no-dynamic-require': 'off',
-    'global-require': 'off',
-    '@typescript-eslint/no-var-requires': 'off',
   },
   settings: {
     react: {
