@@ -1,0 +1,37 @@
+{
+  "name": "@zimi/ssl-proxy",
+  "license": "MIT",
+  "version": "0.0.2",
+  "author": "xiaomingTang",
+  "description": "ssl proxy",
+  "private": false,
+  "sideEffects": [
+    "./dist/proxy.js"
+  ],
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": "https://github.com/xiaomingTang/xiaoming/tree/master/%40zimi/ssl-proxy",
+  "bin": {
+    "ssl-proxy": "./dist/proxy.js"
+  },
+  "files": [
+    "src",
+    "dist",
+    "resources"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch"
+  },
+  "dependencies": {
+    "commander": "^14.0.0",
+    "http-proxy": "^1.18.1",
+    "proxy-agent": "^6.5.0"
+  },
+  "devDependencies": {
+    "@types/http-proxy": "^1.17.16",
+    "@types/node": "^20.11.30"
+  }
+}
