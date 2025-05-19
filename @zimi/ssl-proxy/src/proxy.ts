@@ -5,30 +5,22 @@ import { createCommand } from 'commander'
 import { realpathSync, readFileSync } from 'fs'
 import { fileURLToPath } from 'url'
 import path from 'path'
-import { proxy, ProxyServerConfig } from './index.js'
+import { proxy } from './index.js'
 import { toAbsPath } from './utils.js'
-import { DEFAULT_SSL_CONFIG } from './constants.js'
+import { DEFAULT_CONFIG, ProxyServerConfig } from './constants.js'
 
 function main() {
   const name = 'ssl-proxy'
 
   const program = createCommand(name)
-    .option(
-      '-s --source <url>',
-      'source url, e.g. https://0.0.0.0:3001',
-      'https://localhost:3001'
-    )
-    .option(
-      '-t --target <url>',
-      'target url, e.g. http://localhost:3000',
-      'http://localhost:3000'
-    )
-    .option('-k --key <path>', 'ssl key path', DEFAULT_SSL_CONFIG.key)
-    .option('-c --cert <path>', 'ssl cert path', DEFAULT_SSL_CONFIG.cert)
-    .option('-n --name <string>', 'task name', name)
-    .option('-w --ws', 'enable websocket proxy', true)
-    .option('-a --agent', 'enable use system agent', true)
-    .option('-o --config <path>', 'config file path')
+    .option('-s --source <url>', `source url`, DEFAULT_CONFIG.source)
+    .option('-t --target <url>', 'target url', DEFAULT_CONFIG.target)
+    .option('-k --key <path>', 'ssl key path', DEFAULT_CONFIG.key)
+    .option('-c --cert <path>', 'ssl cert path', DEFAULT_CONFIG.cert)
+    .option('-n --name <string>', 'task name', DEFAULT_CONFIG.name)
+    .option('-w --ws', 'enable websocket proxy', DEFAULT_CONFIG.ws)
+    .option('-a --agent', 'enable use system agent', DEFAULT_CONFIG.agent)
+    .option('-o --config <path>', 'config file path, .json')
 
   const parsed: ProxyServerConfig & {
     config?: string
@@ -58,6 +50,7 @@ function main() {
     proxy(config)
   }
 }
+
 function isMainModule() {
   try {
     const realArgv = realpathSync(process.argv[1] ?? '')
@@ -68,6 +61,7 @@ function isMainModule() {
     return false
   }
 }
+
 if (isMainModule()) {
   main()
 } else {

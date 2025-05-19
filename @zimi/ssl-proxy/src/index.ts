@@ -2,49 +2,17 @@ import httpProxy from 'http-proxy'
 
 import { ProxyAgent } from 'proxy-agent'
 import { readSslFile } from './utils.js'
-import { DEFAULT_SSL_CONFIG } from './constants.js'
-
-export interface ProxyServerConfig {
-  /**
-   * 必须 https, 例如:
-   * - https://localhost:3001
-   * - https://127.0.0.1:3001
-   * - https://0.0.0.0:3001
-   * - https://192.168.0.123:3001
-   */
-  source: string
-  /**
-   * 转发的目标，可以是任意地址
-   */
-  target: string
-  /**
-   * 该次代理任务的名称，用于日志输出显示
-   */
-  name?: string
-  /**
-   * 是否开启 WebSocket 代理
-   * @default true
-   */
-  ws?: boolean
-  /**
-   * 是否使用系统代理
-   * @default true
-   */
-  agent?: boolean
-  /**
-   * SSL 证书文件路径
-   * - key.pem
-   */
-  key?: string
-  /**
-   * SSL 证书文件路径
-   * - cert.pem
-   */
-  cert?: string
-}
+import { DEFAULT_CONFIG, ProxyServerConfig } from './constants.js'
 
 export function proxy(options: ProxyServerConfig) {
-  const { source, target, name = 'ssl-proxy' } = options
+  const source = options.source || DEFAULT_CONFIG.source
+  const target = options.target || DEFAULT_CONFIG.target
+  const name = options.name || DEFAULT_CONFIG.name
+  const key = options.key || DEFAULT_CONFIG.key
+  const cert = options.cert || DEFAULT_CONFIG.cert
+  const ws = options.ws ?? DEFAULT_CONFIG.ws
+  const agent = options.agent ?? DEFAULT_CONFIG.agent
+
   const sourceUrl = new URL(source)
   const targetUrl = new URL(target)
 
@@ -52,16 +20,16 @@ export function proxy(options: ProxyServerConfig) {
     throw new Error('source must be https')
   }
 
-  const ws = !!(options.ws ?? true)
-  const agent = !!(options.agent ?? true)
-
   const ssl =
     options.key && options.cert
       ? {
           key: options.key,
           cert: options.cert,
         }
-      : DEFAULT_SSL_CONFIG
+      : {
+          key,
+          cert,
+        }
 
   httpProxy
     .createServer({
