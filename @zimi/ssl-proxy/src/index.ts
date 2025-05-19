@@ -1,7 +1,8 @@
 import httpProxy from 'http-proxy'
 
 import { ProxyAgent } from 'proxy-agent'
-import { readSslFile } from './utils.js'
+import { ServerResponse } from 'http'
+import { errorToString, readSslFile } from './utils.js'
 import { DEFAULT_CONFIG, ProxyServerConfig } from './constants.js'
 
 export function proxy(options: ProxyServerConfig) {
@@ -31,7 +32,7 @@ export function proxy(options: ProxyServerConfig) {
           cert,
         }
 
-  httpProxy
+  const server = httpProxy
     .createServer({
       xfwd: true,
       secure: false,
@@ -48,4 +49,16 @@ export function proxy(options: ProxyServerConfig) {
     .listen(+sourceUrl.port, sourceUrl.hostname)
 
   console.log(`[${name}] Proxying ${sourceUrl.href} to ${targetUrl.href}`)
+
+  server.on('error', (err, req, res) => {
+    const errorMessage = `[${name}] Error: ${errorToString(err)}`
+    if (res) {
+      ;(res as ServerResponse).writeHead?.(500, {
+        'Content-Type': 'text/plain',
+      })
+      res.end(errorMessage)
+    } else {
+      console.error(errorMessage)
+    }
+  })
 }

@@ -27,3 +27,19 @@ ${SSL_CMD}`
     )
   }
 }
+
+export function errorToString(err: unknown) {
+  const code = (err as { code?: string | number })?.code
+  const message = (err as { message?: string })?.message
+  const messages: string[] = []
+  if (code !== undefined && code !== '') {
+    messages.push(`code: ${code}`)
+  }
+  if (message !== undefined && message !== '') {
+    messages.push(`message: ${message}`)
+  }
+  if (messages.length === 0) {
+    return 'Unknown error'
+  }
+  return messages.join(', ')
+}
