@@ -78,7 +78,7 @@ export function createJsonStorage<T, P extends Partial<T> = T>(
           (parse((storage ?? window.localStorage).getItem(name) ?? '') as P) ||
           null
         )
-      } catch (error) {
+      } catch (_) {
         return null
       }
     },
