@@ -261,9 +261,6 @@ importers:
       '@zimi/event-emitter':
         specifier: workspace:*
         version: link:../event-emitter
-      '@zimi/ssl-proxy':
-        specifier: workspace:*
-        version: link:../ssl-proxy
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
