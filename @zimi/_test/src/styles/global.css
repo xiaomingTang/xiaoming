@@ -1,0 +1,24 @@
+@import './preflight.css';
+@import 'normalize.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'toastify-js/src/toastify.css';
+
+html {
+  font-family:
+    -apple-system, system-ui, 'Segoe UI', Roboto, Ubuntu, Cantarell,
+    'Noto Sans', sans-serif, BlinkMacSystemFont, 'Helvetica Neue',
+    'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial;
+  line-height: 1.5;
+  background-color: theme('colors.b.100');
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* overrides toastify-js */
+.toastify {
+  border-radius: 4px;
+  color: white;
+  background: theme('colors.primary.main');
+  box-shadow: 0 3px 16px -1px theme('colors.primary.light');
+}
