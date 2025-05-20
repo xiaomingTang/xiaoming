@@ -64,7 +64,7 @@ export const historyStateManager = {
       }
       try {
         await lastCallback()
-      } catch (error) {
+      } catch (_) {
         onPopStateCallbacks.push(lastCallback)
         window.history.pushState({ type: KEY }, '')
         return
