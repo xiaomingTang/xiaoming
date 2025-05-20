@@ -49,6 +49,11 @@ export interface ProxyServerConfig {
    * @default false
    */
   followRedirects?: boolean
+  /**
+   * 是否打印每个请求的日志
+   * @default false
+   */
+  logRequest?: boolean
 }
 
 export const DEFAULT_CONFIG = {
@@ -60,4 +65,5 @@ export const DEFAULT_CONFIG = {
   key: path.resolve(__dirname, '../resources/key.pem'),
   cert: path.resolve(__dirname, '../resources/cert.pem'),
   followRedirects: false,
+  logRequest: false,
 } satisfies ProxyServerConfig

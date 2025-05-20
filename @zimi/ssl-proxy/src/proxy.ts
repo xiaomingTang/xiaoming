@@ -20,12 +20,13 @@ function main() {
     .option('-n --name <string>', 'task name', DEFAULT_CONFIG.name)
     .option('-w --ws', 'enable websocket proxy', DEFAULT_CONFIG.ws)
     .option('-a --agent', 'enable use system agent', DEFAULT_CONFIG.agent)
-    .option('-o --config <path>', 'config file path, .json')
+    .option('-C --config <path>', 'config file path, .json')
     .option(
       '-f --follow-redirects',
       'follow redirects',
       DEFAULT_CONFIG.followRedirects
     )
+    .option('-l --log-request', 'log each request', DEFAULT_CONFIG.logRequest)
 
   const parsed: ProxyServerConfig & {
     config?: string
