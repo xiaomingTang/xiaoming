@@ -1,5 +1,11 @@
 # @zimi/ssl-proxy
 
+## 0.0.8
+
+### Patch Changes
+
+- feat: 允许 src http & follow-redirects 放到输入参数中
+
 ## 0.0.7
 
 ### Patch Changes
