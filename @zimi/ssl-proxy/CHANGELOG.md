@@ -1,5 +1,11 @@
 # @zimi/ssl-proxy
 
+## 0.0.9
+
+### Patch Changes
+
+- feat: 新增解决跨域 & 路径重写 & 支持打印请求日志
+
 ## 0.0.8
 
 ### Patch Changes
