@@ -5,7 +5,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export interface ProxyServerConfig {
   /**
-   * 必须 https, 例如:
+   * 例如:
    * - "https://localhost:3001"
    * - "https://127.0.0.1:3001"
    * - "https://0.0.0.0:3001"
@@ -44,6 +44,11 @@ export interface ProxyServerConfig {
    * @default "built-in cert.pem"
    */
   cert?: string
+  /**
+   * 是否跟随重定向
+   * @default false
+   */
+  followRedirects?: boolean
 }
 
 export const DEFAULT_CONFIG = {
@@ -54,4 +59,5 @@ export const DEFAULT_CONFIG = {
   agent: false,
   key: path.resolve(__dirname, '../resources/key.pem'),
   cert: path.resolve(__dirname, '../resources/cert.pem'),
+  followRedirects: false,
 } satisfies ProxyServerConfig

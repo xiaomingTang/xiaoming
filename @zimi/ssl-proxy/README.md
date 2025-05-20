@@ -9,15 +9,16 @@ npx @zimi/ssl-proxy
 ### Options
 
 ```
--s --source <url>   source url (default: "https://localhost:3001")
--t --target <url>   target url (default: "http://localhost:3000")
--k --key <path>     ssl key path (default: built-in key.pem)
--c --cert <path>    ssl cert path (default: built-in cert.pem)
--n --name <string>  task name (default: "ssl-proxy")
--w --ws             enable websocket proxy (default: false)
--a --agent          enable use system agent (default: false)
--o --config <path>  config file path, .json
--h, --help          display help for command
+-s --source <url>      source url (default: "https://localhost:3001")
+-t --target <url>      target url (default: "http://localhost:3000")
+-k --key <path>        ssl key path (default: builtin key.pem)
+-c --cert <path>       ssl cert path (default: builtin cert.pem)
+-n --name <string>     task name (default: "ssl-proxy")
+-w --ws                enable websocket proxy (default: false)
+-a --agent             enable use system agent (default: false)
+-o --config <path>     config file path, .json
+-f --follow-redirects  follow redirects (default: false)
+-h, --help             display help for command
 ```
 
 ### config file
@@ -27,7 +28,7 @@ npx @zimi/ssl-proxy
 
 interface ProxyServerConfig {
   /**
-   * 必须 https, 例如:
+   * 例如:
    * - "https://localhost:3001"
    * - "https://127.0.0.1:3001"
    * - "https://0.0.0.0:3001"
@@ -66,6 +67,11 @@ interface ProxyServerConfig {
    * @default "built-in cert.pem"
    */
   cert?: string
+  /**
+   * 是否跟随重定向
+   * @default false
+   */
+  followRedirects?: boolean
 }
 ```
 

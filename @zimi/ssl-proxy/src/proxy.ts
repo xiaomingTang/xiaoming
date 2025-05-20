@@ -21,6 +21,11 @@ function main() {
     .option('-w --ws', 'enable websocket proxy', DEFAULT_CONFIG.ws)
     .option('-a --agent', 'enable use system agent', DEFAULT_CONFIG.agent)
     .option('-o --config <path>', 'config file path, .json')
+    .option(
+      '-f --follow-redirects',
+      'follow redirects',
+      DEFAULT_CONFIG.followRedirects
+    )
 
   const parsed: ProxyServerConfig & {
     config?: string

@@ -13,13 +13,13 @@ export function proxy(options: ProxyServerConfig) {
   const cert = options.cert || DEFAULT_CONFIG.cert
   const ws = options.ws ?? DEFAULT_CONFIG.ws
   const agent = options.agent ?? DEFAULT_CONFIG.agent
+  const followRedirects =
+    options.followRedirects ?? DEFAULT_CONFIG.followRedirects
 
   const sourceUrl = new URL(source)
   const targetUrl = new URL(target)
 
-  if (sourceUrl.protocol !== 'https:') {
-    throw new Error('source must be https')
-  }
+  const isHttps = sourceUrl.protocol === 'https:'
 
   const ssl =
     options.key && options.cert
@@ -38,13 +38,15 @@ export function proxy(options: ProxyServerConfig) {
       secure: false,
       ws,
       target: targetUrl,
-      ssl: {
-        key: readSslFile(ssl.key, 'key'),
-        cert: readSslFile(ssl.cert, 'cert'),
-      },
+      ssl: isHttps
+        ? {
+            key: readSslFile(ssl.key, 'key'),
+            cert: readSslFile(ssl.cert, 'cert'),
+          }
+        : undefined,
       agent: agent ? new ProxyAgent() : undefined,
       changeOrigin: true,
-      followRedirects: true,
+      followRedirects,
     })
     .listen(+sourceUrl.port, sourceUrl.hostname)
 
