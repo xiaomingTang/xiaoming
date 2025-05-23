@@ -235,14 +235,17 @@ export class Remote<
   }
 
   _ = new Proxy<FuncMapWithConfig<OF>>({} as FuncMapWithConfig<OF>, {
-    get: (_, k) => this.callAsync.bind(this, k as string),
+    get: (_, k) => this.callAsync.bind(null, k as string),
   })
 
   self = new Proxy<MF>({} as MF, {
     get: (_, k) => (data: unknown) =>
-      this.map[k as string]?.callback(data, {
-        deviceId: this.deviceId,
-      }),
+      this.map[k as string]?.callback.apply(null, [
+        data,
+        {
+          deviceId: this.deviceId,
+        },
+      ]),
   })
 }
 
