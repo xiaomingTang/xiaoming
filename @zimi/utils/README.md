@@ -9,6 +9,7 @@ yarn add @zimi/utils
 
 ### examples
 
+[dingding](#dingding)    
 [createSsrStore_createJsonStorage](#createSsrStore_createJsonStorage)    
 [ExactClickChecker](#ExactClickChecker)    
 [genePromiseOnce](#genePromiseOnce)    
@@ -18,6 +19,24 @@ yarn add @zimi/utils
 [withStatic](#withStatic)    
 
 ---
+
+#### dingding
+
+```ts
+import { sendDingGroupMessage, DingError } from '@zimi/utils'
+
+try {
+  await sendDingGroupMessage({ xxx })
+  console.log('success')
+} catch (error) {
+  if (DingError.isDingError(error)) {
+    console.error(error)
+  } else {
+    console.error('unknown error: ', error)
+  }
+}
+```
+[↑ all examples ↑](#examples)
 
 #### createSsrStore_createJsonStorage
 

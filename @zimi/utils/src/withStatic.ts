@@ -32,12 +32,13 @@ interface StaticProps {
  */
 export function withStatic<T extends object, S extends StaticProps>(
   useStore: T,
-  staticFuncs: S
+  staticFuncs: S,
+  override?: (keyof S)[]
 ) {
   const isDev = process.env.NODE_ENV === 'development'
   const result = useStore as T & S
   Object.keys(staticFuncs).forEach((key) => {
-    if (key in useStore) {
+    if (key in useStore && !override?.includes(key as keyof S)) {
       if (isDev) {
         throw new Error(`property has exists: "${key}"`)
       }
