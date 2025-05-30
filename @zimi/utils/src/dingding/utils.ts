@@ -1,15 +1,7 @@
 import crypto from 'node:crypto'
 import { DingError } from './error'
 
-import type {
-  DingTextMessage,
-  DingMarkdownMessage,
-  DingLinkMessage,
-  DingActionCardMessage,
-  DingRes,
-  DingFeedCardMessage,
-  DingMessage,
-} from './type'
+import type { DingRes, DingMessage } from './type'
 
 /**
  * 生成加签签名（URL 编码的 base64 HMAC-SHA256）
