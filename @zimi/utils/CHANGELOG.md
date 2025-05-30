@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.18.4
+
+### Patch Changes
+
+- feat: 新增 dingding 辅助函数 & 优化 2 个函数
+
 ## 0.18.3
 
 ### Patch Changes
