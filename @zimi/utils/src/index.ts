@@ -1,3 +1,4 @@
+export * from './dingding'
 export * from './createJsonStorage'
 export * from './createSsrStore'
 export * from './ExactClickChecker'
