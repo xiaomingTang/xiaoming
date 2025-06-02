@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.18.5
+
+### Patch Changes
+
+- fix: 引入时 webpack 报错 不支持 `node:xxx` 的写法
+
 ## 0.18.4
 
 ### Patch Changes
