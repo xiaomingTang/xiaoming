@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.18.6
+
+### Patch Changes
+
+- fix: 引用抛错
+
 ## 0.18.5
 
 ### Patch Changes
