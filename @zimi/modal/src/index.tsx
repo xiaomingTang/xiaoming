@@ -291,8 +291,6 @@ function useModal(modal?: any, args?: any): any {
 function NiceModalPlaceholder() {
   const modals = useContext(ModalContext)
 
-  console.log(modals)
-
   const toRender = Object.keys(modals)
     .filter((id) => !!modals[id])
     .filter((id) => {
