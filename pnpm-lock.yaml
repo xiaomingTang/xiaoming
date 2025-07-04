@@ -256,6 +256,19 @@ importers:
         specifier: workspace:*
         version: link:../interact
 
+  '@zimi/modal':
+    dependencies:
+      '@zimi/hooks':
+        specifier: workspace:*
+        version: link:../hooks
+      react:
+        specifier: '>=16.8'
+        version: 18.3.1
+    devDependencies:
+      '@types/react':
+        specifier: '>=16.8'
+        version: 18.3.21
+
   '@zimi/prize-wheel':
     dependencies:
       '@zimi/event-emitter':
