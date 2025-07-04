@@ -47,3 +47,39 @@ function CustomModal({ title }: CustomModalProps) {
 // will be resolved value
 const res = await NiceModal.show(CustomModal, { title: 'xxx' })
 ```
+
+### warning
+
+在一些场合下，我们可能需要把 Modal Context 透传下去。如：
+
+``` typescript react
+function GrandChild() {
+  const modal = useModal()
+  // ...
+}
+
+// bad practice
+function Child() {
+  const modal = useModal()
+
+  // 由于 Portal 的存在，GrandChild 里面取不到 Modal Context
+  return <Portal>
+    <GrandChild />
+  </Portal>
+}
+
+// good practice
+function Child() {
+  const modal = useModal()
+
+  // 使用 modal.Provider 把 Context 透传下去，
+  // 这样 GrandChild 就能正确取到 Modal Context 了
+  return <Portal>
+    <modal.Provider>
+      <GrandChild />
+    </modal.Provider>
+  </Portal>
+}
+
+await NiceModal.show(Child)
+```
