@@ -1,0 +1,28 @@
+{
+  "name": "@zimi/modal",
+  "license": "MIT",
+  "version": "0.0.1",
+  "author": "xiaomingTang",
+  "description": "simplify modal management",
+  "private": false,
+  "sideEffects": false,
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": "https://github.com/xiaomingTang/xiaoming/tree/master/%40zimi/modal",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch"
+  },
+  "dependencies": {
+    "@zimi/hooks": "workspace:*",
+    "react": ">= 18"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.8"
+  }
+}
