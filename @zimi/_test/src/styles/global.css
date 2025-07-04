@@ -1,9 +1,10 @@
 @import './preflight.css';
 @import 'normalize.css';
+@import 'toastify-js/src/toastify.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import 'toastify-js/src/toastify.css';
 
 html {
   font-family:
