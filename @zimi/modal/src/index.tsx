@@ -198,7 +198,7 @@ function show(
 
   // If modal is a component and not registered, register it
   if (typeof modal !== 'string' && !MODAL_REGISTRY[modalId]) {
-    register(modalId, modal)
+    register(modalId, modal, args)
   }
 
   showModal(modalId, args)
