@@ -4,7 +4,16 @@
 1. 移除 `NiceModal.create` 并把逻辑放到了 `NiceModal.show` 里面
 2. 移除 `NiceModal.hide` 并把逻辑放到了 `NiceModal.resolve` / `NiceModal.reject` 里面
 3. `antdModal`, `muiDialog` 等工具函数移动到了 `helpers.tsx` 中
-4. 其他基本与 `nice-modal-react` 维持一致
+4. 由于移除了 `NiceModal.create`, 因此完全不支持 `NiceModal` 的声明式模态框
+    ```tsx
+    function CustomModal() {
+      // ...
+    }
+
+    // declaration modal like this is NOT supported.
+    <CustomModal id='xxx' />
+    ```
+5. 其他基本与 `nice-modal-react` 维持一致
 
 ### install
 
@@ -14,7 +23,7 @@ yarn add @zimi/modal
 
 ### examples
 
-``` typescript react
+``` tsx
 import { useModal, NiceModal } from '@zimi/modal'
 
 interface CustomModalProps {
@@ -44,7 +53,7 @@ function CustomModal({ title }: CustomModalProps) {
   </div>
 }
 
-// will be resolved value
+// will be 'whatever you want'
 const res = await NiceModal.show(CustomModal, { title: 'xxx' })
 ```
 
@@ -52,7 +61,7 @@ const res = await NiceModal.show(CustomModal, { title: 'xxx' })
 
 在一些场合下，我们可能需要把 Modal Context 透传下去。如：
 
-``` typescript react
+``` tsx
 function GrandChild() {
   const modal = useModal()
   // ...
@@ -75,9 +84,9 @@ function Child() {
   // 使用 modal.Provider 把 Context 透传下去，
   // 这样 GrandChild 就能正确取到 Modal Context 了
   return <Portal>
-    <modal.Provider>
++   <modal.Provider>
       <GrandChild />
-    </modal.Provider>
++   </modal.Provider>
   </Portal>
 }
 
