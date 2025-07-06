@@ -1,5 +1,14 @@
 # @zimi/modal
 
+## 0.0.6
+
+### Patch Changes
+
+- fix: show 一个未注册的 modal id 时，现在会 reject
+- docs: 令文档描述更详细
+- Updated dependencies
+  - @zimi/hooks@0.18.5
+
 ## 0.0.5
 
 ### Patch Changes

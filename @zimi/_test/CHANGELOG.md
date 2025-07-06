@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.16.8
+
+### Patch Changes
+
+- Updated dependencies
+  - @zimi/hooks@0.18.5
+
 ## 0.16.7
 
 ### Patch Changes
