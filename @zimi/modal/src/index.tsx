@@ -201,6 +201,14 @@ function show(
     register(modalId, modal, args)
   }
 
+  if (typeof modal === 'string' && !currentState[modalId]) {
+    return Promise.reject(
+      new Error(
+        `Modal with id "${modalId}" is not registered. You can register it using 'register' or 'ModalDefine'.`
+      )
+    )
+  }
+
   showModal(modalId, args)
 
   if (!modalCallbacks[modalId]) {
