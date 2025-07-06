@@ -71,6 +71,11 @@ function Test() {
   useListen(count, (prev, next) => {
     console.log(prev, next)
   })
+
+  // custom equality function
+  useListen(count, shallowEqual, (prev, next) => {
+    console.log(prev, next)
+  })
 }
 
 ```

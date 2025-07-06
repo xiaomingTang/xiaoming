@@ -10,17 +10,17 @@ import React, {
   ReactNode,
 } from 'react'
 
-export interface NiceModalState {
+export interface ModalState {
   id: string
   args?: Record<string, unknown>
   visible?: boolean
 }
 
-export interface NiceModalStore {
-  [key: string]: NiceModalState
+export interface ModalStore {
+  [key: string]: ModalState
 }
 
-interface NiceModalCallbacks {
+interface ModalCallbacks {
   [modalId: string]: {
     resolve: (args: unknown) => void
     reject: (args: Error) => void
@@ -31,35 +31,39 @@ interface NiceModalCallbacks {
 /**
  * The handler to manage a modal returned by {@link useModal | useModal} hook.
  */
-export interface NiceModalHandler<Props = Record<string, unknown>>
-  extends NiceModalState {
+export interface ModalHandler<Props = Record<string, unknown>>
+  extends ModalState {
   /**
-   * Whether a modal is visible, it's controlled by {@link NiceModalHandler.show | show} method.
+   * Whether a modal is visible, it's controlled by {@link ModalHandler.show | show} method.
    */
   visible: boolean
   /**
-   * Show the modal, it will change {@link NiceModalHandler.visible | visible} state to true.
+   * Show the modal, it will change {@link ModalHandler.visible | visible} state to true.
    * @param args - an object passed to modal component as props.
    */
   show: (args?: Props) => Promise<unknown>
   /**
-   * Resolve the promise returned by {@link NiceModalHandler.show | show} method and hide the modal.
+   * Resolve the promise returned by {@link ModalHandler.show | show} method and hide the modal.
    */
   resolve: (args?: unknown) => void
   /**
-   * Reject the promise returned by {@link NiceModalHandler.show | show} method and hide the modal.
+   * Reject the promise returned by {@link ModalHandler.show | show} method and hide the modal.
    */
   reject: (error?: Error) => void
   /**
    * Remove the modal component from React component tree. It improves performance compared to just making a modal invisible.
    */
   remove: () => void
+  /**
+   * provides the modal id context.
+   */
+  Provider: typeof ModalProvider
 }
 
-const symModalId = Symbol('NiceModalId')
-const initialState: NiceModalStore = {}
+const symModalId = Symbol('ModalId')
+const initialState: ModalStore = {}
 const ModalContext = React.createContext(initialState)
-const NiceModalIdContext = React.createContext<string | null>(null)
+const ModalIdContext = React.createContext<string | null>(null)
 
 const MODAL_REGISTRY: {
   [id: string]: {
@@ -73,10 +77,10 @@ let uidSeed = 0
 const getUid = () => `_nice_modal_${uidSeed++}`
 
 // Modal state management - replacing useReducer with simpler state management
-let stateUpdateCallbacks: Array<(state: NiceModalStore) => void> = []
-let currentState: NiceModalStore = initialState
+let stateUpdateCallbacks: Array<(state: ModalStore) => void> = []
+let currentState: ModalStore = initialState
 
-const updateState = (updater: (state: NiceModalStore) => NiceModalStore) => {
+const updateState = (updater: (state: ModalStore) => ModalStore) => {
   currentState = updater(currentState)
   stateUpdateCallbacks.forEach((callback) => callback(currentState))
 }
@@ -120,7 +124,7 @@ const removeModal = (modalId: string) => {
 const register = <T extends React.FC<any>>(
   id: string,
   comp: T,
-  props?: NiceModalArgs<T>
+  props?: ModalArgs<T>
 ): void => {
   if (!MODAL_REGISTRY[id]) {
     MODAL_REGISTRY[id] = { comp, props }
@@ -137,7 +141,7 @@ const unregister = (id: string): void => {
   delete MODAL_REGISTRY[id]
 }
 
-const modalCallbacks: NiceModalCallbacks = {}
+const modalCallbacks: ModalCallbacks = {}
 const getModalId = (modal: string | React.FC<any>): string => {
   if (typeof modal === 'string') return modal as string
   const extendedModal = modal as React.FC<any> & Record<string | symbol, string>
@@ -147,50 +151,68 @@ const getModalId = (modal: string | React.FC<any>): string => {
   return extendedModal[symModalId]
 }
 
-type NiceModalArgs<T> = T extends
+const remove = (modal: string | React.FC<any>): void => {
+  const modalId = getModalId(modal)
+  removeModal(modalId)
+  modalCallbacks[modalId]?.reject(new Error('Modal removed'))
+  delete modalCallbacks[modalId]
+  unregister(modalId)
+}
+
+// Clean up invisible modals to improve performance
+const cleanupInvisibleModals = () => {
+  const invisibleModalIds = Object.keys(currentState).filter(
+    (id) => !currentState[id]?.visible
+  )
+
+  invisibleModalIds.forEach((modalId) => {
+    remove(modalId)
+  })
+}
+
+type ModalArgs<T> = T extends
   | keyof JSX.IntrinsicElements
   | React.JSXElementConstructor<any>
   ? React.ComponentProps<T>
   : Record<string, unknown>
 
+type EmptyLike =
+  | void
+  | undefined
+  | null
+  | Record<string | number | symbol, never>
+
 function show<T>(modal: string, args?: Record<string, unknown>): Promise<T>
 function show<T, P>(modal: string, args: P): Promise<T>
+function show<T, P extends EmptyLike>(modal: React.FC<P>): Promise<T>
 function show<T, P>(modal: React.FC<P>, args: P): Promise<T>
 
 function show(
   modal: React.FC<any> | string,
-  args?: NiceModalArgs<React.FC<any>> | Record<string, unknown>
+  args?: ModalArgs<React.FC<any>> | Record<string, unknown>
 ) {
+  // Clean up invisible modals before showing new one
+  cleanupInvisibleModals()
+
   const modalId = getModalId(modal)
 
-  // If modal is a component, register it with enhanced logic
+  // If modal is a component and not registered, register it
   if (typeof modal !== 'string' && !MODAL_REGISTRY[modalId]) {
-    const OriginalComp = modal as React.FC<any>
+    register(modalId, modal, args)
+  }
 
-    const EnhancedComp = function EnhancedComp(props: any) {
-      const { id, ...restProps } = props
-      // eslint-disable-next-line @typescript-eslint/no-use-before-define
-      const { args: modalArgs } = useModal(id)
-      const modals = useContext(ModalContext)
-      const shouldMount = !!modals[id]
-
-      if (!shouldMount) return null
-      return (
-        <NiceModalIdContext.Provider value={id}>
-          <OriginalComp {...restProps} {...modalArgs} />
-        </NiceModalIdContext.Provider>
+  if (typeof modal === 'string' && !currentState[modalId]) {
+    return Promise.reject(
+      new Error(
+        `Modal with id "${modalId}" is not registered. You can register it using 'register' or 'ModalDefine'.`
       )
-    }
-
-    register(modalId, EnhancedComp)
+    )
   }
 
   showModal(modalId, args)
 
   if (!modalCallbacks[modalId]) {
-    // `!` tell ts that theResolve will be written before it is used
     let theResolve!: (args?: unknown) => void
-    // `!` tell ts that theResolve will be written before it is used
     let theReject!: (args?: Error) => void
     const promise = new Promise((resolve, reject) => {
       theResolve = resolve
@@ -205,31 +227,18 @@ function show(
   return modalCallbacks[modalId].promise
 }
 
-const remove = (modal: string | React.FC<any>): void => {
-  const modalId = getModalId(modal)
-  removeModal(modalId)
-  modalCallbacks[modalId]?.reject(new Error('Modal removed'))
-  delete modalCallbacks[modalId]
-  unregister(modalId)
-}
-
-function useModal(): NiceModalHandler
-function useModal(
-  modal: string,
-  args?: Record<string, unknown>
-): NiceModalHandler
-function useModal<P>(modal: React.FC<P>, args?: P): NiceModalHandler
-
+function useModal(): ModalHandler
+function useModal(modal: string, args?: Record<string, unknown>): ModalHandler
+function useModal<P>(modal: React.FC<P>, args?: P): ModalHandler<P>
 function useModal(modal?: any, args?: any): any {
   const modals = useContext(ModalContext)
-  const contextModalId = useContext(NiceModalIdContext)
+  const contextModalId = useContext(ModalIdContext)
 
   const mid = !modal ? contextModalId : getModalId(modal)
   const isUseComponent = modal && typeof modal !== 'string'
 
-  // Only if contextModalId doesn't exist
   if (!mid) {
-    throw new Error('No modal id found in NiceModal.useModal.')
+    throw new Error('No modal id found in useModal.')
   }
 
   useListen(mid, () => {
@@ -264,6 +273,13 @@ function useModal(modal?: any, args?: any): any {
     [mid]
   )
 
+  const Provider = useCallback(
+    ({ children }: { children: React.ReactNode }) => (
+      <ModalIdContext.Provider value={mid}>{children}</ModalIdContext.Provider>
+    ),
+    [mid]
+  )
+
   return useMemo(
     () => ({
       id: mid,
@@ -273,6 +289,7 @@ function useModal(modal?: any, args?: any): any {
       remove: removeCallback,
       resolve: resolveCallback,
       reject: rejectCallback,
+      Provider,
     }),
     [
       mid,
@@ -282,13 +299,14 @@ function useModal(modal?: any, args?: any): any {
       removeCallback,
       resolveCallback,
       rejectCallback,
+      Provider,
     ]
   )
 }
 
 // The placeholder component is used to auto render modals when call modal.show()
 // When modal.show() is called, it means there've been modal info
-function NiceModalPlaceholder() {
+function ModalPlaceholder() {
   const modals = useContext(ModalContext)
 
   const toRender = Object.keys(modals)
@@ -310,7 +328,9 @@ function NiceModalPlaceholder() {
   return (
     <>
       {toRender.map((t) => (
-        <t.comp key={t.id} id={t.id} {...t.props} />
+        <ModalIdContext.Provider key={t.id} value={t.id}>
+          <t.comp {...t.props} />
+        </ModalIdContext.Provider>
       ))}
     </>
   )
@@ -321,7 +341,7 @@ function ModalProvider({ children }: { children: ReactNode }) {
 
   // Subscribe to state changes
   useEffect(() => {
-    const callback = (newState: NiceModalStore) => {
+    const callback = (newState: ModalStore) => {
       setModals(newState)
     }
     stateUpdateCallbacks.push(callback)
@@ -335,7 +355,7 @@ function ModalProvider({ children }: { children: ReactNode }) {
   return (
     <ModalContext.Provider value={modals}>
       {children}
-      <NiceModalPlaceholder />
+      <ModalPlaceholder />
     </ModalContext.Provider>
   )
 }

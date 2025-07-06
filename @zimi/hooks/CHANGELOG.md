@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.18.5
+
+### Patch Changes
+
+- perf: use listen hook 新增支持传入自定义 equal 函数
+
 ## 0.18.4
 
 ### Patch Changes

@@ -1,10 +1,10 @@
-import type { NiceModalHandler } from '.'
+import type { ModalHandler } from '.'
 
 /**
  * Helper function for Ant Design Modal (v4)
  */
 export const antdModal = (
-  modal: NiceModalHandler
+  modal: ModalHandler
 ): {
   visible: boolean
   onCancel: () => void
@@ -23,7 +23,7 @@ export const antdModal = (
  * Helper function for Ant Design Modal (v5)
  */
 export const antdModalV5 = (
-  modal: NiceModalHandler
+  modal: ModalHandler
 ): {
   open: boolean
   onCancel: () => void
@@ -43,7 +43,7 @@ export const antdModalV5 = (
  * Helper function for Ant Design Drawer (v4)
  */
 export const antdDrawer = (
-  modal: NiceModalHandler
+  modal: ModalHandler
 ): {
   visible: boolean
   onClose: () => void
@@ -62,7 +62,7 @@ export const antdDrawer = (
  * Helper function for Ant Design Drawer (v5)
  */
 export const antdDrawerV5 = (
-  modal: NiceModalHandler
+  modal: ModalHandler
 ): {
   open: boolean
   onClose: () => void
@@ -80,7 +80,7 @@ export const antdDrawerV5 = (
  * Helper function for Material-UI Dialog
  */
 export const muiDialog = (
-  modal: NiceModalHandler
+  modal: ModalHandler
 ): { open: boolean; onClose: () => void; onExited: () => void } => ({
   open: modal.visible,
   onClose: () => modal.reject(new Error('Dialog closed')),
@@ -93,7 +93,7 @@ export const muiDialog = (
  * Helper function for Material-UI Dialog (v5)
  */
 export const muiDialogV5 = (
-  modal: NiceModalHandler
+  modal: ModalHandler
 ): {
   open: boolean
   onClose: () => void
@@ -112,7 +112,7 @@ export const muiDialogV5 = (
  * Helper function for Bootstrap Dialog
  */
 export const bootstrapDialog = (
-  modal: NiceModalHandler
+  modal: ModalHandler
 ): { show: boolean; onHide: () => void; onExited: () => void } => ({
   show: modal.visible,
   onHide: () => modal.reject(new Error('Dialog hidden')),
