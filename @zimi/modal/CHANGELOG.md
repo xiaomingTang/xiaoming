@@ -1,5 +1,11 @@
 # @zimi/modal
 
+## 0.0.7
+
+### Patch Changes
+
+- 取消导出不够支持的函数
+
 ## 0.0.6
 
 ### Patch Changes
