@@ -1,4 +1,4 @@
-import type { ModalHandler } from '.'
+import type { ModalHandler } from './modal'
 
 /**
  * Helper function for Ant Design Modal (v4)
