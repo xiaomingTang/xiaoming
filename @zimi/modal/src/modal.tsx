@@ -203,7 +203,7 @@ function show(
   if (typeof modal === 'string' && !currentState[modalId]) {
     return Promise.reject(
       new Error(
-        `Modal with id "${modalId}" is not registered. You can register it using 'register' or 'ModalDefine'.`
+        `Modal with id "${modalId}" is not registered. Maybe it was removed early?`
       )
     )
   }
@@ -358,33 +358,9 @@ function ModalPlaceholder() {
   )
 }
 
-/**
- * Declarative way to register a modal.
- * @param id - The id of the modal.
- * @param component - The modal Component.
- * @returns
- */
-function ModalDefine({
-  id,
-  component,
-}: {
-  id: string
-  component: React.FC<any>
-}) {
-  useEffect(() => {
-    register(id, component)
-    return () => {
-      unregister(id)
-    }
-  }, [id, component])
-  return null
-}
-
 const NiceModal = {
   show,
   remove,
-  register,
-  unregister,
 }
 
-export { NiceModal, ModalDefine, ModalPlaceholder, useModal }
+export { NiceModal, ModalPlaceholder, useModal }

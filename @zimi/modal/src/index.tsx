@@ -1,10 +1,4 @@
-export {
-  NiceModal,
-  ModalContext,
-  ModalDefine,
-  ModalPlaceholder,
-  useModal,
-} from './modal'
+export { NiceModal, ModalPlaceholder, useModal } from './modal'
 
 export {
   antdModal,
