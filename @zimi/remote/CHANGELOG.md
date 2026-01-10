@@ -1,5 +1,11 @@
 # @zimi/remote
 
+## 0.2.2
+
+### Patch Changes
+
+- add electron adaptor
+
 ## 0.2.1
 
 ### Patch Changes
