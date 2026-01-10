@@ -17,6 +17,10 @@ jobs:
     timeout-minutes: 15
     needs: test
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      id-token: write
     steps:
       # install deps
       - uses: actions/checkout@v4
@@ -24,8 +28,6 @@ jobs:
         with:
           version: 9.1.2
       - uses: actions/setup-node@v4
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         with:
           node-version: 20
           cache: 'pnpm'
@@ -42,7 +44,7 @@ jobs:
           commit: 'feat: update version'
           title: 'feat: update version'
           version: pnpm changeset version
-          publish: pnpm publish --no-git-checks --access public -r
+          publish: pnpm --filter "./@zimi/*" --filter "!@zimi/test" -r exec npm publish --provenance --access public
 
       - name: Merge pull request
         id: merge_request
