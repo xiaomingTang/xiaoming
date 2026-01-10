@@ -1,13 +1,13 @@
 {
   "name": "@zimi/remote",
   "license": "MIT",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": "xiaomingTang",
   "description": "call remote functions as local",
   "private": false,
   "sideEffects": false,
   "main": "dist/index.js",
-  "module": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "repository": "https://github.com/xiaomingTang/xiaoming/tree/master/%40zimi/remote",
   "files": [
@@ -15,10 +15,17 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc",
-    "build:watch": "tsc --watch"
+    "build": "tsup",
+    "build:watch": "tsup --watch"
   },
   "dependencies": {
+    "electron": "^39.2.7",
     "eventemitter3": "^5.0.1"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.1"
+  },
+  "peerDependencies": {
+    "electron": "^39.2.7"
   }
 }

@@ -196,6 +196,10 @@ const remote = new Remote<{}, FuncsFromHttp>(adaptor, {
 await remote._.xxx(anyData)
 ```
 
+### electron 的 main 和 renderer 之间通信
+
+使用比较复杂，暂无示例代码。
+
 ### 与其他端通信（如 websocket）略
 
 你可以看看 `iframe adaptor` / `http adaptor` 源码，包含空行也就 30 行，依葫芦画瓢很轻易就能写一个。
