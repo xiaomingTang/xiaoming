@@ -44,7 +44,7 @@ jobs:
           commit: 'feat: update version'
           title: 'feat: update version'
           version: pnpm changeset version
-          publish: pnpm --filter "./@zimi/*" --filter "!@zimi/test" -r exec npm publish --provenance --access public
+          publish: pnpm -r --filter "@zimi/*" --filter '!@zimi/test' exec -- npm publish --provenance --access public
 
       - name: Merge pull request
         id: merge_request
