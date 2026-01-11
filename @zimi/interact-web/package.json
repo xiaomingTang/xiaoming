@@ -22,10 +22,10 @@
     "@zimi/event-emitter": "workspace:*",
     "gl-matrix": "^3.4.3"
   },
-  "peerDependencies": {
+  "devDependencies": {
     "@zimi/interact": "workspace:*"
   },
-  "devDependencies": {
+  "peerDependencies": {
     "@zimi/interact": "workspace:*"
   }
 }

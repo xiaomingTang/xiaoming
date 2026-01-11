@@ -211,9 +211,6 @@ importers:
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
-      react:
-        specifier: '>=16.8'
-        version: 18.3.1
     devDependencies:
       '@types/lodash':
         specifier: ^4.17.0
@@ -221,6 +218,9 @@ importers:
       '@types/react':
         specifier: '>=16.8'
         version: 18.3.21
+      react:
+        specifier: '>=16.8'
+        version: 18.3.1
 
   '@zimi/input-device-capabilities-polyfill': {}
 
@@ -306,13 +306,13 @@ importers:
 
   '@zimi/remote':
     dependencies:
-      electron:
-        specifier: ^39.2.7
-        version: 39.2.7
       eventemitter3:
         specifier: ^5.0.1
         version: 5.0.1
     devDependencies:
+      electron:
+        specifier: ^39.2.7
+        version: 39.2.7
       tsup:
         specifier: ^8.5.1
         version: 8.5.1(@microsoft/api-extractor@7.39.0(@types/node@22.19.5))(jiti@2.4.2)(postcss@8.5.3)(tsx@4.19.4)(typescript@5.8.3)(yaml@2.8.0)

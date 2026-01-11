@@ -19,10 +19,10 @@
     "build:watch": "tsup --watch"
   },
   "dependencies": {
-    "electron": "^39.2.7",
     "eventemitter3": "^5.0.1"
   },
   "devDependencies": {
+    "electron": "^39.2.7",
     "tsup": "^8.5.1"
   },
   "peerDependencies": {

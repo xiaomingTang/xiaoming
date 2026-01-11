@@ -18,12 +18,12 @@
     "build": "tsc",
     "build:watch": "tsc --watch"
   },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
   "devDependencies": {
     "@types/lodash": "^4.17.0",
-    "@types/react": ">=16.8"
-  },
-  "dependencies": {
-    "lodash": "^4.17.21",
+    "@types/react": ">=16.8",
     "react": ">=16.8"
   },
   "peerDependencies": {
