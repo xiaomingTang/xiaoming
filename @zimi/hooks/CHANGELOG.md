@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.18.6
+
+### Patch Changes
+
+- rm redundant dependencies
+
 ## 0.18.5
 
 ### Patch Changes

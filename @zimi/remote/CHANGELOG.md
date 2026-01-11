@@ -1,5 +1,11 @@
 # @zimi/remote
 
+## 0.2.5
+
+### Patch Changes
+
+- rm redundant dependencies
+
 ## 0.2.3
 
 ### Patch Changes

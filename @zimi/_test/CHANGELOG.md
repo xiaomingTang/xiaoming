@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.16.9
+
+### Patch Changes
+
+- Updated dependencies
+  - @zimi/prize-wheel-helper@0.17.4
+  - @zimi/interact-web@0.17.4
+  - @zimi/hooks@0.18.6
+
 ## 0.16.8
 
 ### Patch Changes

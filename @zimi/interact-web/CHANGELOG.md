@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.17.4
+
+### Patch Changes
+
+- rm redundant dependencies
+
 ## 0.17.2
 
 ### Patch Changes
