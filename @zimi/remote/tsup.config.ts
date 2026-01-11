@@ -14,4 +14,5 @@ export default defineConfig({
   target: 'node16',
   shims: false,
   minify: true,
+  external: ['electron'],
 })
